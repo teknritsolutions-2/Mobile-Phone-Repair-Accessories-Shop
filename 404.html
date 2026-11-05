@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Find your way back | Port &amp; Pixel</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f7f8fa;
+        color: #141820;
+        font:
+          17px/1.65 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 600px;
+        padding: 35px;
+      }
+      h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+      }
+      p {
+        color: #596373;
+      }
+      a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 20px;
+        border-radius: 5px;
+        background: #315fe8;
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Let’s get you to the right place.</h1>
+      <p>
+        This page may have moved. Visit the Port &amp; Pixel homepage to explore
+        repairs, accessories, and booking.
+      </p>
+      <a id="home-link" href="./">Return to the studio</a>
+    </main>
+    <script>
+      // GitHub serves this file at the requested URL. Resolve only known legacy routes.
+      const parts = location.pathname.split("/").filter(Boolean);
+      const legacy = {
+        services: "services",
+        "home-2": "home2",
+        home2: "home2",
+        accessories: "accessories",
+        pricing: "pricing",
+        contact: "contact",
+      };
+      const segment = parts.at(-1);
+      const target = legacy[segment];
+      const repository = "Mobile-Phone-Repair-Accessories-Shop";
+      const index = parts.indexOf(repository);
+      const root =
+        index >= 0 ? "/" + parts.slice(0, index + 1).join("/") + "/" : "/";
+      document.getElementById("home-link").href = root;
+      if (target && parts.length === (index >= 0 ? index + 2 : 1)) {
+        location.replace(
+          root + "pages/" + target + ".html" + location.search + location.hash,
+        );
+      }
+    </script>
+  </body>
+</html>

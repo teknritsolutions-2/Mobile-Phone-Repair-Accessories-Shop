@@ -32,6 +32,15 @@ jobs:
           done
           test -s assets/css/style.css
           test -s assets/js/main.js
+          test -s 404.html
+          for legacy in home-2 home2 services accessories pricing contact; do
+            test -s "$legacy/index.html"
+          done
+
+      - name: Check static references and request behavior
+        run: |
+          python3 documentation/check-static.py
+          node documentation/check-behavior.mjs
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -51,3 +51,9 @@ Primary URLs:
 - `/Mobile-Phone-Repair-Accessories-Shop/pages/contact.html`
 
 See `documentation/verification.md` for tested layouts and interaction coverage. Optional browser QA tooling is not required to run or publish the site.
+
+## Legacy links and deployment verification
+
+The six public pages retain their physical URLs. Old `/services`, `/accessories`, `/pricing`, `/contact`, `/home-2`, and `/home2` bookmarks have small static directory-index redirects to the matching files in `pages/`. The redirect preserves query parameters and anchors in normal browsers. `404.html` only redirects recognized old route names and otherwise offers a real homepage link; it is not a page router.
+
+GitHub Pages is configured to use Actions from `main` at the repository root. The workflow validates HTML entrypoints, redirect files, local references, JavaScript syntax, and request/catalog behavior before uploading. No package installation or build is used. After a release, verify the live HTML against the source files, visit and refresh all six pages, test navigation, and confirm the old bookmarks continue to the intended page.

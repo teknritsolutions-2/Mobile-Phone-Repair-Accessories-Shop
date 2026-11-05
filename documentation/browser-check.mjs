@@ -185,10 +185,7 @@ await page.locator('[data-product="cable"]').first().click();
 await page.locator("#product-dialog .button").click();
 await page.waitForSelector('body[data-ready="true"]');
 assert.equal(await page.locator("#service").inputValue(), "accessory");
-assert.match(
-  await page.locator(".enquiry-context").innerText(),
-  /USB-C connection essentials/,
-);
+assert.match(await page.locator(".enquiry-context").innerText(), /USB-C cable/);
 assert.equal(await page.locator("#brand").getAttribute("required"), null);
 checks.push(
   "Category/search/sort/reset, detail modal/Escape, and accessory enquiry preselection",

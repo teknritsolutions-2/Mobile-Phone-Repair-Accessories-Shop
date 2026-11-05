@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Prepare a repair request or an accessory enquiry with Port & Pixel."
+      content="Prepare a repair request or an accessory enquiry with Port &amp; Pixel."
     />
     <meta name="theme-color" content="#315FE8" />
     <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
-    <title>Contact & repair booking | Port &amp; Pixel</title>
+    <title>Contact &amp; repair booking | Port &amp; Pixel</title>
     <script>
       try {
         document.documentElement.dataset.theme =
@@ -31,15 +31,30 @@
     <div id="site-header"></div>
     <main id="main">
       <section class="page-banner">
-        <div class="container page-banner__grid">
+        <div class="container contact-intro">
           <div>
-            <p class="eyebrow">Contact & booking</p>
-            <h1>A better day<br />for your device.</h1>
+            <p class="eyebrow">Contact &amp; repair requests</p>
+            <h1>
+              Tell us the problem. <br /><span>Let’s take it from here.</span>
+            </h1>
           </div>
-          <div class="page-banner__aside">
+          <div class="contact-intro__note">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6l8-4Z"></path>
+              <path d="m8 11 3 3 5-5"></path>
+            </svg>
             <p>
-              Tell us what needs attention. Prepare a repair request, ask about
-              an accessory, or start with a question.
+              Your request stays on this device until a submission service is
+              connected. Review it, edit it, or download a copy.
             </p>
           </div>
         </div>
@@ -47,7 +62,7 @@
       <section class="section booking-section">
         <div class="container booking-layout">
           <div id="request-container">
-            <form id="booking-form" novalidate>
+            <form id="booking-form" novalidate="">
               <div class="form-heading">
                 <h2>Your repair request</h2>
                 <p>Required fields are marked with an asterisk (*).</p>
@@ -64,7 +79,7 @@
                       id="name"
                       name="name"
                       type="text"
-                      required
+                      required=""
                       placeholder="Your full name"
                       autocomplete="name"
                       value=""
@@ -80,7 +95,7 @@
                       id="email"
                       name="email"
                       type="email"
-                      required
+                      required=""
                       placeholder="you@example.com"
                       autocomplete="email"
                       value=""
@@ -88,7 +103,7 @@
                     />
                     <span class="field-error" id="email-error"></span>
                   </div>
-                  <div class="field">
+                  <div class="field field--wide">
                     <label for="phone"
                       >Phone number <span aria-hidden="true">*</span></label
                     >
@@ -96,7 +111,7 @@
                       id="phone"
                       name="phone"
                       type="tel"
-                      required
+                      required=""
                       placeholder="Your contact number"
                       autocomplete="tel"
                       value=""
@@ -107,7 +122,7 @@
                 </div>
               </fieldset>
               <fieldset>
-                <legend><span>02</span> Your device & request</legend>
+                <legend><span>02</span> Your device &amp; request</legend>
                 <div class="form-grid">
                   <div class="field">
                     <label for="brand"
@@ -117,7 +132,7 @@
                       id="brand"
                       name="brand"
                       type="text"
-                      required
+                      required=""
                       placeholder="e.g. Apple, Samsung, Google"
                       value=""
                       aria-describedby="brand-error"
@@ -132,7 +147,7 @@
                       id="model"
                       name="model"
                       type="text"
-                      required
+                      required=""
                       placeholder="e.g. iPhone 14"
                       value=""
                       aria-describedby="model-error"
@@ -145,7 +160,7 @@
                     ><select
                       id="service"
                       name="service"
-                      required
+                      required=""
                       aria-describedby="service-error"
                     >
                       <option value="">Choose a service</option>
@@ -154,7 +169,9 @@
                       <option value="charging">Charging Port Repair</option>
                       <option value="software">Software Troubleshooting</option>
                       <option value="camera">Camera Repair</option>
-                      <option value="audio">Speaker & Microphone Repair</option>
+                      <option value="audio">
+                        Speaker &amp; Microphone Repair
+                      </option>
                       <option value="unsure">Not sure — help me choose</option>
                       <option value="accessory">
                         Accessory enquiry
@@ -169,7 +186,7 @@
                     <textarea
                       id="description"
                       name="description"
-                      required
+                      required=""
                       minlength="10"
                       placeholder="What’s happening, when did it start, and what have you tried?"
                       aria-describedby="description-error"
@@ -227,7 +244,7 @@
                     stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="M12 5v14M5 12h14" />
+                    <path d="M12 5v14M5 12h14"></path>
                   </svg>
                 </summary>
                 <div class="field field--wide">
@@ -256,8 +273,8 @@
                     stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6l8-4Z" />
-                    <path d="m8 11 3 3 5-5" /></svg
+                    <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6l8-4Z"></path>
+                    <path d="m8 11 3 3 5-5"></path></svg
                 ></span>
                 <p>
                   Your request is prepared on your device. It is not sent to the
@@ -269,11 +286,11 @@
                   id="consent"
                   name="consent"
                   type="checkbox"
-                  required
+                  required=""
                   aria-describedby="consent-error"
                 /><span
                   >I understand how this request is handled and have read the
-                  <button type="button" class="plain-link" data-privacy-open>
+                  <button type="button" class="plain-link" data-privacy-open="">
                     privacy information</button
                   >.</span
                 ></label
@@ -289,7 +306,7 @@
                   stroke-linejoin="round"
                   aria-hidden="true"
                 >
-                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                  <path d="M4 12h15m-6-6 6 6-6 6"></path>
                 </svg>
               </button>
               <div id="submit-error" role="alert"></div>
@@ -297,7 +314,7 @@
           </div>
           <aside class="booking-aside">
             <p class="eyebrow">Good to bring along</p>
-            <h2>A little preparation.<br />A smoother visit.</h2>
+            <h2>Before you bring <br />your phone in.</h2>
             <ol>
               <li>
                 <h3>A recent backup.</h3>
@@ -323,8 +340,8 @@
                 stroke-linejoin="round"
                 aria-hidden="true"
               >
-                <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6l8-4Z" />
-                <path d="m8 11 3 3 5-5" />
+                <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6l8-4Z"></path>
+                <path d="m8 11 3 3 5-5"></path>
               </svg>
               <p>
                 Keep passwords and sensitive information out of your request.
@@ -337,16 +354,16 @@
       <section class="closing-cta">
         <div class="container closing-cta__inner">
           <div>
-            <p class="eyebrow">Keep a good thing going</p>
-            <h2>More life.<br />Less interruption.</h2>
+            <p class="eyebrow">Make room for a better day</p>
+            <h2>Keep the phone. <br />Lose the problem.</h2>
           </div>
           <div>
             <p>
-              Your phone has more to give. Tell us what’s wrong, and let’s start
-              with the right next step.
+              Start with your model and what’s not working. <br />We’ll help you
+              understand the next step.
             </p>
             <a class="button" href="../pages/contact.html"
-              >Let’s talk about your repair<svg
+              >Start your repair request<svg
                 class="icon directional"
                 viewBox="0 0 24 24"
                 fill="none"
@@ -356,22 +373,9 @@
                 stroke-linejoin="round"
                 aria-hidden="true"
               >
-                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                <path d="M4 12h15m-6-6 6 6-6 6"></path></svg
             ></a>
           </div>
-          <span class="closing-cta__symbol" aria-hidden="true"
-            ><svg
-              class="icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M4 12h15m-6-6 6 6-6 6" /></svg
-          ></span>
         </div>
       </section>
     </main>

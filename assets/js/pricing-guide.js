@@ -23,7 +23,7 @@ export function initPricingGuide() {
       <div class="estimate-detail__heading"><h2>${service.name}</h2>${icon(service.id)}</div>
       <div class="quotation-status"><span></span>Device-specific quotation</div>
       <p>${service.detail}</p>
-      <dl><div><dt>What shapes the estimate</dt><dd>${service.factors}</dd></div><div><dt>What happens next</dt><dd>Share your exact model and symptoms. A physical assessment may be needed to confirm the issue and the proposed work.</dd></div><div><dt>Before you decide</dt><dd>Confirm the total cost, available component options, and expected timing. ${device.value !== "Smartphone" ? "Support for this device category is subject to confirmation." : "Repair work starts after you agree to the scope."}</dd></div></dl>
+      <dl><div><dt>What shapes the estimate</dt><dd>${service.factors}</dd></div><div><dt>What happens next</dt><dd>Share your model and symptoms. After assessment, confirm the total cost, component options, and timing before agreeing to repair. ${device.value !== "Smartphone" ? "Support for this device category is subject to confirmation." : ""}</dd></div></dl>
       ${bookLink(selected, "Request your estimate")}
     </article>`;
   };

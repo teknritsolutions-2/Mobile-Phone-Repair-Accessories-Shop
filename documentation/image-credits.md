@@ -11,7 +11,6 @@ All photography is served locally. Pexels photographs are used under the Pexels 
 | cable.jpg             | ready made — https://www.pexels.com/photo/3921711/          |
 | charger.jpg           | ready made — https://www.pexels.com/photo/3921710/          |
 | audio.jpg             | Adrian Regeci — https://www.pexels.com/photo/30608591/      |
-| accessory-hero.jpg    | ready made — https://www.pexels.com/photo/4032362/          |
 | stand.jpg             | Rohan Krishnan — https://unsplash.com/photos/ZieeEAogV9Y    |
 | protector.svg         | Original product illustration for Port & Pixel              |
 | favicon.svg           | Original Port & Pixel mark                                  |

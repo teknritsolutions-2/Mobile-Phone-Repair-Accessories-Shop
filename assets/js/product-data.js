@@ -1,7 +1,7 @@
 export const products = [
   {
     id: "case",
-    name: "Everyday protective case",
+    name: "Protective phone case",
     category: "Cases & Protection",
     image: "case.jpg",
     attribute: "Everyday protection · Model-specific fit",
@@ -10,7 +10,7 @@ export const products = [
   },
   {
     id: "cable",
-    name: "USB-C connection essentials",
+    name: "USB-C cable",
     category: "Chargers & Cables",
     image: "cable.jpg",
     attribute: "USB-C · Everyday connection",
@@ -19,7 +19,7 @@ export const products = [
   },
   {
     id: "glass",
-    name: "Edge-to-edge screen protector",
+    name: "Screen protector",
     category: "Screen Protectors",
     image: "protector.svg",
     attribute: "Clear finish · Model-specific fit",
@@ -28,7 +28,7 @@ export const products = [
   },
   {
     id: "earbuds",
-    name: "Wireless listening essentials",
+    name: "Wireless earbuds",
     category: "Audio",
     image: "audio.jpg",
     attribute: "Wireless · Compact charging case",
@@ -37,7 +37,7 @@ export const products = [
   },
   {
     id: "charger",
-    name: "Compact wall charger",
+    name: "Wall charger",
     category: "Chargers & Cables",
     image: "charger.jpg",
     attribute: "Compact design · USB charging",
@@ -46,7 +46,7 @@ export const products = [
   },
   {
     id: "stand",
-    name: "Desk-ready phone stand",
+    name: "Desk phone stand",
     category: "Everyday Essentials",
     image: "stand.jpg",
     attribute: "Desktop companion · Upright design",
