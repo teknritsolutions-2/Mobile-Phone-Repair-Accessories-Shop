@@ -1,0 +1,16 @@
+{
+  "layoutCases": 144,
+  "failures": [],
+  "errors": [],
+  "checks": [
+    "Desktop Home dropdown and routing",
+    "Guided finder context and booking preselection",
+    "Home issue selector and booking flow",
+    "All service booking links and FAQ accordion",
+    "Accessory category/search/sort/empty state/detail modal/enquiry context",
+    "Pricing selectors and estimate booking",
+    "Form required/email/phone validation, local review, download, and editing",
+    "Mobile navigation, submenu, Escape, scroll lock, theme/direction persistence",
+    "Privacy dialog and back-to-top"
+  ]
+}
