@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore screen, battery, charging, software, camera, and audio repairs."
+    />
+    <meta name="theme-color" content="#315FE8" />
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+    <title>Repair services | Port &amp; Pixel</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("pp-theme") || "light";
+        document.documentElement.dir = localStorage.getItem("pp-dir") || "ltr";
+      } catch {
+        /* Preferences are optional when storage is unavailable. */
+      }
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="../assets/css/rtl.css" />
+    <script type="module" src="../assets/js/main.js"></script>
+  </head>
+  <body data-page="services">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="page-banner">
+        <div class="container page-banner__grid">
+          <div>
+            <p class="eyebrow">Repair services</p>
+            <h1>Expert attention.<br />For everyday problems.</h1>
+          </div>
+          <div class="page-banner__aside">
+            <p>
+              A cracked screen, a tired battery, an unreliable connection. Find
+              out what a considered repair can involve.
+            </p>
+            <a class="button button--outline" href="../pages/contact.html"
+              >Find your next step<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container services-layout">
+          <nav class="service-navigation" aria-label="Repair categories">
+            <span>Explore services</span
+            ><a href="#screen"
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="6" y="2" width="12" height="20" rx="2" />
+                <path d="m13 5-3 6 4 2-3 5m0 1h2" /></svg
+              >Screen Replacement</a
+            ><a href="#battery"
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="7" width="17" height="11" rx="2" />
+                <path d="M22 10v5M7 10v5m4-5v5m4-5v5" /></svg
+              >Battery Replacement</a
+            ><a href="#charging"
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 2v4m6-4v4M7 6h10v4a5 5 0 0 1-10 0V6Zm5 9v7" /></svg
+              >Charging Port Repair</a
+            ><a href="#software"
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <path d="m9 8-4 4 4 4m6-8 4 4-4 4" /></svg
+              >Software Troubleshooting</a
+            ><a href="#camera"
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 5 10 2h4l2 3h4v16H4V5h4Z" />
+                <circle cx="12" cy="12" r="4" /></svg
+              >Camera Repair</a
+            ><a href="#audio"
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 10h4l5-5v14l-5-5H3v-4Zm13-3a7 7 0 0 1 0 10m3-13a11 11 0 0 1 0 16"
+                /></svg
+              >Speaker & Microphone Repair</a
+            >
+          </nav>
+          <div class="services-content">
+            <article class="service-feature" id="screen">
+              <div class="service-feature__title">
+                <p class="eyebrow">01 / Screen replacement</p>
+                <h2>A clearer way forward.</h2>
+                <p>
+                  From a cracked corner to a screen that has gone completely
+                  dark, start with a careful display assessment.
+                </p>
+              </div>
+              <img
+                class="service-feature__image"
+                src="../assets/images/repair.jpg"
+                alt="Phone internals and precision screwdriver during a careful repair"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="service-explanation">
+                <div>
+                  <h3>What you might notice</h3>
+                  <p>
+                    Cracks, flickering, black spots, or a display that no longer
+                    responds to touch.
+                  </p>
+                </div>
+                <div>
+                  <h3>What we check</h3>
+                  <p>
+                    We inspect the display and touch response, discuss
+                    compatible replacement options, and check key functions
+                    after fitting.
+                  </p>
+                </div>
+              </div>
+              <p class="service-consideration">
+                <strong>What affects the estimate</strong>Device model, display
+                technology, frame damage, and component availability affect the
+                estimate.
+              </p>
+              <a
+                class="button button--outline"
+                href="../pages/contact.html?service=screen"
+                >Book this service<svg
+                  class="icon directional"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+              ></a>
+            </article>
+            <div class="power-services">
+              <article class="power-service" id="battery">
+                <div class="service-title-icon">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="7" width="17" height="11" rx="2" />
+                    <path d="M22 10v5M7 10v5m4-5v5m4-5v5" />
+                  </svg>
+                </div>
+                <p class="eyebrow">02 / Power & connection</p>
+                <h2>Battery Replacement</h2>
+                <p class="service-intro">
+                  Give everyday use a little more staying power. We check the
+                  battery before recommending a change.
+                </p>
+                <div class="service-explanation">
+                  <div>
+                    <h3>What you might notice</h3>
+                    <p>
+                      Rapid battery drain, unexpected shutdowns, or a battery
+                      that struggles to hold a charge.
+                    </p>
+                  </div>
+                  <div>
+                    <h3>What we check</h3>
+                    <p>
+                      We review battery health and charging behavior before
+                      recommending a replacement or further checks.
+                    </p>
+                  </div>
+                </div>
+                <p class="service-consideration">
+                  <strong>What affects the estimate</strong>Battery
+                  availability, device construction, and other power faults can
+                  affect cost and timing.
+                </p>
+                <a
+                  class="button button--outline"
+                  href="../pages/contact.html?service=battery"
+                  >Book this service<svg
+                    class="icon directional"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                ></a>
+              </article>
+              <article class="power-service" id="charging">
+                <div class="service-title-icon">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 2v4m6-4v4M7 6h10v4a5 5 0 0 1-10 0V6Zm5 9v7" />
+                  </svg>
+                </div>
+                <p class="eyebrow">03 / Power & connection</p>
+                <h2>Charging Port Repair</h2>
+                <p class="service-intro">
+                  A charging problem is not always the port. A closer look helps
+                  establish the right next step.
+                </p>
+                <div class="service-explanation">
+                  <div>
+                    <h3>What you might notice</h3>
+                    <p>
+                      Intermittent charging, a loose connection, or no response
+                      when a cable is connected.
+                    </p>
+                  </div>
+                  <div>
+                    <h3>What we check</h3>
+                    <p>
+                      We check the cable, connector, and power path. Cleaning or
+                      repair may be appropriate after inspection.
+                    </p>
+                  </div>
+                </div>
+                <p class="service-consideration">
+                  <strong>What affects the estimate</strong>Connector design,
+                  board damage, corrosion, and parts availability influence the
+                  work needed.
+                </p>
+                <a
+                  class="button button--outline"
+                  href="../pages/contact.html?service=charging"
+                  >Book this service<svg
+                    class="icon directional"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                ></a>
+              </article>
+            </div>
+            <div class="precision-services">
+              <header>
+                <p class="eyebrow">The smaller details</p>
+                <h2>See it. Hear it.<br />Use it like you should.</h2>
+              </header>
+              <article class="precision-service" id="software">
+                <div class="precision-service__heading">
+                  <span>04</span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="3" />
+                    <path d="m9 8-4 4 4 4m6-8 4 4-4 4" />
+                  </svg>
+                  <h2>Software Troubleshooting</h2>
+                </div>
+                <div class="service-explanation">
+                  <div>
+                    <h3>What you might notice</h3>
+                    <p>
+                      Freezing, slow performance, unexpected restarts, or apps
+                      that repeatedly crash.
+                    </p>
+                  </div>
+                  <div>
+                    <h3>What we check</h3>
+                    <p>
+                      We review symptoms and software settings, discuss backup
+                      options, and agree on any reset before proceeding.
+                    </p>
+                  </div>
+                </div>
+                <p class="service-consideration">
+                  <strong>What affects the estimate</strong>Data backup needs,
+                  software state, and underlying hardware issues can change the
+                  scope.
+                </p>
+                <a
+                  class="button button--outline"
+                  href="../pages/contact.html?service=software"
+                  >Book this service<svg
+                    class="icon directional"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                ></a>
+              </article>
+              <article class="precision-service" id="camera">
+                <div class="precision-service__heading">
+                  <span>05</span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5 10 2h4l2 3h4v16H4V5h4Z" />
+                    <circle cx="12" cy="12" r="4" />
+                  </svg>
+                  <h2>Camera Repair</h2>
+                </div>
+                <div class="service-explanation">
+                  <div>
+                    <h3>What you might notice</h3>
+                    <p>
+                      Blurry photos, focus problems, a black preview, or a
+                      damaged camera lens.
+                    </p>
+                  </div>
+                  <div>
+                    <h3>What we check</h3>
+                    <p>
+                      We test camera functions and inspect the lens and module
+                      to understand which component needs attention.
+                    </p>
+                  </div>
+                </div>
+                <p class="service-consideration">
+                  <strong>What affects the estimate</strong>Camera
+                  configuration, lens damage, and component availability affect
+                  the estimate.
+                </p>
+                <a
+                  class="button button--outline"
+                  href="../pages/contact.html?service=camera"
+                  >Book this service<svg
+                    class="icon directional"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                ></a>
+              </article>
+              <article class="precision-service" id="audio">
+                <div class="precision-service__heading">
+                  <span>06</span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 10h4l5-5v14l-5-5H3v-4Zm13-3a7 7 0 0 1 0 10m3-13a11 11 0 0 1 0 16"
+                    />
+                  </svg>
+                  <h2>Speaker & Microphone Repair</h2>
+                </div>
+                <div class="service-explanation">
+                  <div>
+                    <h3>What you might notice</h3>
+                    <p>
+                      Distorted sound, quiet calls, or a microphone that others
+                      cannot hear clearly.
+                    </p>
+                  </div>
+                  <div>
+                    <h3>What we check</h3>
+                    <p>
+                      We check audio settings, speaker output, microphone input,
+                      and the relevant connectors.
+                    </p>
+                  </div>
+                </div>
+                <p class="service-consideration">
+                  <strong>What affects the estimate</strong>Dust, liquid
+                  exposure, component layout, and additional damage can
+                  influence the repair.
+                </p>
+                <a
+                  class="button button--outline"
+                  href="../pages/contact.html?service=audio"
+                  >Book this service<svg
+                    class="icon directional"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                ></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="assessment-note">
+        <div class="container">
+          <span
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="10" cy="10" r="6" />
+              <path d="m15 15 6 6" /></svg
+          ></span>
+          <div>
+            <h2>The symptom is a starting point.</h2>
+            <p>
+              A charging problem may involve the cable, the connector, or
+              something deeper. Inspection helps establish the right scope.
+              Proposed work and any assessment fees should be discussed before
+              you agree.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container prepare-guide">
+          <div>
+            <p class="eyebrow">Before the workbench</p>
+            <h2>Bring your phone.<br />And a little preparation.</h2>
+          </div>
+          <ol>
+            <li>
+              <h3>Make a backup.</h3>
+              <p>
+                Back up your phone where possible. Tell us if accessing your
+                data is part of the issue.
+              </p>
+            </li>
+            <li>
+              <h3>Keep personal things personal.</h3>
+              <p>
+                Remove sensitive information where practical. Never put
+                passwords in your enquiry.
+              </p>
+            </li>
+            <li>
+              <h3>Share the full picture.</h3>
+              <p>
+                Tell us about drops, liquid exposure, when the issue started,
+                and what you’ve tried.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container faq-layout">
+          <div>
+            <p class="eyebrow">Before you book</p>
+            <h2>A little more clarity.</h2>
+          </div>
+          <div class="accordion">
+            <details class="accordion-item">
+              <summary>
+                Can I get an estimate before visiting?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Share your device model and describe the problem in your
+                  request. A final estimate may require a physical inspection;
+                  any proposed work should be discussed before proceeding.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                How long does a repair take?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Timing depends on the device, the fault, and parts
+                  availability. Same-day options may be possible for eligible
+                  repairs; ask for a device-specific timeframe.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                Should I back up my phone?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Yes. Make a current backup where possible before service. Some
+                  troubleshooting may involve a reset, which should always be
+                  discussed with you first.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                Is my preferred visit time confirmed?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  No. A preferred date and time is a request. An appointment is
+                  only confirmed after the shop agrees to it.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                What should I bring for collection?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Keep your repair reference and any collection instructions
+                  provided by the shop. Ask in advance if someone else will
+                  collect your device.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="closing-cta">
+        <div class="container closing-cta__inner">
+          <div>
+            <p class="eyebrow">Keep a good thing going</p>
+            <h2>More life.<br />Less interruption.</h2>
+          </div>
+          <div>
+            <p>
+              Your phone has more to give. Tell us what’s wrong, and let’s start
+              with the right next step.
+            </p>
+            <a class="button" href="../pages/contact.html"
+              >Let’s talk about your repair<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <span class="closing-cta__symbol" aria-hidden="true"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+          ></span>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <div id="site-dialogs"></div>
+  </body>
+</html>

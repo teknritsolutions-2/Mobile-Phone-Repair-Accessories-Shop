@@ -24,13 +24,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Verify static entrypoints
+        run: |
+          test -s index.html
+          for page in home2 services accessories pricing contact; do
+            test -s "pages/$page.html"
+          done
+          test -s assets/css/style.css
+          test -s assets/js/main.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload static website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment

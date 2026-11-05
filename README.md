@@ -1,17 +1,53 @@
 # Port & Pixel
 
-A complete six-page, buildless ES-module frontend. No runtime dependencies or build step.
+A buildless, six-page HTML/CSS/vanilla JavaScript repair-shop website. The structure follows the Waylark repository; the graphite, white, and electric-blue design is original to Port & Pixel.
 
-Run `npm run dev`, then open http://127.0.0.1:4173. Run `npm run check` for JavaScript syntax validation.
+## Run locally
 
-Routes: `/`, `/home-2`, `/services`, `/accessories`, `/pricing`, `/contact`.
+```sh
+python3 -m http.server 4173
+```
 
-Content and business settings live in `dist/data.js`. Add actual contact details there; blank fields are omitted. No business prices, ratings, opening hours, or guarantees have been invented. Product imagery and names form an enquiry selection; availability, exact specification, and compatibility must be confirmed.
+Open http://localhost:4173/index.html. No package manager, framework, build, generated output, or custom server is needed. Use a static HTTP server so browser ES modules load correctly.
 
-Booking works locally until `business.submissionEndpoint` is configured. Requests remain in page memory, with review, editing, and a downloadable text copy. They are never silently stored or reported as delivered. To connect delivery, supply an HTTPS endpoint accepting POST JSON and returning a successful status only after accepting the request. Production integration should add server validation, abuse protection, and an appropriate privacy policy. Confirm CORS and actual delivery before enabling. No appointment is automatically confirmed.
+## Structure
 
-Deploy `dist` to a static host with a fallback to `index.html` for clean routes. `.openai/hosting.json` configures Sites hosting. `server.mjs` provides the same fallback locally.
+- `index.html` — Home 1, the main repair showroom.
+- `pages/home2.html` — guided device-first repair discovery.
+- `pages/services.html` — repair information and preparation guide.
+- `pages/accessories.html` — searchable, filterable accessory collection.
+- `pages/pricing.html` — device-specific estimate guide.
+- `pages/contact.html` — repair requests and accessory enquiries.
+- `assets/css/` — `fonts.css`, `style.css`, `dark-mode.css`, `rtl.css`.
+- `assets/js/` — shared shell, UI helpers, configuration, reusable data, and individual interaction modules.
+- `assets/images/` and `assets/fonts/` — local assets and font licenses.
+- `documentation/` — architecture, image credits, QA evidence, and optional verification tooling.
 
-Theme and direction preferences are stored in localStorage. Service and accessory context is passed through query parameters and validated against the content catalog. Personal form data is never put into URLs.
+All pages are physical HTML files. Their main content is authored directly in HTML. Shared navigation and footer are inserted by a common JavaScript module. Navigation uses relative URLs and works under the GitHub Pages repository subpath and a normal origin root. No server fallback or hostname detection is used.
 
-Images: Pexels photography by Tima Miroshnichenko and Unsplash product photography; source details in `ASSETS.md`.
+## Editing
+
+Business details and the optional delivery endpoint: `assets/js/site-config.js`. Blank contact details are omitted.
+
+Reusable service definitions: `assets/js/service-data.js`. Accessory catalog: `assets/js/product-data.js`. Edit page-specific editorial content in the corresponding HTML file. Shared header/footer and dialogs: `assets/js/site-shell.js`. The main stylesheet has labeled component/page sections; dark tokens and semantic RTL adjustments are separate files.
+
+## Request handling
+
+With the submission endpoint blank, form data stays in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is sent, no appointment is confirmed, and personal details are never put into URLs or local storage. Reloading clears entries. Theme and direction preferences alone use local storage.
+
+A production endpoint must accept POST JSON, validate server-side, handle abuse protection and CORS, and return success only after accepting the request. Confirm actual delivery before enabling it. No backend, approved prices, business address, phone number, or opening hours have been supplied. No such details have been invented.
+
+## Hosting
+
+GitHub Pages uses `.github/workflows/deploy.yml` to verify entrypoints and upload the repository's static files directly. There is no dependency-installation or build job. Keep `index.html`, `pages/`, and `assets/` together.
+
+Primary URLs:
+
+- `/Mobile-Phone-Repair-Accessories-Shop/index.html`
+- `/Mobile-Phone-Repair-Accessories-Shop/pages/home2.html`
+- `/Mobile-Phone-Repair-Accessories-Shop/pages/services.html`
+- `/Mobile-Phone-Repair-Accessories-Shop/pages/accessories.html`
+- `/Mobile-Phone-Repair-Accessories-Shop/pages/pricing.html`
+- `/Mobile-Phone-Repair-Accessories-Shop/pages/contact.html`
+
+See `documentation/verification.md` for tested layouts and interaction coverage. Optional browser QA tooling is not required to run or publish the site.

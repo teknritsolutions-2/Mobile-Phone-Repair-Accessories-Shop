@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Browse practical cases, charging accessories, screen protection, and audio essentials."
+    />
+    <meta name="theme-color" content="#315FE8" />
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+    <title>Accessories for the everyday | Port &amp; Pixel</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("pp-theme") || "light";
+        document.documentElement.dir = localStorage.getItem("pp-dir") || "ltr";
+      } catch {
+        /* Preferences are optional when storage is unavailable. */
+      }
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="../assets/css/rtl.css" />
+    <script type="module" src="../assets/js/main.js"></script>
+  </head>
+  <body data-page="accessories">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="accessories-hero">
+        <div class="container accessories-hero__inner">
+          <div class="accessories-hero__copy">
+            <p class="eyebrow">The Port & Pixel edit</p>
+            <h1>Small essentials.<br /><span>Big everyday energy.</span></h1>
+            <p>
+              Protect. Connect. Carry on. Considered accessories for the device
+              you reach for most.
+            </p>
+            <a class="button button--outline" href="#catalog"
+              >Explore the collection
+              <svg
+                class="icon down-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <div class="accessories-hero__visual">
+            <img
+              class=""
+              src="../assets/images/audio.jpg"
+              alt="Wireless earbuds and their charging case on a clean background"
+              fetchpriority="high"
+              decoding="async"
+            /><span>Soundtrack to the everyday.</span>
+          </div>
+        </div>
+      </section>
+      <section class="section catalog-section" id="catalog">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Find your essentials</p>
+              <h2>Good additions.<br />Nothing unnecessary.</h2>
+            </div>
+            <p>
+              Enquire about fit, availability, and pricing.<br />Find the right
+              match for your device.
+            </p>
+          </div>
+          <div class="catalog-toolbar">
+            <div class="catalog-search">
+              <label class="sr-only" for="product-search"
+                >Search accessories</label
+              ><svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="10" cy="10" r="6" />
+                <path d="m15 15 6 6" /></svg
+              ><input
+                type="search"
+                id="product-search"
+                placeholder="Search the collection"
+              />
+            </div>
+            <label class="sort-control"
+              >Sort by<select id="product-sort">
+                <option value="featured">Featured</option>
+                <option value="az">Name: A–Z</option>
+                <option value="za">Name: Z–A</option>
+              </select></label
+            >
+          </div>
+          <div class="catalog-categories" aria-label="Accessory categories">
+            <button data-category="All essentials" aria-pressed="true">
+              All essentials</button
+            ><button data-category="Cases & Protection" aria-pressed="false">
+              Cases & Protection</button
+            ><button data-category="Chargers & Cables" aria-pressed="false">
+              Chargers & Cables</button
+            ><button data-category="Screen Protectors" aria-pressed="false">
+              Screen Protectors</button
+            ><button data-category="Audio" aria-pressed="false">Audio</button
+            ><button data-category="Everyday Essentials" aria-pressed="false">
+              Everyday Essentials
+            </button>
+          </div>
+          <p id="catalog-count" class="catalog-count" aria-live="polite"></p>
+          <div class="catalog-grid" id="product-catalog"></div>
+        </div>
+      </section>
+      <section class="connection-edit">
+        <div class="container connection-edit__grid">
+          <div class="connection-edit__image">
+            <img
+              class=""
+              src="../assets/images/cable.jpg"
+              alt="Detailed view of a USB-C cable and connection"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div>
+            <p class="eyebrow">Make the right connection</p>
+            <h2>One cable.<br />A little less friction.</h2>
+            <p>
+              A connector that fits is only part of the story. Choose a cable
+              and charger suited to your phone’s power and data needs.
+            </p>
+            <ul>
+              <li>Check your connector type.</li>
+              <li>Confirm supported charging power.</li>
+              <li>Ask about cable length and compatibility.</li>
+            </ul>
+            <a
+              class="button button--text"
+              href="../pages/contact.html?product=cable"
+              >Ask about charging essentials<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="closing-cta">
+        <div class="container closing-cta__inner">
+          <div>
+            <p class="eyebrow">Keep a good thing going</p>
+            <h2>More life.<br />Less interruption.</h2>
+          </div>
+          <div>
+            <p>
+              Your phone has more to give. Tell us what’s wrong, and let’s start
+              with the right next step.
+            </p>
+            <a class="button" href="../pages/contact.html"
+              >Let’s talk about your repair<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <span class="closing-cta__symbol" aria-hidden="true"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+          ></span>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <div id="site-dialogs"></div>
+  </body>
+</html>

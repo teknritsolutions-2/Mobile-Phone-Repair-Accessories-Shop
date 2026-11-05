@@ -1,0 +1,20 @@
+{
+  "layoutCases": 144,
+  "failures": [],
+  "errors": [],
+  "failedRequests": [],
+  "checks": [
+    "Desktop Home dropdown and physical page navigation",
+    "Device/problem/symptom finder and booking context",
+    "Quick repair selector and service preselection",
+    "Interactive repair journey",
+    "All six service booking URLs and FAQ expansion",
+    "Category/search/sort/reset, detail modal/Escape, and accessory enquiry preselection",
+    "Pricing category/device selectors and request-estimate link",
+    "Required/email/phone/date/consent validation and local review/download/edit",
+    "Mobile menu, nested Home links, scroll lock, Escape/outside close, persistent theme/direction",
+    "Privacy dialog and back-to-top",
+    "Direct visits, refreshes, and every rendered internal link under the GitHub Pages subpath",
+    "All six physical pages at origin root"
+  ]
+}

@@ -1,0 +1,14 @@
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #0d1118;
+  --surface: #171d28;
+  --ink: #f1f4fb;
+  --muted: #b0bacb;
+  --line: #30394a;
+  --blue: #8daaff;
+  --on-blue: #0d1838;
+  --blue-soft: #1c2b4c;
+  --image-bg: #e7e9ee;
+  --night: #080c12;
+  --error: #ff9da8;
+}

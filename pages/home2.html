@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Choose your device, describe the problem, and discover a relevant repair service."
+    />
+    <meta name="theme-color" content="#315FE8" />
+    <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml" />
+    <title>Find the right repair | Port &amp; Pixel</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("pp-theme") || "light";
+        document.documentElement.dir = localStorage.getItem("pp-dir") || "ltr";
+      } catch {
+        /* Preferences are optional when storage is unavailable. */
+      }
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="../assets/css/rtl.css" />
+    <script type="module" src="../assets/js/main.js"></script>
+  </head>
+  <body data-page="home2">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-header"></div>
+    <main id="main">
+      <section class="device-first">
+        <div class="container">
+          <div class="device-first__heading">
+            <p class="eyebrow">Less searching. A clearer next step.</p>
+            <h1>Your phone.<br /><span>Let’s work it out.</span></h1>
+            <p>
+              Start with the device in your hand and the problem on your mind.
+            </p>
+          </div>
+          <div class="repair-finder" id="repair-finder">
+            <div class="finder-inputs">
+              <fieldset>
+                <legend><span>01</span> Start with your device</legend>
+                <div class="device-options">
+                  <button
+                    type="button"
+                    data-device="Smartphone"
+                    aria-pressed="true"
+                  >
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="6" y="2" width="12" height="20" rx="3" />
+                      <path d="M10 5h4m-3 14h2" /></svg
+                    ><span>Smartphone</span></button
+                  ><button
+                    type="button"
+                    data-device="Tablet"
+                    aria-pressed="false"
+                  >
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="2" width="18" height="20" rx="2" />
+                      <path d="M11 19h2" /></svg
+                    ><span>Tablet</span></button
+                  ><button
+                    type="button"
+                    data-device="Other mobile device"
+                    aria-pressed="false"
+                  >
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="4" y="4" width="16" height="16" rx="4" />
+                      <path d="M9 1v3m6-3v3M9 20v3m6-3v3" /></svg
+                    ><span>Other device</span>
+                  </button>
+                </div>
+              </fieldset>
+              <div class="finder-selects">
+                <div class="field">
+                  <label for="finder-problem"
+                    ><span>02</span> What’s not working?</label
+                  ><select id="finder-problem">
+                    <option value="screen">Broken screen</option>
+                    <option value="battery">Weak battery</option>
+                    <option value="charging">Charging trouble</option>
+                    <option value="software">Software issues</option>
+                    <option value="camera">Camera problems</option>
+                    <option value="audio">Speaker or microphone</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="finder-symptom"
+                    ><span>03</span> What are you noticing?</label
+                  ><select id="finder-symptom"></select>
+                </div>
+              </div>
+              <p class="finder-note">
+                A service guide, rather than an automatic diagnosis. An
+                inspection is needed to confirm the issue.
+              </p>
+            </div>
+            <div
+              class="finder-recommendation"
+              id="finder-result"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container symptoms-index">
+          <div>
+            <p class="eyebrow">A familiar frustration?</p>
+            <h2>Find it by<br />how it feels.</h2>
+            <p>
+              You don’t need to know the fault.<br />Start with the symptom.
+            </p>
+          </div>
+          <div>
+            <a href="../pages/services.html#battery"
+              ><span>01</span>
+              <h3>It’s always running out of charge.</h3>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14" /></svg></a
+            ><a href="../pages/services.html#charging"
+              ><span>02</span>
+              <h3>It only charges at a certain angle.</h3>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14" /></svg></a
+            ><a href="../pages/services.html#screen"
+              ><span>03</span>
+              <h3>The screen won’t respond.</h3>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14" /></svg></a
+            ><a href="../pages/services.html#camera"
+              ><span>04</span>
+              <h3>My photos won’t come into focus.</h3>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14" /></svg></a
+            ><a href="../pages/services.html#software"
+              ><span>05</span>
+              <h3>Everything feels slower.</h3>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14" /></svg></a
+            ><a href="../pages/services.html#audio"
+              ><span>06</span>
+              <h3>Calls are hard to hear.</h3>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="repair-spotlight">
+        <div class="container">
+          <div class="repair-spotlight__image">
+            <img
+              class=""
+              src="../assets/images/workshop-detail.jpg"
+              alt="Technician examining a smartphone beneath a repair microscope"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="repair-spotlight__story">
+            <p class="eyebrow">In focus / Battery & power</p>
+            <h2>A shorter battery life.<br />Not the end of the story.</h2>
+            <p>
+              A phone that runs out too soon may need a new battery, a software
+              adjustment, or a closer look at its charging system.
+            </p>
+            <dl>
+              <div>
+                <dt>First, we check.</dt>
+                <dd>
+                  Battery health, charging behavior, and the symptoms you’ve
+                  noticed.
+                </dd>
+              </div>
+              <div>
+                <dt>Then, we discuss.</dt>
+                <dd>
+                  The available options and a device-specific estimate before
+                  repair.
+                </dd>
+              </div>
+            </dl>
+            <a
+              class="button button--outline"
+              href="../pages/contact.html?service=battery"
+              >Ask about your battery<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container prevention-edit">
+          <div class="prevention-edit__copy">
+            <p class="eyebrow">A little prevention</p>
+            <h2>Look after the<br />little things.</h2>
+            <p>
+              A suitable case. The right charging connection. A screen protector
+              that actually fits. Everyday care starts with the basics.
+            </p>
+            <a class="button button--text" href="../pages/accessories.html"
+              >Find your everyday essentials<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <div class="prevention-edit__image">
+            <img
+              class=""
+              src="../assets/images/stand.jpg"
+              alt="A phone on a stand in a clean desk setup"
+              loading="lazy"
+              decoding="async"
+            /><span>A place for your everyday essential.</span>
+          </div>
+          <div class="care-notes">
+            <h3>Three habits worth keeping.</h3>
+            <p><span>01</span>Keep a recent backup.</p>
+            <p><span>02</span>Use compatible charging accessories.</p>
+            <p><span>03</span>Get damage checked before it gets worse.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container faq-layout">
+          <div>
+            <p class="eyebrow">Before you book</p>
+            <h2>Good questions.<br />Clear answers.</h2>
+          </div>
+          <div class="accordion">
+            <details class="accordion-item">
+              <summary>
+                Can I get an estimate before visiting?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Share your device model and describe the problem in your
+                  request. A final estimate may require a physical inspection;
+                  any proposed work should be discussed before proceeding.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                How long does a repair take?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Timing depends on the device, the fault, and parts
+                  availability. Same-day options may be possible for eligible
+                  repairs; ask for a device-specific timeframe.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                Should I back up my phone?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Yes. Make a current backup where possible before service. Some
+                  troubleshooting may involve a reset, which should always be
+                  discussed with you first.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                Is my preferred visit time confirmed?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  No. A preferred date and time is a request. An appointment is
+                  only confirmed after the shop agrees to it.
+                </p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary>
+                What should I bring for collection?<svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </summary>
+              <div class="accordion-answer">
+                <p>
+                  Keep your repair reference and any collection instructions
+                  provided by the shop. Ask in advance if someone else will
+                  collect your device.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="closing-cta">
+        <div class="container closing-cta__inner">
+          <div>
+            <p class="eyebrow">Keep a good thing going</p>
+            <h2>More life.<br />Less interruption.</h2>
+          </div>
+          <div>
+            <p>
+              Your phone has more to give. Tell us what’s wrong, and let’s start
+              with the right next step.
+            </p>
+            <a class="button" href="../pages/contact.html"
+              >Let’s talk about your repair<svg
+                class="icon directional"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+            ></a>
+          </div>
+          <span class="closing-cta__symbol" aria-hidden="true"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+          ></span>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <div id="site-dialogs"></div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+/* Layout spacing uses logical properties; only semantic arrows change direction. */
+[dir="rtl"] .directional {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .repair-spotlight__story {
+  padding-inline-start: 55px;
+  padding-inline-end: 0;
+}
+[dir="rtl"] .closing-cta__symbol .icon {
+  transform: rotate(215deg);
+}
+[dir="rtl"] .journey-tabs button {
+  padding-inline-start: 0;
+  padding-inline-end: 25px;
+}
+@media (max-width: 1000px) {
+  [dir="rtl"] .repair-spotlight__story {
+    padding-inline: 28px;
+  }
+}
+@media (max-width: 640px) {
+  [dir="rtl"] .repair-spotlight__story {
+    padding-inline: 24px;
+  }
+  [dir="rtl"] .journey-tabs button {
+    padding-inline-end: 15px;
+  }
+}
