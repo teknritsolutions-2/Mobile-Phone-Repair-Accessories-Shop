@@ -177,12 +177,12 @@ export function Footer() {
     <div class="container footer-main">
       <div class="footer-brand">${Logo()}<p>Keep your phone working and your everyday connected. Explore repair options, find useful accessories, and prepare for your next visit.</p><a class="button button--text" href="${pageUrl("home-2")}#repair-finder">Find my repair ${icon("arrow", "directional")}</a>${ContactDetails()}</div>
       ${group("Explore", [
-        ["The repair studio", pageUrl()],
-        ["Repair finder", `${pageUrl("home-2")}#repair-finder`],
-        ["All repair services", pageUrl("services")],
-        ["Accessories", `${pageUrl("accessories")}#catalog`],
-        ["Pricing guide", pageUrl("pricing")],
-        ["Contact & booking", pageUrl("contact")],
+        ["Home 1", pageUrl()],
+        ["Home 2", pageUrl("home-2")],
+        ["About", `${pageUrl()}#about`],
+        ["Services", pageUrl("services")],
+        ["Accessories", pageUrl("accessories")],
+        ["Contact", pageUrl("contact")],
       ])}
       ${group("Repair services", [
         ["Screen replacement", `${pageUrl("services")}#screen`],
