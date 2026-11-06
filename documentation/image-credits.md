@@ -1,6 +1,6 @@
 # Image sources and framing audit
 
-Photographs are locally hosted under the [Pexels License](https://www.pexels.com/license/) or [Unsplash License](https://unsplash.com/license). Product photographs and illustrations describe categories, not verified stock. Sample prices are illustrative.
+Photographs are locally hosted under the [Pexels License](https://www.pexels.com/license/) or [Unsplash License](https://unsplash.com/license). Product photographs and illustrations describe categories, not verified stock. Prices are confirmed on enquiry; unverified sample prices have been removed.
 
 | Asset             | Native size / ratio | Source and display decision                                                                                                                                                                                     |
 | ----------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,3 +37,7 @@ All six images are real, locally hosted photographs covered by the [Pexels Licen
 All six local files have identical dimensions: **1200 × 800 (3:2)**. The Services rows display them at their native ratio with no inset, letterboxing, hover zoom or additional CSS crop. The software photograph replaces the previous 1200×904 close-up; its original 4:3 composition includes enough background for a 3:2 trim while preserving the full phone. Other sources retain their previous compositions. Photos illustrate repair categories, not a guarantee of supported parts or models. No AI-generated imagery is used.
 
 The browser suite checks both native file dimensions and equal rendered photo widths/heights at 320, 390, 768, 1024, 1280 and 1440px. All six photos render at the same 3:2 ratio at each width.
+
+## Home 2 opening banner
+
+`home2-banner.jpg` — [Tima Miroshnichenko, Pexels 6754839](https://www.pexels.com/photo/a-person-repairing-a-smartphone-6754839/), [Pexels License](https://www.pexels.com/license/). Real photograph of smartphone repair under a microscope, locally stored at 1800×1200. No generated imagery. Desktop uses a 74%-width photographic layer beneath a dark gradient, with the microscope, working hands and phone visible; mobile uses the complete native 3:2 photo fading into the banner background. RTL moves the photographic layer and gradient without mirroring the photograph.

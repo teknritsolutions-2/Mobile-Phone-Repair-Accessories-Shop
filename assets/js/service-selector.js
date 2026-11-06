@@ -1,6 +1,6 @@
-import { services } from "./service-data.js";
-import { bookLink } from "./shared-ui.js";
-import { icon } from "./shared-ui.js";
+import { services } from "./service-data.js?v=site-4";
+import { bookLink } from "./shared-ui.js?v=site-4";
+import { icon } from "./shared-ui.js?v=site-4";
 
 export function initServiceSelector() {
   const container = document.querySelector(".service-selector");

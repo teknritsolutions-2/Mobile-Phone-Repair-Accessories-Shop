@@ -21,119 +21,68 @@
     </script>
 
     <link rel="stylesheet" href="../assets/css/fonts.css" />
-    <link rel="stylesheet" href="../assets/css/style.css?v=footer-1" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=site-4" />
     <link rel="stylesheet" href="../assets/css/dark-mode.css" />
     <link rel="stylesheet" href="../assets/css/rtl.css" />
-    <script type="module" src="../assets/js/main.js?v=shell-3"></script>
+    <script type="module" src="../assets/js/main.js?v=site-4"></script>
   </head>
   <body data-page="home2">
     <a class="skip-link" href="#main">Skip to content</a>
     <div id="site-header"></div>
     <main id="main">
-      <section class="section guided-studio">
-        <div class="container">
-          <div class="guided-heading">
-            <div>
-              <p class="eyebrow">Repair finder / Home 2</p>
-              <h1>Let’s find your fix.</h1>
-            </div>
+      <section class="home2-banner" aria-labelledby="home2-title">
+        <img
+          class="home2-banner__image"
+          src="../assets/images/home2-banner.jpg"
+          width="1800"
+          height="1200"
+          alt="Technician inspecting a smartphone circuit board under a microscope at a repair workbench"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="container home2-banner__inner">
+          <div class="home2-banner__copy">
+            <p class="eyebrow">Phone repairs &amp; everyday essentials</p>
+            <h1 id="home2-title">
+              Life moves fast.<br /><span
+                >Keep your phone<br />in the picture.</span
+              >
+            </h1>
             <p>
-              Three quick choices.<br />A clearer next step for your device.
+              A cracked screen or a fading battery shouldn’t put your day on
+              hold. Find the right repair and take the next step with
+              confidence.
             </p>
-          </div>
-          <div class="repair-finder" id="repair-finder">
-            <div class="finder-inputs">
-              <fieldset>
-                <legend><span>01</span> Start with your device</legend>
-                <div class="device-options">
-                  <button
-                    type="button"
-                    data-device="Smartphone"
-                    aria-pressed="true"
-                  >
-                    <svg
-                      class="icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect x="6" y="2" width="12" height="20" rx="3"></rect>
-                      <path d="M10 5h4m-3 14h2"></path></svg
-                    ><span>Smartphone</span></button
-                  ><button
-                    type="button"
-                    data-device="Tablet"
-                    aria-pressed="false"
-                  >
-                    <svg
-                      class="icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect x="3" y="2" width="18" height="20" rx="2"></rect>
-                      <path d="M11 19h2"></path></svg
-                    ><span>Tablet</span></button
-                  ><button
-                    type="button"
-                    data-device="Other mobile device"
-                    aria-pressed="false"
-                  >
-                    <svg
-                      class="icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-                      <path d="M9 1v3m6-3v3M9 20v3m6-3v3"></path></svg
-                    ><span>Other device</span>
-                  </button>
-                </div>
-              </fieldset>
-              <div class="finder-selects">
-                <div class="field">
-                  <label for="finder-problem"
-                    ><span>02</span> What’s not working?</label
-                  ><select id="finder-problem">
-                    <option value="screen">Broken screen</option>
-                    <option value="battery">Weak battery</option>
-                    <option value="charging">Charging trouble</option>
-                    <option value="software">Software issues</option>
-                    <option value="camera">Camera problems</option>
-                    <option value="audio">Speaker or microphone</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="finder-symptom"
-                    ><span>03</span> What are you noticing?</label
-                  ><select id="finder-symptom"></select>
-                </div>
-              </div>
-              <p class="finder-note">
-                A guide to your next step. The cause is confirmed by inspection.
-              </p>
+            <div class="button-group">
+              <a class="button" href="contact.html"
+                >Book a repair<svg
+                  class="icon directional"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg></a
+              ><a class="button button--light" href="#repair-finder"
+                >Find my repair<svg
+                  class="icon directional"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+              ></a>
             </div>
-            <div
-              class="finder-recommendation"
-              id="finder-result"
-              aria-live="polite"
-            ></div>
+            <div class="home2-banner__details">
+              <span>Assessment first</span><span>Options for your device</span>
+            </div>
           </div>
         </div>
       </section>
+
       <section class="section popular-problems">
         <div class="container">
           <div class="section-heading">
@@ -276,24 +225,108 @@
           </div>
         </div>
       </section>
-      <section class="section repair-demo-section">
+      <section class="section guided-studio">
         <div class="container">
-          <div class="section-heading">
+          <div class="guided-heading">
             <div>
-              <p class="eyebrow">From symptom to function</p>
-              <h2>What does a repair aim to change?</h2>
+              <p class="eyebrow">Find your repair</p>
+              <h2>Let’s find your fix.</h2>
             </div>
             <p>
-              An illustrated guide, not a customer result.<br />Choose an
-              example to explore the checks.
+              Three quick choices.<br />A clearer next step for your device.
             </p>
           </div>
-          <div class="demo-options" aria-label="Repair examples">
-            <button data-demo="screen" aria-pressed="true">Screen</button
-            ><button data-demo="battery" aria-pressed="false">Battery</button
-            ><button data-demo="charging" aria-pressed="false">Charging</button>
+          <div class="repair-finder" id="repair-finder">
+            <div class="finder-inputs">
+              <fieldset>
+                <legend><span>01</span> Start with your device</legend>
+                <div class="device-options">
+                  <button
+                    type="button"
+                    data-device="Smartphone"
+                    aria-pressed="true"
+                  >
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="6" y="2" width="12" height="20" rx="3"></rect>
+                      <path d="M10 5h4m-3 14h2"></path></svg
+                    ><span>Smartphone</span></button
+                  ><button
+                    type="button"
+                    data-device="Tablet"
+                    aria-pressed="false"
+                  >
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="2" width="18" height="20" rx="2"></rect>
+                      <path d="M11 19h2"></path></svg
+                    ><span>Tablet</span></button
+                  ><button
+                    type="button"
+                    data-device="Other mobile device"
+                    aria-pressed="false"
+                  >
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                      <path d="M9 1v3m6-3v3M9 20v3m6-3v3"></path></svg
+                    ><span>Other device</span>
+                  </button>
+                </div>
+              </fieldset>
+              <div class="finder-selects">
+                <div class="field">
+                  <label for="finder-problem"
+                    ><span>02</span> What’s not working?</label
+                  ><select id="finder-problem">
+                    <option value="screen">Broken screen</option>
+                    <option value="battery">Weak battery</option>
+                    <option value="charging">Charging trouble</option>
+                    <option value="software">Software issues</option>
+                    <option value="camera">Camera problems</option>
+                    <option value="audio">Speaker or microphone</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="finder-symptom"
+                    ><span>03</span> What are you noticing?</label
+                  ><select id="finder-symptom"></select>
+                </div>
+              </div>
+              <p class="finder-note">
+                A guide to your next step. The cause is confirmed by inspection.
+              </p>
+            </div>
+            <div
+              class="finder-recommendation"
+              id="finder-result"
+              aria-live="polite"
+            ></div>
           </div>
-          <div id="repair-demonstration" aria-live="polite"></div>
         </div>
       </section>
       <section class="section home2-essentials">
@@ -315,9 +348,6 @@
                 <path d="M4 12h15m-6-6 6 6-6 6" /></svg
             ></a>
           </div>
-          <p class="sample-price-note">
-            Sample prices for preview. Final prices subject to confirmation.
-          </p>
           <div
             class="essentials-strip"
             data-product-preview="glass,charger,stand"

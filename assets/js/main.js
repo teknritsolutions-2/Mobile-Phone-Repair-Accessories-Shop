@@ -9,18 +9,17 @@ import {
   ContactDetails,
   FloatingBackToTop,
   initBackToTop,
-} from "./site-shell.js?v=shell-3";
+} from "./site-shell.js?v=site-4";
 import {
   initProductDetails,
   initAccessoryCatalog,
-} from "./accessory-catalog.js";
-import { initServiceSelector } from "./service-selector.js";
-import { initRepairFinder } from "./repair-finder.js";
-import { initRepairJourney } from "./repair-journey.js";
-import { initPricingGuide } from "./pricing-guide.js";
-import { initRepairDemonstration } from "./repair-demonstration.js";
-import { initProductPreviews } from "./product-previews.js";
-import { initBookingForm } from "./booking-form.js";
+} from "./accessory-catalog.js?v=site-4";
+import { initServiceSelector } from "./service-selector.js?v=site-4";
+import { initRepairFinder } from "./repair-finder.js?v=site-4";
+import { initRepairJourney } from "./repair-journey.js?v=site-4";
+import { initPricingGuide } from "./pricing-guide.js?v=site-4";
+import { initProductPreviews } from "./product-previews.js?v=site-4";
+import { initBookingForm } from "./booking-form.js?v=site-4";
 
 const page = document.body.dataset.page;
 document.querySelector("#site-header").innerHTML = Header(page);
@@ -39,7 +38,6 @@ initRepairJourney();
 initAccessoryCatalog();
 initPricingGuide();
 initBookingForm();
-initRepairDemonstration();
 initProductPreviews();
 const contactDetails = document.querySelector(
   ".booking-aside .business-details",

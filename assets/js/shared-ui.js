@@ -1,5 +1,4 @@
-import { formatSamplePrice } from "./product-data.js";
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=site-4";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -97,7 +96,7 @@ export function ProductCard(product) {
     <p class="product-card__category">${product.category}</p>
     <h3><button class="plain-link" data-product="${product.id}">${product.name}</button></h3>
     <p class="product-card__attribute">${product.attribute}</p>
-    <p class="product-price">${formatSamplePrice(product)}<span>Sample price</span></p>
+    <p class="product-price">Price on enquiry</p>
     ${textLink("Enquire", "contact", { product: product.id })}
   </article>`;
 }

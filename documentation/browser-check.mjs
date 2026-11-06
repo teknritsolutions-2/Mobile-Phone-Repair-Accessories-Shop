@@ -189,15 +189,24 @@ checks.push("Interactive repair journey");
 await go("pages/home2.html");
 assert.equal(await page.locator("main>section").count(), 8);
 assert.equal(await page.locator(".essentials-strip .product-price").count(), 3);
-await page.locator('[data-demo="battery"]').click();
-assert.match(
-  await page.locator("#repair-demonstration").innerText(),
-  /Battery & power behavior/,
+assert.equal(
+  await page.locator("main > section").first().getAttribute("class"),
+  "home2-banner",
 );
-await page.locator('[data-demo="charging"]').click();
-assert.match(
-  await page.locator("#repair-demonstration .button").getAttribute("href"),
-  /service=charging/,
+assert.equal(await page.locator(".repair-demo-section").count(), 0);
+assert.equal(await page.locator(".guided-heading h2").count(), 1);
+assert.ok(
+  await page
+    .locator(".home2-banner")
+    .evaluate(
+      (el) =>
+        el.compareDocumentPosition(document.querySelector(".guided-studio")) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ),
+);
+assert.doesNotMatch(
+  await page.locator("main").innerText(),
+  /Home ?2|sample price|illustrated guide/i,
 );
 await page.locator(".home2-faq summary").first().click();
 assert.equal(
@@ -205,7 +214,7 @@ assert.equal(
   "",
 );
 checks.push(
-  "Expanded Home 2, illustrative repair examples, accessory sample prices, and FAQ",
+  "Photographic Home 2 banner, middle-page finder, removed demo content, accessory enquiries, and FAQ",
 );
 await go("pages/services.html");
 for (const id of [
@@ -281,24 +290,32 @@ assert.deepEqual(
   names,
   [...names].sort((a, b) => a.localeCompare(b)),
 );
-await page.selectOption("#product-sort", "price-low");
-const amounts = async () =>
-  page
-    .locator("#product-catalog .product-price")
-    .evaluateAll((nodes) =>
-      nodes.map((n) => Number(n.firstChild.textContent.replace(/[^0-9]/g, ""))),
-    );
-assert.deepEqual(await amounts(), [249, 299, 349, 399, 699, 1499]);
-await page.selectOption("#product-sort", "price-high");
-assert.deepEqual(await amounts(), [1499, 699, 399, 349, 299, 249]);
+await page.selectOption("#product-sort", "za");
+names = await page.locator("#product-catalog h3").allTextContents();
+assert.deepEqual(
+  names,
+  [...names].sort((a, b) => b.localeCompare(a)),
+);
 await page.locator('[data-category="Chargers & Cables"]').click();
-assert.deepEqual(await amounts(), [699, 299]);
+assert.equal(await page.locator("#product-catalog .product-card").count(), 2);
 await page.fill("#product-search", "USB-C");
-assert.deepEqual(await amounts(), [299]);
+assert.equal(await page.locator("#product-catalog .product-card").count(), 1);
+assert.match(
+  await page.locator("#product-catalog h3").innerText(),
+  /USB-C cable/,
+);
+assert.equal(
+  await page.locator("#product-catalog .product-price").innerText(),
+  "Price on enquiry",
+);
 await page.fill("#product-search", "");
 await page.locator('[data-category="All essentials"]').click();
+assert.equal(
+  await page.locator('#product-sort option[value^="price-"]').count(),
+  0,
+);
 checks.push(
-  "Visible INR sample prices and both numerical price sorts combined with search/category",
+  "Alphabetical sorting combined with search/category; enquiry pricing without sample amounts",
 );
 await page.locator('[data-product="case"]').first().click();
 assert.equal(
@@ -307,7 +324,7 @@ assert.equal(
 );
 assert.match(
   await page.locator("#product-dialog .product-price").innerText(),
-  /₹399/,
+  /Price on enquiry/,
 );
 await page.keyboard.press("Escape");
 assert.equal(

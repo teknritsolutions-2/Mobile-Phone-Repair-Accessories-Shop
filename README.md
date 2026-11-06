@@ -13,7 +13,7 @@ Open `http://localhost:4173/`. No installation, framework, build, or custom serv
 ## Structure
 
 - `index.html`: Home 1 repair showroom.
-- `pages/home2.html`: guided repair finder, service browser, portrait spotlight, illustrative repair demonstration, accessory preview, three-step process, FAQs, and booking.
+- `pages/home2.html`: photographic opening banner, service browser, portrait spotlight, middle-page repair finder, accessory preview, three-step process, FAQs, and booking.
 - `pages/services.html`: real-photo service gallery, six visible repair categories, booking/estimate links, and visit FAQs.
 - `pages/accessories.html`: searchable, filterable product collection.
 - `pages/pricing.html`: connected service/device estimate guide.
@@ -27,7 +27,7 @@ Main content is physical HTML. JavaScript inserts the common header/footer and e
 
 ## Editing and request delivery
 
-Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. Accessory sample prices are illustrative INR amounts in `product-data.js`, formatted centrally and shared by previews, cards, and dialogs. Price sorting combines with search and categories. Final selling prices require confirmation. Repair estimates remain quotation-based. No warranties, turnaround promises, or business contact details have been invented.
+Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. Accessories use price-on-enquiry messaging in previews, cards, and dialogs. Alphabetical sorting combines with search and categories; unverified prices and their sorting controls have been removed. Repair estimates remain quotation-based. No warranties, turnaround promises, or business contact details have been invented.
 
 Without an endpoint, request details stay in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is delivered and no appointment is confirmed. Reloading clears entries. Only theme and direction preferences use local storage. A configured endpoint must accept POST JSON, validate server-side, and confirm actual acceptance before the UI reports delivery.
 
