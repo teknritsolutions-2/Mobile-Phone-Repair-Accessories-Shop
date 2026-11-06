@@ -45,6 +45,35 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
       );
       await document.fonts.ready;
     });
+    if (route === "pages/services.html") {
+      const photos = await page
+        .locator(".service-story img")
+        .evaluateAll((images) =>
+          images.map((i) => ({
+            nativeWidth: i.naturalWidth,
+            nativeHeight: i.naturalHeight,
+            width: i.getBoundingClientRect().width,
+            height: i.getBoundingClientRect().height,
+          })),
+        );
+      assert.equal(photos.length, 6);
+      assert.ok(
+        photos.every((i) => i.nativeWidth === 1200 && i.nativeHeight === 800),
+        "All six service files must be 1200 × 800",
+      );
+      assert.ok(
+        photos.every(
+          (i) =>
+            Math.abs(i.width - photos[0].width) < 1 &&
+            Math.abs(i.height - photos[0].height) < 1,
+        ),
+        `Equal rendered photo dimensions at ${width}px`,
+      );
+      assert.ok(
+        photos.every((i) => Math.abs(i.width / i.height - 1.5) < 0.01),
+        "Service photos retain their 3:2 ratio",
+      );
+    }
     // Test actual scrolled geometry; CSS declarations alone do not prove sticky behavior.
     await page.evaluate(() => {
       document.documentElement.style.scrollBehavior = "auto";
@@ -198,7 +227,9 @@ assert.equal(
   await page.locator(".accordion-item").first().getAttribute("open"),
   "",
 );
-checks.push("All six service booking URLs and FAQ expansion");
+checks.push(
+  "Six 1200 × 800 service photos with equal rendered 3:2 areas at every tested width; all booking URLs and FAQ expansion",
+);
 assert.equal(await page.locator(".service-story").count(), 6);
 const servicePhotos = await page
   .locator(".service-story img")
@@ -216,7 +247,7 @@ for (const id of [
   assert.equal(await page.locator(`#${id}`).isVisible(), true);
   assert.match(
     await page.locator(`#${id} img`).getAttribute("src"),
-    new RegExp(`service-${id}\\.jpg$`),
+    new RegExp(`service-${id}\\.jpg(?:\\?.*)?$`),
   );
   await page.locator(`#${id} .button[href*="contact.html"]`).click();
   await page.waitForSelector('body[data-ready="true"]');

@@ -33,10 +33,10 @@ The optional browser suite remains outside the public artifact, with screenshots
 
 No real submission endpoint is configured: requests stay local and visits need confirmation. Actual request delivery, Safari, Firefox, physical devices, and screen-reader sessions remain unverified. Old bookmarks use the documented `404.html` map; current navigation uses physical files directly.
 
-## Services photographic refinement
+## Services layout and dimension correction
 
-The accepted six-service gallery keeps its three/two/one-column layout. Numbered photo mounts, a dark screen-repair feature card, compact symptom tags, filled booking actions, and six native quick links give the collection a more distinctive presentation. Anchors leave room for the sticky header and preserve booking context.
+Services now uses six full-width editorial rows with alternating photo/text placement on desktop and tablet, stacking photo before text on mobile. This replaces the outlined three-column cards, padded mounts, and singled-out dark card. A centered introduction and a compact repair index lead into the rows. Each row keeps symptoms and booking/cost actions visible.
 
-Three tightly framed source photographs were replaced: charging now shows a complete phone with its port, camera shows a complete phone back and camera lenses, and audio shows a complete phone with earbuds and case. All six sources are real Pexels photographs. Published source credits and the Pexels License remain keyboard accessible. Replacement images are 1200×800 landscapes downloaded without crop parameters; software retains its 1200×904 source. The 4:3 mounts use contain fitting and an inset, with no image zoom. See `image-credits.md` for exact sources and the remaining source-edge limitation of the battery photo’s secondary display.
+All six real photograph files are exactly 1200×800, with matching HTML dimensions and a 3:2 rendered ratio. A new software-update photograph replaces the previous 1200×904 image; a controlled background trim preserves the complete phone. Photos display edge to edge without padded frames or hover zoom. Exact sources and framing decisions are documented in `image-credits.md` and credited on the published page.
 
-Static and behavior checks pass. Browser verification covers all six service/image mappings, booking prefills, published photo credits, and the existing 144 responsive/theme/direction cases. Screenshots and raw reports remain outside the repository in `/private/tmp/pp-refine/`.
+Static and behavior checks pass. The browser suite passes 144 layout/theme/direction combinations and checks native dimensions plus equal rendered image widths/heights at all six screen widths. All six service booking prefills and keyboard-accessible source credits pass. Visual review covers desktop, tablet and mobile in light and dark modes. Screenshots and reports remain outside the repository under `/private/tmp/pp-service-rows/`.
