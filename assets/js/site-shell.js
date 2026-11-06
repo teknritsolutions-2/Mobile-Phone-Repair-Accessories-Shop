@@ -32,7 +32,7 @@ export function initThemeToggle() {
 }
 
 export function DirectionToggle() {
-  return `<button class="tool-button" data-direction-toggle aria-label="Switch reading direction">${icon("direction")}<span data-direction-label>RTL</span></button>`;
+  return `<button class="tool-button" data-direction-toggle aria-label="Switch reading direction"><span data-direction-label>RTL</span></button>`;
 }
 
 export function initDirectionToggle() {
