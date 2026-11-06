@@ -7,6 +7,8 @@ import {
   initDirectionToggle,
   initDialogs,
   ContactDetails,
+  FloatingBackToTop,
+  initBackToTop,
 } from "./site-shell.js";
 import {
   initProductDetails,
@@ -16,12 +18,16 @@ import { initServiceSelector } from "./service-selector.js";
 import { initRepairFinder } from "./repair-finder.js";
 import { initRepairJourney } from "./repair-journey.js";
 import { initPricingGuide } from "./pricing-guide.js";
+import { initRepairDemonstration } from "./repair-demonstration.js";
+import { initProductPreviews } from "./product-previews.js";
 import { initBookingForm } from "./booking-form.js";
 
 const page = document.body.dataset.page;
 document.querySelector("#site-header").innerHTML = Header(page);
 document.querySelector("#site-footer").innerHTML = Footer();
 document.querySelector("#site-dialogs").innerHTML = Dialogs();
+document.body.insertAdjacentHTML("beforeend", FloatingBackToTop());
+initBackToTop();
 initNavigation();
 initThemeToggle();
 initDirectionToggle();
@@ -33,17 +39,11 @@ initRepairJourney();
 initAccessoryCatalog();
 initPricingGuide();
 initBookingForm();
+initRepairDemonstration();
+initProductPreviews();
 const contactDetails = document.querySelector(
   ".booking-aside .business-details",
 );
 if (contactDetails) contactDetails.outerHTML = ContactDetails();
 
-document.querySelector("[data-back-top]").addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "instant"
-      : "smooth",
-  });
-});
 document.body.dataset.ready = "true";

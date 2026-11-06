@@ -1,4 +1,4 @@
-import { products } from "./product-data.js";
+import { products, formatSamplePrice } from "./product-data.js";
 import { ProductCard } from "./shared-ui.js";
 import { label, photo, button } from "./shared-ui.js";
 
@@ -15,12 +15,13 @@ export function filterProducts({
         .toLowerCase()
         .includes(search),
   );
-  if (sort !== "featured")
-    result.sort((a, b) =>
-      sort === "az"
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name),
-    );
+  const comparators = {
+    az: (a, b) => a.name.localeCompare(b.name),
+    za: (a, b) => b.name.localeCompare(a.name),
+    "price-low": (a, b) => a.samplePrice - b.samplePrice,
+    "price-high": (a, b) => b.samplePrice - a.samplePrice,
+  };
+  if (comparators[sort]) result.sort(comparators[sort]);
   return result;
 }
 
@@ -33,9 +34,9 @@ export function initProductDetails() {
     );
     if (!product) return;
     document.querySelector("#product-dialog-content").innerHTML =
-      `<div class="product-detail">
+      `<div class="product-detail" data-kind="${product.id}">
       <div class="product-detail__image">${photo(product.image, product.name, "", true)}</div>
-      <div class="product-detail__copy">${label(product.category)}<h2>${product.name}</h2><p>${product.description}</p><p class="small">Product photographs illustrate the category. Exact options, availability, and price are confirmed on enquiry.</p>${button("Enquire about this item", "contact", { product: product.id })}</div></div>`;
+      <div class="product-detail__copy">${label(product.category)}<h2>${product.name}</h2><p class="product-price">${formatSamplePrice(product)}<span>Sample price</span></p><p>${product.description}</p><p class="small">Sample prices for preview. Final prices subject to confirmation. Images illustrate the category; exact options and compatibility are confirmed on enquiry.</p>${button("Enquire about this item", "contact", { product: product.id })}</div></div>`;
     document.querySelector("#product-dialog").showModal();
   });
 }

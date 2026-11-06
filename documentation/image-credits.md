@@ -1,20 +1,22 @@
-# Images and fonts
+# Image sources and framing audit
 
-All photography is served locally. Pexels photographs are used under the Pexels License. The Rohan Krishnan photograph uses the Unsplash License. Product imagery illustrates categories and does not imply a brand partnership or verified stock.
+Photographs are locally hosted under the [Pexels License](https://www.pexels.com/license/) or [Unsplash License](https://unsplash.com/license). Product photographs and illustrations describe categories, not verified stock. Sample prices are illustrative.
 
-| File in assets/images | Photographer / source                                       |
-| --------------------- | ----------------------------------------------------------- |
-| studio-repair.jpg | Tima Miroshnichenko — https://www.pexels.com/photo/6755056/ |
-| screen-repair.jpg     | Tima Miroshnichenko — https://www.pexels.com/photo/6755075/ |
-| workshop-detail.jpg   | Tima Miroshnichenko — https://www.pexels.com/photo/6754839/ |
-| case.jpg              | Youssef Samuil — https://www.pexels.com/photo/17343193/     |
-| cable.jpg             | ready made — https://www.pexels.com/photo/3921711/          |
-| charger.jpg           | ready made — https://www.pexels.com/photo/3921710/          |
-| audio.jpg             | Andrey Matveev — https://www.pexels.com/photo/33444591/      |
-| stand.jpg             | Rohan Krishnan — https://unsplash.com/photos/ZieeEAogV9Y    |
-| protector.svg         | Original product illustration for Port & Pixel              |
-| favicon.svg           | Original Port & Pixel mark                                  |
+| Asset | Native size / ratio | Source and display decision |
+| --- | --- | --- |
+| studio-repair.jpg | 1400 × 933 / 3:2 | [Tima Miroshnichenko, Pexels 6755056](https://www.pexels.com/photo/6755056/). Home 1 hero uses full native proportions, no zoom; technician, tool, phone, and equipment remain visible. |
+| screen-repair.jpg | 1000 × 667 / 3:2 | [Tima Miroshnichenko, Pexels 6755075](https://www.pexels.com/photo/6755075/). Home 1 and Services keep the landscape source intact. The source itself is a close-up; no extra crop is added. |
+| repair-detail.jpg | 1400 × 2100 / 2:3 | [Revendo, Unsplash](https://unsplash.com/photos/Q_I49DIzHu8). Home 2 spotlight preserves the portrait; max 340px wide on desktop, 300px tablet, 270px mobile. Open phone, tool, and working hands stay visible. |
+| case.jpg | 1000 × 750 / 4:3 | [Andrey Matveev, Pexels 21854447](https://www.pexels.com/photo/21854447/). Replaces the rustic portrait. Full phone/case and props, centered in a 4:3 catalog frame. |
+| audio.jpg | 1000 × 750 / 4:3 | [Andrey Matveev, Pexels 33444591](https://www.pexels.com/photo/33444591/). Complete earbuds and open case. Hero, gallery, and modal use matching native proportions. |
+| charger.jpg | 1000 × 669 / 3:2 | [Steve A Johnson, Pexels 845239](https://www.pexels.com/photo/845239/). Replaces a cropped multi-object source. Complete adapter and pins, centered within a 4:3 frame with a small neutral inset. |
+| cable.svg | 800 × 600 / 4:3 | Original Port & Pixel category illustration. Replaces a source-cropped cable photograph; coil and both USB-C ends are fully visible. |
+| stand.svg | 800 × 600 / 4:3 | Original Port & Pixel category illustration. Replaces a tall lifestyle photograph that left large side gaps; shows a complete stand. |
+| protector.svg | 700 × 600 / 7:6 | Original Port & Pixel illustration. Whole protector with a small inset in catalog frames. |
+| favicon.svg | Vector | Original phone-frame brand mark in Steel & Ice colors. |
 
-Archivo and Inter are self-hosted under the SIL Open Font License. Font files and the complete license for each family are in `assets/fonts/`. The site makes no Google Fonts request at runtime.
+The main image subjects use intentional `50% 50%` positioning. Repair photography has natural height; product images use contain fitting without hover zoom. No portrait is forced into a panoramic frame. HTML and dynamically generated images carry intrinsic dimensions. Card frames are 4:3; compact preview rows can use a square outer frame while retaining complete image proportions. Product dialogs retain 4:3 image areas with native scaling.
 
-The new studio hero and replacement earbuds images are displayed at their natural 3:2 and 4:3 ratios. Product frames use contain fitting and subject-specific backgrounds. Repair photographs retain hands, tools, and device context without CSS cropping.
+Actual image measurements and screenshots were collected at 390, 768, 1024, and 1440px, including all six product dialogs. Raw evidence is outside the repository under `/private/tmp/pp4-qa/` and `/private/tmp/pp4-final/`. Gallery source photographs and all rendered frames were inspected directly; tightly cropped candidate images were rejected before use.
+
+Archivo and Inter are self-hosted under the SIL Open Font License. Complete licenses are in `assets/fonts/`; no Google Fonts runtime request is made.

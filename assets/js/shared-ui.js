@@ -1,3 +1,4 @@
+import { formatSamplePrice } from "./product-data.js";
 import { pageUrl, assetUrl, escapeHtml } from "./utils.js";
 
 const paths = {
@@ -51,8 +52,23 @@ export function textLink(label, page, params = {}) {
   return button(label, page, params, "button--text");
 }
 
+const imageSizes = {
+  "stand.svg": [800, 600],
+  "case.jpg": [1000, 750],
+  "protector.svg": [700, 600],
+  "studio-repair.jpg": [1400, 933],
+  "screen-repair.jpg": [1000, 667],
+  "charger.jpg": [1000, 669],
+  "repair-detail.jpg": [1400, 2100],
+  "audio.jpg": [1000, 750],
+  "favicon.svg": [40, 40],
+  "cable.svg": [800, 600],
+};
+
 export function photo(file, alt, className = "", eager = false) {
-  return `<img class="${className}" src="${assetUrl(file)}" alt="${escapeHtml(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" />`;
+  const [width, height] = imageSizes[file] || [];
+  const dimensions = width ? `width="${width}" height="${height}"` : "";
+  return `<img ${dimensions} class="${className}" src="${assetUrl(file)}" alt="${escapeHtml(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" />`;
 }
 
 export function label(text) {
@@ -81,6 +97,7 @@ export function ProductCard(product) {
     <p class="product-card__category">${product.category}</p>
     <h3><button class="plain-link" data-product="${product.id}">${product.name}</button></h3>
     <p class="product-card__attribute">${product.attribute}</p>
+    <p class="product-price">${formatSamplePrice(product)}<span>Sample price</span></p>
     ${textLink("Enquire", "contact", { product: product.id })}
   </article>`;
 }

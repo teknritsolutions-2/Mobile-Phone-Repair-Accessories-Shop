@@ -1,34 +1,34 @@
-# Port & Pixel 3.0 verification
+# Steel & Ice refinement verification
 
-November 6, 2026. Static HTML/CSS/vanilla JavaScript; no runtime dependencies or build system.
+November 6, 2026. The six physical HTML pages and existing CSS/vanilla JavaScript architecture are preserved.
 
-## Scope and cleanup
+## Reproduced issue and fixes
 
-All six pages were substantially redesigned. Home 1 now has six major sections; redundant trust, estimate, and editorial filler was removed. Home 2 retains the finder, symptom shortcuts, a short visual spotlight, and booking invitation. Services is a compact visual directory. Accessories centers on products and catalog controls. Pricing combines service/device selection with estimate information. Contact retains the complete form and a concise pre-visit guide.
+An actual browser scroll of 900px put the old header at -900px: the nested sticky header was constrained by its 81px parent. Sticky positioning now belongs to `#site-header`, while the injected header establishes menu positioning. All six pages are tested after 650px scrolling at every required width; their header top remains 0px. Anchor scroll padding clears the header.
 
-The six legacy redirect directories, obsolete font families/licenses, unused portrait repair photo, and old verification JSON were removed. One `404.html` compatibility map handles known old bookmarks. The workflow publishes only public HTML, pages, assets, and `.nojekyll`; documentation and optional QA tools stay out of the live artifact.
+The footer back-to-top action was removed. Its replacement is a body-level fixed control, shown above 400px and hidden near the top or while the mobile menu is open. Logical inline positioning supports RTL; safe-area offsets, focus indication, keyboard activation, and reduced-motion handling are present. On long pages, the smooth-scroll assertion waits for completion instead of relying on a fixed delay.
 
-The new studio hero photograph uses its complete 3:2 source. The replacement earbuds photograph shows the full case and earbuds at 4:3. Product displays use contain fitting, consistent gallery ratios, and subject-specific framing/backgrounds. Existing workshop and display photographs keep their natural proportions. The protector illustration and logo were updated to the neutral/red identity. Credits are in `image-credits.md`.
+Home 2 now includes the finder, a six-issue browser, native portrait repair spotlight, interactive illustrated symptom/approach/function checks, three priced accessory previews, a three-step process, four FAQs, and final booking invitation. Demonstrations are explicitly illustrative, with no fabricated customer outcomes. Services has a distinct power-repair pair and lighter secondary listings. Pricing has a shorter connected result. Contact retains validation and local review/edit/download, with a concise sticky desktop pre-visit guide.
 
-## Actual browser review and corrections
+Accessory sample amounts live only in `product-data.js` and use one INR formatter. Cards, both homepage previews, and dialogs share the same values and sample labels. Numeric price sorts work together with category and search. Repair estimates remain quotation-based; no actual selling prices or booking delivery are claimed.
 
-Before screenshots of all six pages were captured at 390, 768, and 1440px. New compositions were viewed directly in Brave/Chromium, including light, dark, tablet, mobile, and representative RTL screenshots. Visual corrections included vertically balancing the featured-repair tiles, reorganizing the five secondary services into a two-plus-three directory, shortening estimate copy, replacing the cropped earbuds source, and adjusting the product cover to preserve full source framing. Screenshots and raw reports are outside the repository under `/private/tmp/pp3-*`.
+## Actual checks
 
-The release suite checks all six pages at 320, 390, 768, 1024, 1280, and 1440px, in light/dark and LTR/RTL: 144 combinations. It verifies overflow, image loading, visible heading/button boundaries, JavaScript errors, and failed requests. Screenshots are captured at 390, 768, 1024, and 1440px in both themes, plus representative RTL views.
+Brave/Chromium: six pages × six widths (320, 390, 768, 1024, 1280, 1440) × light/dark × LTR/RTL = 144 layout cases, with no overflow, broken images, heading/action clipping, JavaScript errors, or failed requests. Scroll checks verify the sticky header and floating-control threshold separately on all 36 page/width combinations.
 
-Interaction coverage: desktop/mobile Home dropdown, physical navigation and refreshes, all rendered internal links, mobile scroll lock and Escape/outside close, persistent theme/direction, repair selector, guided finder with device/symptom booking context, four-step journey, six service booking links, FAQs, catalog categories/search/sort/reset, product modal/Escape/enquiry, pricing with device prefill, required/email/phone/date/consent errors, local review/download/edit, privacy dialog, and back-to-top.
+The browser suite exercises Home dropdown and keyboard focus, mobile navigation and scroll lock, theme/direction persistence, repair selector, finder and booking context, journey, new demonstration examples and FAQs, all service booking actions, all sample prices, numeric sorting with combined filters, reset, modal price matching, product enquiry, pricing device context, required/email/phone/date/consent errors, local review/download/edit, privacy dialogs, floating back-to-top with keyboard and reduced motion, page refreshes, and rendered internal links.
 
-Additional fixes have direct browser assertions: generic accessory enquiry preselection; required/optional fields when switching request type; reset restoring sort as well as search/category; and Home dropdown Escape restoring focus to its summary. Native dialogs retain focus trapping and return focus on close.
+Before screenshots were captured at 390/768/1440px. After screenshots cover 390/768/1024/1440px in light and dark, plus representative RTL. Actual compositions were viewed directly. Review corrected overly long mobile product rows, portrait-image letterboxing, a cramped mobile demonstration, repeated estimate text, and the verbose pre-visit sidebar. Source sizes and rendered image measurements at four widths, plus all six product modals, are recorded outside the repository in `/private/tmp/pp4-*`. See `image-credits.md` for the source/framing audit.
 
-## Repeatable checks
+Dependency-free checks:
 
 ```sh
 python3 documentation/check-static.py
 node documentation/check-behavior.mjs
 ```
 
-Optional `browser-check.mjs` accepts `PLAYWRIGHT_MODULE`, `BROWSER_EXECUTABLE`, `QA_BASE_URL`, `QA_ROOT_URL`, and `QA_OUTPUT_DIR`. Browser tooling is installed outside this repository. These checks are verification, not a website build.
+The optional browser suite remains outside the public artifact, with screenshots and raw reports stored outside the repository. GitHub Pages deploys the same physical HTML and assets without a build or package installation. Release verification checks the actual Actions run and published files before claiming live verification.
 
-## Limitations
+## Limits
 
-No real submission endpoint or approved business contact details were supplied. Requests remain local, and no appointment is confirmed. Real delivery is therefore unverified. Safari, Firefox, physical devices, and assistive-technology sessions have not been tested. Legacy bookmarks initially return a server 404 before `404.html` redirects; all current links use physical HTML files directly.
+No real submission endpoint is configured: requests stay local and visits need confirmation. Actual request delivery, Safari, Firefox, physical devices, and screen-reader sessions remain unverified. Old bookmarks use the documented `404.html` map; current navigation uses physical files directly.

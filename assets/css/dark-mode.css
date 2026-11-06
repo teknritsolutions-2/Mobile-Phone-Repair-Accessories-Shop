@@ -1,32 +1,25 @@
-/* Carbon surfaces and accessible signal accents, independently tuned. */
+/* Steel & Ice dark surfaces, with independently tuned foregrounds. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --canvas: #101215;
-  --surface: #1c2024;
-  --ink: #f5f6f7;
-  --muted: #b5bbc2;
-  --line: #3b4148;
-  --accent: #ff6871;
-  --on-accent: #151719;
-  --soft: #252b31;
-  --image-bg: #eceeef;
-  --error: #ff8993;
+  --canvas: #111a20;
+  --surface: #1c2930;
+  --ink: #edf4f7;
+  --muted: #b2c3cb;
+  --line: #3c515d;
+  --accent: #8dc2d2;
+  --on-accent: #111a20;
+  --soft: #263d48;
+  --image-bg: #edf2f4;
+  --error: #e5a9bb;
+  --dark-surface: #18252d;
 }
 :root[data-theme="dark"] .finder-recommendation {
-  background: #151719;
-  color: #f5f6f7;
+  background: #18252d;
+  color: #edf4f7;
 }
 :root[data-theme="dark"] .finder-recommendation > p:not(.eyebrow) {
-  color: #c9cbd0;
+  color: #c3d2d9;
 }
 :root[data-theme="dark"] .closing-cta {
-  background: #1c2024;
-  color: #f5f6f7;
   border-top: 1px solid var(--line);
-}
-
-:root[data-theme="dark"] .studio-hero .button:not(.button--light) {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
 }

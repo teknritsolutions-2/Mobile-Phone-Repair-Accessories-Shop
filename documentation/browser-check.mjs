@@ -45,6 +45,25 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
       );
       await document.fonts.ready;
     });
+    // Test actual scrolled geometry; CSS declarations alone do not prove sticky behavior.
+    await page.evaluate(() => {
+      document.documentElement.style.scrollBehavior = "auto";
+      scrollTo(0, 0);
+    });
+    await page.waitForTimeout(40);
+    assert.equal(await page.locator("[data-back-top]").isVisible(), false);
+    await page.evaluate(() => scrollTo(0, 650));
+    await page.waitForTimeout(60);
+    const headerTop = await page
+      .locator(".site-header")
+      .evaluate((el) => el.getBoundingClientRect().top);
+    assert.ok(
+      Math.abs(headerTop) <= 1,
+      `Sticky header ${route} at ${width}: ${headerTop}`,
+    );
+    assert.equal(await page.locator("[data-back-top]").isVisible(), true);
+    await page.evaluate(() => scrollTo(0, 0));
+    await page.waitForTimeout(40);
     for (const theme of ["light", "dark"])
       for (const dir of ["ltr", "rtl"]) {
         await page.evaluate(
@@ -138,6 +157,27 @@ assert.match(
   /Leave it in careful hands/,
 );
 checks.push("Interactive repair journey");
+await go("pages/home2.html");
+assert.equal(await page.locator("main>section").count(), 8);
+assert.equal(await page.locator(".essentials-strip .product-price").count(), 3);
+await page.locator('[data-demo="battery"]').click();
+assert.match(
+  await page.locator("#repair-demonstration").innerText(),
+  /Battery & power behavior/,
+);
+await page.locator('[data-demo="charging"]').click();
+assert.match(
+  await page.locator("#repair-demonstration .button").getAttribute("href"),
+  /service=charging/,
+);
+await page.locator(".home2-faq summary").first().click();
+assert.equal(
+  await page.locator(".home2-faq details").first().getAttribute("open"),
+  "",
+);
+checks.push(
+  "Expanded Home 2, illustrative repair examples, accessory sample prices, and FAQ",
+);
 await go("pages/services.html");
 for (const id of [
   "screen",
@@ -171,10 +211,33 @@ assert.deepEqual(
   names,
   [...names].sort((a, b) => a.localeCompare(b)),
 );
+await page.selectOption("#product-sort", "price-low");
+const amounts = async () =>
+  page
+    .locator("#product-catalog .product-price")
+    .evaluateAll((nodes) =>
+      nodes.map((n) => Number(n.firstChild.textContent.replace(/[^0-9]/g, ""))),
+    );
+assert.deepEqual(await amounts(), [249, 299, 349, 399, 699, 1499]);
+await page.selectOption("#product-sort", "price-high");
+assert.deepEqual(await amounts(), [1499, 699, 399, 349, 299, 249]);
+await page.locator('[data-category="Chargers & Cables"]').click();
+assert.deepEqual(await amounts(), [699, 299]);
+await page.fill("#product-search", "USB-C");
+assert.deepEqual(await amounts(), [299]);
+await page.fill("#product-search", "");
+await page.locator('[data-category="All essentials"]').click();
+checks.push(
+  "Visible INR sample prices and both numerical price sorts combined with search/category",
+);
 await page.locator('[data-product="case"]').first().click();
 assert.equal(
   await page.locator("#product-dialog").evaluate((d) => d.open),
   true,
+);
+assert.match(
+  await page.locator("#product-dialog .product-price").innerText(),
+  /₹399/,
 );
 await page.keyboard.press("Escape");
 assert.equal(
@@ -276,7 +339,10 @@ assert.equal(
 checks.push("Keyboard Home dropdown Escape restores summary focus");
 await page.setViewportSize({ width: 390, height: 844 });
 await go("index.html");
+await page.evaluate(() => scrollTo(0, 650));
+await page.waitForTimeout(100);
 await page.locator(".menu-toggle").click();
+assert.equal(await page.locator("[data-back-top]").isVisible(), false);
 assert.equal(
   await page.locator("#mobile-menu").evaluate((e) => e.inert),
   false,
@@ -323,9 +389,20 @@ assert.equal(
 );
 await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
 await page.locator("[data-back-top]").click();
-await page.waitForTimeout(1200);
+await page.waitForFunction(() => scrollY === 0, null, { timeout: 5000 });
 assert.equal(await page.evaluate(() => scrollY), 0);
-checks.push("Privacy dialog and back-to-top");
+assert.equal(await page.locator("[data-back-top]").isVisible(), false);
+await page.emulateMedia({ reducedMotion: "reduce" });
+await page.evaluate(() => scrollTo(0, 650));
+await page.waitForTimeout(100);
+await page.locator("[data-back-top]").focus();
+await page.keyboard.press("Enter");
+await page.waitForTimeout(100);
+assert.equal(await page.evaluate(() => scrollY), 0);
+await page.emulateMedia({ reducedMotion: "no-preference" });
+checks.push(
+  "Privacy dialog; floating back-to-top threshold, keyboard, reduced motion, and mobile-menu visibility",
+);
 for (const route of routes) {
   await go(route);
   await page.reload();

@@ -66,3 +66,25 @@ assert.deepEqual(
 console.log(
   "PASS: request validation, honest request summary, safe text rendering, relative page URLs, filtering, search, and sorting.",
 );
+const low = filterProducts({ sort: "price-low" });
+assert.deepEqual(
+  low.map((p) => p.samplePrice),
+  [249, 299, 349, 399, 699, 1499],
+);
+assert.deepEqual(
+  filterProducts({ sort: "price-high" }).map((p) => p.samplePrice),
+  [1499, 699, 399, 349, 299, 249],
+);
+assert.deepEqual(
+  filterProducts({
+    category: "Chargers & Cables",
+    sort: "price-high",
+    query: "wall",
+  }).map((p) => p.samplePrice),
+  [699],
+);
+const { formatSamplePrice } = await import("../assets/js/product-data.js");
+assert.equal(formatSamplePrice(low.at(-1)), "₹1,499");
+console.log(
+  "PASS: numeric sample-price sorting, combined search/category/price filters, and INR formatting.",
+);

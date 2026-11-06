@@ -1,6 +1,6 @@
-# Port & Pixel 3.0
+# Port & Pixel
 
-A six-page precision repair showroom in HTML5, CSS3, and vanilla JavaScript. Carbon, cool pearl, and signal red; self-hosted Archivo and Inter. The conventional file organization follows the approved Waylark reference.
+A six-page precision repair showroom in HTML5, CSS3, and vanilla JavaScript. Steel & Ice: desaturated blue-gray, ice, and white; self-hosted Archivo and Inter. The conventional file organization follows the approved Waylark reference.
 
 ## Run
 
@@ -13,7 +13,7 @@ Open `http://localhost:4173/`. No installation, framework, build, or custom serv
 ## Structure
 
 - `index.html`: Home 1 repair showroom.
-- `pages/home2.html`: guided device-first repair finder.
+- `pages/home2.html`: guided repair finder, service browser, portrait spotlight, illustrative repair demonstration, accessory preview, three-step process, FAQs, and booking.
 - `pages/services.html`: visual repair directory.
 - `pages/accessories.html`: searchable, filterable product collection.
 - `pages/pricing.html`: connected service/device estimate guide.
@@ -27,7 +27,7 @@ Main content is physical HTML. JavaScript inserts the common header/footer and e
 
 ## Editing and request delivery
 
-Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. No prices, warranties, turnaround promises, or business contact details have been invented.
+Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. Accessory sample prices are illustrative INR amounts in `product-data.js`, formatted centrally and shared by previews, cards, and dialogs. Price sorting combines with search and categories. Final selling prices require confirmation. Repair estimates remain quotation-based. No warranties, turnaround promises, or business contact details have been invented.
 
 Without an endpoint, request details stay in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is delivered and no appointment is confirmed. Reloading clears entries. Only theme and direction preferences use local storage. A configured endpoint must accept POST JSON, validate server-side, and confirm actual acceptance before the UI reports delivery.
 
@@ -38,3 +38,7 @@ The Actions workflow checks all six pages, local references, JavaScript syntax, 
 Old `/services`, `/accessories`, `/pricing`, `/contact`, `/home-2`, and `/home2` bookmarks use one compatibility map in `404.html`. It preserves queries and anchors and redirects only recognized paths to physical pages. GitHub initially returns HTTP 404 for these old bookmarks before the browser redirect; current physical page URLs return 200 directly. Unknown paths show a helpful homepage link. There are no route-mirror directories.
 
 Optional checks and actual verification coverage are in `documentation/verification.md`. Image sources and font licenses are recorded in `documentation/image-credits.md`.
+
+## Global behavior
+
+`#site-header` is the sticky host, so its injected header is not confined by a short parent. Anchors allow for the header height. A document-level floating back-to-top control appears after 400px, hides with the mobile menu, uses logical RTL positioning and safe-area offsets, and honors reduced-motion preferences.

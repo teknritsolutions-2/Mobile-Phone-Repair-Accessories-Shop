@@ -178,7 +178,7 @@ export function Footer() {
       <div><h3>The essentials</h3><a href="${pageUrl("accessories")}">Accessories</a><a href="${pageUrl("pricing")}">Pricing guide</a><a href="${pageUrl("contact")}">Contact & booking</a></div>
 
     </div>
-    <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><button class="plain-link" data-privacy-open>Privacy & your request</button><button class="plain-link" data-back-top>Back to top ${icon("arrow", "up-arrow")}</button></div>
+    <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><button class="plain-link" data-privacy-open>Privacy & your request</button></div>
   </footer>`;
 }
 
@@ -214,4 +214,37 @@ export function initDialogs() {
         dialog.close();
     });
   });
+}
+
+export function FloatingBackToTop() {
+  return `<button class="back-to-top" data-back-top aria-label="Back to top" hidden>${icon("arrow", "up-arrow")}</button>`;
+}
+
+export function initBackToTop() {
+  const control = document.querySelector("[data-back-top]");
+  const sync = () => {
+    const visible =
+      scrollY > 400 && !document.body.classList.contains("menu-is-open");
+    // Restore a useful focus target before hiding a keyboard-activated control.
+    if (!visible && document.activeElement === control) {
+      const main = document.querySelector("main");
+      main.tabIndex = -1;
+      main.focus({ preventScroll: true });
+    }
+    control.hidden = !visible;
+  };
+  addEventListener("scroll", sync, { passive: true });
+  new MutationObserver(sync).observe(document.body, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  control.addEventListener("click", () =>
+    scrollTo({
+      top: 0,
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    }),
+  );
+  sync();
 }
