@@ -32,3 +32,9 @@ The optional browser suite remains outside the public artifact, with screenshots
 ## Limits
 
 No real submission endpoint is configured: requests stay local and visits need confirmation. Actual request delivery, Safari, Firefox, physical devices, and screen-reader sessions remain unverified. Old bookmarks use the documented `404.html` map; current navigation uses physical files directly.
+
+## Services page rebuild
+
+The former featured-service card and five-item grid were replaced with a new studio introduction, six service shortcuts, a single-expanded-service explorer, and an original device component diagram. All repair descriptions remain physical HTML. `service-directory.js` synchronizes native details, selected shortcuts, component highlights, direct hashes, and browser history. Every service retains a booking link and a quotation-guide link. The pre-visit section and final invitation were recomposed; obsolete directory CSS was removed from all breakpoints.
+
+Desktop uses the full portrait repair photograph; mobile uses an alternate native 3:2 source in a picture element, avoiding an awkward portrait/caption split. The new page was visually reviewed at desktop, tablet, and mobile widths in both themes and representative RTL. Browser assertions cover all six direct service anchors, one expanded service, corresponding component highlight, keyboard activation, browser Back, and each booking prefill, in addition to the existing 144 layout cases and sitewide interactions.

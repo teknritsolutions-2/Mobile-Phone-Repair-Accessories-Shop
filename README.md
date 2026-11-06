@@ -14,7 +14,7 @@ Open `http://localhost:4173/`. No installation, framework, build, or custom serv
 
 - `index.html`: Home 1 repair showroom.
 - `pages/home2.html`: guided repair finder, service browser, portrait spotlight, illustrative repair demonstration, accessory preview, three-step process, FAQs, and booking.
-- `pages/services.html`: visual repair directory.
+- `pages/services.html`: repair studio, interactive six-service explorer, device component diagram, and visit FAQs.
 - `pages/accessories.html`: searchable, filterable product collection.
 - `pages/pricing.html`: connected service/device estimate guide.
 - `pages/contact.html`: repair requests and accessory enquiries.

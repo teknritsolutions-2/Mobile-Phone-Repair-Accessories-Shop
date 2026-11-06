@@ -188,7 +188,9 @@ for (const id of [
   "audio",
 ])
   assert.match(
-    await page.locator(`#${id} .button`).getAttribute("href"),
+    await page
+      .locator(`#${id} .button[href*="contact.html"]`)
+      .getAttribute("href"),
     new RegExp("pages/contact.html\\?service=" + id),
   );
 await page.locator(".accordion summary").first().click();
@@ -197,6 +199,47 @@ assert.equal(
   "",
 );
 checks.push("All six service booking URLs and FAQ expansion");
+for (const id of [
+  "screen",
+  "battery",
+  "charging",
+  "software",
+  "camera",
+  "audio",
+]) {
+  await go(`pages/services.html?entry=${id}#${id}`);
+  assert.equal(
+    await page.locator(`#${id}`).evaluate((entry) => entry.open),
+    true,
+  );
+  assert.equal(await page.locator(".repair-service[open]").count(), 1);
+  assert.equal(
+    await page
+      .locator(`[data-component="${id}"]`)
+      .evaluate((part) => part.classList.contains("is-active")),
+    true,
+  );
+  await page.locator(`#${id} .button[href*="contact.html"]`).click();
+  await page.waitForSelector('body[data-ready="true"]');
+  assert.equal(await page.locator("#service").inputValue(), id);
+}
+await go("pages/services.html");
+await page.locator("#charging summary").focus();
+await page.keyboard.press("Enter");
+await page.waitForFunction(
+  () =>
+    document.querySelector("#charging").open && location.hash === "#charging",
+);
+await page.locator('.repair-shortcuts a[href="#battery"]').click();
+assert.equal(
+  await page.locator("#battery").evaluate((entry) => entry.open),
+  true,
+);
+await page.goBack();
+await page.waitForFunction(() => document.querySelector("#charging").open);
+checks.push(
+  "Six direct service anchors, single expanded service, matching device diagram, keyboard activation, browser Back, and all booking prefills",
+);
 await go("pages/accessories.html");
 assert.equal(await page.locator("#product-catalog .product-card").count(), 6);
 await page.locator('[data-category="Chargers & Cables"]').click();
