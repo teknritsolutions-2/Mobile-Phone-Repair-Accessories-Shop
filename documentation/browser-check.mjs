@@ -228,7 +228,7 @@ await page.keyboard.press("Enter");
 assert.equal(
   await page
     .locator(
-      '.service-photo-attribution a[href="https://creativecommons.org/licenses/by-sa/4.0/"]',
+      '.service-photo-attribution a[href="https://www.pexels.com/license/"]',
     )
     .isVisible(),
   true,

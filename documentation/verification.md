@@ -33,10 +33,10 @@ The optional browser suite remains outside the public artifact, with screenshots
 
 No real submission endpoint is configured: requests stay local and visits need confirmation. Actual request delivery, Safari, Firefox, physical devices, and screen-reader sessions remain unverified. Old bookmarks use the documented `404.html` map; current navigation uses physical files directly.
 
-## Services real-photo gallery
+## Services photographic refinement
 
-The Services page now uses an open photographic collection with all six repair types visible, replacing the previous accordion, device diagram, and split hero. Desktop uses three columns, tablet two, and mobile one. Each repair has a distinct real photograph, a concise description, and direct booking/estimate links. The obsolete service-directory JavaScript and its CSS were removed.
+The accepted six-service gallery keeps its three/two/one-column layout. Numbered photo mounts, a dark screen-repair feature card, compact symptom tags, filled booking actions, and six native quick links give the collection a more distinctive presentation. Anchors leave room for the sticky header and preserve booking context.
 
-No AI-generated images are used. The chosen real sources are five Pexels photographs and a Wikimedia Commons component photograph. The speaker/microphone attribution, license, source, and resize notice are accessible from the live page. See `image-credits.md` for exact source files. Important subjects retain source framing with contain fitting and no hover zoom.
+Three tightly framed source photographs were replaced: charging now shows a complete phone with its port, camera shows a complete phone back and camera lenses, and audio shows a complete phone with earbuds and case. All six sources are real Pexels photographs. Published source credits and the Pexels License remain keyboard accessible. Replacement images are 1200×800 landscapes downloaded without crop parameters; software retains its 1200×904 source. The 4:3 mounts use contain fitting and an inset, with no image zoom. See `image-credits.md` for exact sources and the remaining source-edge limitation of the battery photo’s secondary display.
 
-Verification includes all six image/service mappings, direct anchors, every booking prefill, accessible photo credits, and the existing responsive, theme, direction, navigation, catalog, and request checks. Real browser screenshots are stored outside the repository under `/private/tmp/pp-services-gallery/`.
+Static and behavior checks pass. Browser verification covers all six service/image mappings, booking prefills, published photo credits, and the existing 144 responsive/theme/direction cases. Screenshots and raw reports remain outside the repository in `/private/tmp/pp-refine/`.
