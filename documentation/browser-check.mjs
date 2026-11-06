@@ -199,6 +199,11 @@ assert.equal(
   "",
 );
 checks.push("All six service booking URLs and FAQ expansion");
+assert.equal(await page.locator(".service-story").count(), 6);
+const servicePhotos = await page
+  .locator(".service-story img")
+  .evaluateAll((images) => images.map((i) => i.getAttribute("src")));
+assert.equal(new Set(servicePhotos).size, 6);
 for (const id of [
   "screen",
   "battery",
@@ -208,37 +213,28 @@ for (const id of [
   "audio",
 ]) {
   await go(`pages/services.html?entry=${id}#${id}`);
-  assert.equal(
-    await page.locator(`#${id}`).evaluate((entry) => entry.open),
-    true,
-  );
-  assert.equal(await page.locator(".repair-service[open]").count(), 1);
-  assert.equal(
-    await page
-      .locator(`[data-component="${id}"]`)
-      .evaluate((part) => part.classList.contains("is-active")),
-    true,
+  assert.equal(await page.locator(`#${id}`).isVisible(), true);
+  assert.match(
+    await page.locator(`#${id} img`).getAttribute("src"),
+    new RegExp(`service-${id}\\.jpg$`),
   );
   await page.locator(`#${id} .button[href*="contact.html"]`).click();
   await page.waitForSelector('body[data-ready="true"]');
   assert.equal(await page.locator("#service").inputValue(), id);
 }
 await go("pages/services.html");
-await page.locator("#charging summary").focus();
+await page.locator(".service-photo-attribution summary").focus();
 await page.keyboard.press("Enter");
-await page.waitForFunction(
-  () =>
-    document.querySelector("#charging").open && location.hash === "#charging",
-);
-await page.locator('.repair-shortcuts a[href="#battery"]').click();
 assert.equal(
-  await page.locator("#battery").evaluate((entry) => entry.open),
+  await page
+    .locator(
+      '.service-photo-attribution a[href="https://creativecommons.org/licenses/by-sa/4.0/"]',
+    )
+    .isVisible(),
   true,
 );
-await page.goBack();
-await page.waitForFunction(() => document.querySelector("#charging").open);
 checks.push(
-  "Six direct service anchors, single expanded service, matching device diagram, keyboard activation, browser Back, and all booking prefills",
+  "Six visible repair types with distinct real photographs, direct service anchors, all booking prefills, and accessible photo attribution",
 );
 await go("pages/accessories.html");
 assert.equal(await page.locator("#product-catalog .product-card").count(), 6);

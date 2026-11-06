@@ -20,7 +20,6 @@ import { initRepairJourney } from "./repair-journey.js";
 import { initPricingGuide } from "./pricing-guide.js";
 import { initRepairDemonstration } from "./repair-demonstration.js";
 import { initProductPreviews } from "./product-previews.js";
-import { initServiceDirectory } from "./service-directory.js";
 import { initBookingForm } from "./booking-form.js";
 
 const page = document.body.dataset.page;
@@ -42,7 +41,6 @@ initPricingGuide();
 initBookingForm();
 initRepairDemonstration();
 initProductPreviews();
-initServiceDirectory();
 const contactDetails = document.querySelector(
   ".booking-aside .business-details",
 );

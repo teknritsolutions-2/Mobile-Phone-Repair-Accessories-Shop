@@ -33,8 +33,10 @@ The optional browser suite remains outside the public artifact, with screenshots
 
 No real submission endpoint is configured: requests stay local and visits need confirmation. Actual request delivery, Safari, Firefox, physical devices, and screen-reader sessions remain unverified. Old bookmarks use the documented `404.html` map; current navigation uses physical files directly.
 
-## Services page rebuild
+## Services real-photo gallery
 
-The former featured-service card and five-item grid were replaced with a new studio introduction, six service shortcuts, a single-expanded-service explorer, and an original device component diagram. All repair descriptions remain physical HTML. `service-directory.js` synchronizes native details, selected shortcuts, component highlights, direct hashes, and browser history. Every service retains a booking link and a quotation-guide link. The pre-visit section and final invitation were recomposed; obsolete directory CSS was removed from all breakpoints.
+The Services page now uses an open photographic collection with all six repair types visible, replacing the previous accordion, device diagram, and split hero. Desktop uses three columns, tablet two, and mobile one. Each repair has a distinct real photograph, a concise description, and direct booking/estimate links. The obsolete service-directory JavaScript and its CSS were removed.
 
-Desktop uses the full portrait repair photograph; mobile uses an alternate native 3:2 source in a picture element, avoiding an awkward portrait/caption split. The new page was visually reviewed at desktop, tablet, and mobile widths in both themes and representative RTL. Browser assertions cover all six direct service anchors, one expanded service, corresponding component highlight, keyboard activation, browser Back, and each booking prefill, in addition to the existing 144 layout cases and sitewide interactions.
+No AI-generated images are used. The chosen real sources are five Pexels photographs and a Wikimedia Commons component photograph. The speaker/microphone attribution, license, source, and resize notice are accessible from the live page. See `image-credits.md` for exact source files. Important subjects retain source framing with contain fitting and no hover zoom.
+
+Verification includes all six image/service mappings, direct anchors, every booking prefill, accessible photo credits, and the existing responsive, theme, direction, navigation, catalog, and request checks. Real browser screenshots are stored outside the repository under `/private/tmp/pp-services-gallery/`.

@@ -20,3 +20,16 @@ The main image subjects use intentional `50% 50%` positioning. Repair photograph
 Actual image measurements and screenshots were collected at 390, 768, 1024, and 1440px, including all six product dialogs. Raw evidence is outside the repository under `/private/tmp/pp4-qa/` and `/private/tmp/pp4-final/`. Gallery source photographs and all rendered frames were inspected directly; tightly cropped candidate images were rejected before use.
 
 Archivo and Inter are self-hosted under the SIL Open Font License. Complete licenses are in `assets/fonts/`; no Google Fonts runtime request is made.
+
+## Services collection — real photographs only
+
+| Local file | Source | Photographer / license | Subject |
+| --- | --- | --- | --- |
+| service-screen.jpg | https://www.pexels.com/photo/31884550/ | Fotografia Lui Vlad / Pexels License | Cracked phone display on a repair mat. |
+| service-battery.jpg | https://www.pexels.com/photo/31862950/ | Fotografia Lui Vlad / Pexels License | Disassembled phone with removed battery. |
+| service-charging.jpg | https://www.pexels.com/photo/18662753/ | Masood Aslami / Pexels License | Smartphone charging port. |
+| service-software.jpg | https://www.pexels.com/photo/a-hand-holding-a-smartphone-18275133/ | Watford London Media / Pexels License | Actual Android settings screen. |
+| service-camera.jpg | https://www.pexels.com/photo/a-close-up-shot-of-a-smartphone-camera-5510605/ | Thiago Japyassu / Pexels License | Rear camera lenses. |
+| service-audio.jpg | https://commons.wikimedia.org/wiki/File:IPhone_4,_model_A1332_-_loudspeaker_and_microphone-9448.jpg | © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons), https://creativecommons.org/licenses/by-sa/4.0/ | Actual loudspeaker and MEMS microphone. Resized and recompressed, no crop. |
+
+All six files are locally stored photographs, not AI-generated assets. Native local dimensions are 1200×800 for screen/battery/charging, 1200×904 for software, 1200×900 for camera, and 1200×1200 for audio. Gallery frames use contain fitting to preserve the photographed components. The live Services page includes accessible source and license credits; documentation is not required for users to find the attribution.
