@@ -56,6 +56,8 @@ export function initAccessoryCatalog() {
     document.querySelector("#reset-catalog")?.addEventListener("click", () => {
       state.category = "All essentials";
       state.query = "";
+      state.sort = "featured";
+      sort.value = "featured";
       search.value = "";
       document
         .querySelectorAll("[data-category]")

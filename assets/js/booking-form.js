@@ -25,27 +25,41 @@ export function initBookingForm() {
     (item) => item.id === params.get("service"),
   );
   if (requestedService) form.elements.service.value = requestedService.id;
-  if (product) {
+  if (product || params.get("service") === "accessory")
     form.elements.service.value = "accessory";
-    form.querySelector(".form-heading h2").textContent =
-      "Your accessory enquiry";
-    form.querySelector(".form-heading").insertAdjacentHTML(
-      "afterend",
-      `
-      <div class="enquiry-context"><div><span>You’re asking about</span><strong>${escapeHtml(product.name)}</strong></div></div>`,
-    );
+  if (product) {
+    form
+      .querySelector(".form-heading")
+      .insertAdjacentHTML(
+        "afterend",
+        `<div class="enquiry-context"><div><span>You’re asking about</span><strong>${escapeHtml(product.name)}</strong></div></div>`,
+      );
+  }
+  const syncRequestType = () => {
+    const accessory = form.elements.service.value === "accessory";
+    form.querySelector(".form-heading h2").textContent = accessory
+      ? "Your accessory enquiry"
+      : "Your repair request";
+    const context = form.querySelector(".enquiry-context");
+    if (context) context.hidden = !accessory;
     for (const name of ["brand", "model"]) {
-      form.elements[name].required = false;
+      form.elements[name].required = !accessory;
       const marker = form.querySelector(`label[for="${name}"] span`);
-      marker.className = "optional";
-      marker.removeAttribute("aria-hidden");
-      marker.textContent = "(optional)";
+      marker.className = accessory ? "optional" : "";
+      marker.textContent = accessory ? "(optional)" : "*";
+      if (accessory) marker.removeAttribute("aria-hidden");
+      else marker.setAttribute("aria-hidden", "true");
+      form.elements[name].removeAttribute("aria-invalid");
+      document.getElementById(`${name}-error`).textContent = "";
     }
     form.querySelector('label[for="description"]').innerHTML =
-      'What would you like to know? <span aria-hidden="true">*</span>';
-    form.elements.description.placeholder =
-      "Ask about fit, availability, or pricing. Include your device model where possible.";
-  }
+      `${accessory ? "What would you like to know?" : "Describe the issue"} <span aria-hidden="true">*</span>`;
+    form.elements.description.placeholder = accessory
+      ? "Ask about fit, availability, or pricing. Include your model where possible."
+      : "What’s happening, when did it start, and what have you tried?";
+  };
+  form.elements.service.addEventListener("change", syncRequestType);
+  syncRequestType();
 
   const initialDetails = [
     params.get("device") ? `Device: ${params.get("device")}` : "",
@@ -63,8 +77,9 @@ export function initBookingForm() {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(form));
-    data.product = product?.id || "";
-    const errors = validateRequest(data, Boolean(product));
+    const accessory = data.service === "accessory";
+    data.product = accessory ? product?.id || "" : "";
+    const errors = validateRequest(data, accessory);
     form.querySelectorAll(".field-error").forEach((element) => {
       element.textContent = "";
     });
@@ -105,7 +120,12 @@ export function initBookingForm() {
       (data.service === "accessory"
         ? "Accessory enquiry"
         : "Help choosing a service");
-    const summary = buildRequestSummary(data, serviceName, product?.name, sent);
+    const summary = buildRequestSummary(
+      data,
+      serviceName,
+      accessory ? product?.name : "",
+      sent,
+    );
     const review = document.createElement("section");
     review.className = "request-review";
     review.tabIndex = -1;

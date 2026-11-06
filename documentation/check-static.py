@@ -63,7 +63,7 @@ for file in (ROOT / 'assets/css').glob('*.css'):
             errors.append(f'{file.name}: missing CSS asset {path}')
         checked += 1
 
-for obsolete in ['src', 'dist', 'node_modules', 'package.json', 'package-lock.json', 'vite.config.js', 'server.mjs']:
+for obsolete in ['src', 'dist', 'node_modules', 'package.json', 'package-lock.json', 'vite.config.js', 'server.mjs', 'services', 'contact', 'accessories', 'pricing', 'home-2', 'home2']:
     if (ROOT / obsolete).exists():
         errors.append(f'Obsolete architecture remains: {obsolete}')
 

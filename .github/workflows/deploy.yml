@@ -33,9 +33,6 @@ jobs:
           test -s assets/css/style.css
           test -s assets/js/main.js
           test -s 404.html
-          for legacy in home-2 home2 services accessories pricing contact; do
-            test -s "$legacy/index.html"
-          done
 
       - name: Check static references and request behavior
         run: |
@@ -45,10 +42,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Collect public files
+        run: |
+          mkdir -p "$RUNNER_TEMP/port-pixel-pages"
+          cp index.html 404.html .nojekyll "$RUNNER_TEMP/port-pixel-pages/"
+          cp -R assets pages "$RUNNER_TEMP/port-pixel-pages/"
+
       - name: Upload static website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: ${{ runner.temp }}/port-pixel-pages
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -1,59 +1,40 @@
-# Port & Pixel
+# Port & Pixel 3.0
 
-A buildless, six-page HTML/CSS/vanilla JavaScript repair-shop website. The structure follows the Waylark repository; the graphite, white, and electric-blue design is original to Port & Pixel.
+A six-page precision repair showroom in HTML5, CSS3, and vanilla JavaScript. Carbon, cool pearl, and signal red; self-hosted Archivo and Inter. The conventional file organization follows the approved Waylark reference.
 
-## Run locally
+## Run
 
 ```sh
 python3 -m http.server 4173
 ```
 
-Open http://localhost:4173/index.html. No package manager, framework, build, generated output, or custom server is needed. Use a static HTTP server so browser ES modules load correctly.
+Open `http://localhost:4173/`. No installation, framework, build, or custom server is required. Use HTTP so browser ES modules load.
 
 ## Structure
 
-- `index.html` — Home 1, the main repair showroom.
-- `pages/home2.html` — guided device-first repair discovery.
-- `pages/services.html` — repair information and preparation guide.
-- `pages/accessories.html` — searchable, filterable accessory collection.
-- `pages/pricing.html` — device-specific estimate guide.
-- `pages/contact.html` — repair requests and accessory enquiries.
-- `assets/css/` — `fonts.css`, `style.css`, `dark-mode.css`, `rtl.css`.
-- `assets/js/` — shared shell, UI helpers, configuration, reusable data, and individual interaction modules.
-- `assets/images/` and `assets/fonts/` — local assets and font licenses.
-- `documentation/` — architecture, image credits, QA evidence, and optional verification tooling.
+- `index.html`: Home 1 repair showroom.
+- `pages/home2.html`: guided device-first repair finder.
+- `pages/services.html`: visual repair directory.
+- `pages/accessories.html`: searchable, filterable product collection.
+- `pages/pricing.html`: connected service/device estimate guide.
+- `pages/contact.html`: repair requests and accessory enquiries.
+- `assets/css/`: local fonts, shared/responsive styles, dark theme, RTL adjustments.
+- `assets/js/`: shared shell, feature modules, service/product data, configuration.
+- `assets/images/`, `assets/fonts/`: local assets and font licenses.
+- `documentation/`: credits and optional verification tools, excluded from deployment.
 
-All pages are physical HTML files. Their main content is authored directly in HTML. Shared navigation and footer are inserted by a common JavaScript module. Navigation uses relative URLs and works under the GitHub Pages repository subpath and a normal origin root. No server fallback or hostname detection is used.
+Main content is physical HTML. JavaScript inserts the common header/footer and enables interactions. All primary links use physical files and relative URLs, including on the GitHub Pages repository subpath.
 
-## Editing
+## Editing and request delivery
 
-Business details and the optional delivery endpoint: `assets/js/site-config.js`. Blank contact details are omitted.
+Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. No prices, warranties, turnaround promises, or business contact details have been invented.
 
-Reusable service definitions: `assets/js/service-data.js`. Accessory catalog: `assets/js/product-data.js`. Edit page-specific editorial content in the corresponding HTML file. Shared header/footer and dialogs: `assets/js/site-shell.js`. The main stylesheet has labeled component/page sections; dark tokens and semantic RTL adjustments are separate files.
+Without an endpoint, request details stay in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is delivered and no appointment is confirmed. Reloading clears entries. Only theme and direction preferences use local storage. A configured endpoint must accept POST JSON, validate server-side, and confirm actual acceptance before the UI reports delivery.
 
-## Request handling
+## GitHub Pages
 
-With the submission endpoint blank, form data stays in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is sent, no appointment is confirmed, and personal details are never put into URLs or local storage. Reloading clears entries. Theme and direction preferences alone use local storage.
+The Actions workflow checks all six pages, local references, JavaScript syntax, and request/catalog behavior. It copies only `index.html`, `404.html`, `.nojekyll`, `pages/`, and `assets/` into the public artifact. This is static file collection, with no build or dependencies. Tests, documentation, and screenshots are not published.
 
-A production endpoint must accept POST JSON, validate server-side, handle abuse protection and CORS, and return success only after accepting the request. Confirm actual delivery before enabling it. No backend, approved prices, business address, phone number, or opening hours have been supplied. No such details have been invented.
+Old `/services`, `/accessories`, `/pricing`, `/contact`, `/home-2`, and `/home2` bookmarks use one compatibility map in `404.html`. It preserves queries and anchors and redirects only recognized paths to physical pages. GitHub initially returns HTTP 404 for these old bookmarks before the browser redirect; current physical page URLs return 200 directly. Unknown paths show a helpful homepage link. There are no route-mirror directories.
 
-## Hosting
-
-GitHub Pages uses `.github/workflows/deploy.yml` to verify entrypoints and upload the repository's static files directly. There is no dependency-installation or build job. Keep `index.html`, `pages/`, and `assets/` together.
-
-Primary URLs:
-
-- `/Mobile-Phone-Repair-Accessories-Shop/index.html`
-- `/Mobile-Phone-Repair-Accessories-Shop/pages/home2.html`
-- `/Mobile-Phone-Repair-Accessories-Shop/pages/services.html`
-- `/Mobile-Phone-Repair-Accessories-Shop/pages/accessories.html`
-- `/Mobile-Phone-Repair-Accessories-Shop/pages/pricing.html`
-- `/Mobile-Phone-Repair-Accessories-Shop/pages/contact.html`
-
-See `documentation/verification.md` for tested layouts and interaction coverage. Optional browser QA tooling is not required to run or publish the site.
-
-## Legacy links and deployment verification
-
-The six public pages retain their physical URLs. Old `/services`, `/accessories`, `/pricing`, `/contact`, `/home-2`, and `/home2` bookmarks have small static directory-index redirects to the matching files in `pages/`. The redirect preserves query parameters and anchors in normal browsers. `404.html` only redirects recognized old route names and otherwise offers a real homepage link; it is not a page router.
-
-GitHub Pages is configured to use Actions from `main` at the repository root. The workflow validates HTML entrypoints, redirect files, local references, JavaScript syntax, and request/catalog behavior before uploading. No package installation or build is used. After a release, verify the live HTML against the source files, visit and refresh all six pages, test navigation, and confirm the old bookmarks continue to the intended page.
+Optional checks and actual verification coverage are in `documentation/verification.md`. Image sources and font licenses are recorded in `documentation/image-credits.md`.

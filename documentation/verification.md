@@ -1,41 +1,34 @@
-# Layout repair and GitHub Pages verification
+# Port & Pixel 3.0 verification
 
-November 5, 2026. The approved buildless HTML/CSS/JavaScript structure is preserved.
+November 6, 2026. Static HTML/CSS/vanilla JavaScript; no runtime dependencies or build system.
 
-## Production investigation before edits
+## Scope and cleanup
 
-GitHub Actions run `42007048892` completed successfully for commit `483a40c99a5294de025a42afc778f67860cbf775`. The actual Pages settings report workflow deployment, branch `main`, repository root. Live browser visits and refreshes returned 200 for the homepage and all five `pages/*.html` files, with no failed asset requests or JavaScript errors.
+All six pages were substantially redesigned. Home 1 now has six major sections; redundant trust, estimate, and editorial filler was removed. Home 2 retains the finder, symptom shortcuts, a short visual spotlight, and booking invitation. Services is a compact visual directory. Accessories centers on products and catalog controls. Pricing combines service/device selection with estimate information. Contact retains the complete form and a concise pre-visit guide.
 
-The old `/services`, `/home-2`, `/accessories`, `/pricing`, and `/contact` URLs returned 404. These obsolete bookmarks were a reproducible navigation failure. Static directory-index redirect files now take them to the correct physical pages. `/home2` is supported as well. Query strings and hashes are preserved by the redirect script. `404.html` recognizes only the known old paths and provides a usable fallback for unknown pages.
+The six legacy redirect directories, obsolete font families/licenses, unused portrait repair photo, and old verification JSON were removed. One `404.html` compatibility map handles known old bookmarks. The workflow publishes only public HTML, pages, assets, and `.nojekyll`; documentation and optional QA tools stay out of the live artifact.
 
-## Page-by-page work
+The new studio hero photograph uses its complete 3:2 source. The replacement earbuds photograph shows the full case and earbuds at 4:3. Product displays use contain fitting, consistent gallery ratios, and subject-specific framing/backgrounds. Existing workshop and display photographs keep their natural proportions. The protector illustration and logo were updated to the neutral/red identity. Credits are in `image-credits.md`.
 
-- **Home 1:** replaced the panoramic image and oversized heading with a balanced workshop composition; kept the complete technician, phone, and tools in a natural 3:2 frame. Made issue choices compact and connected their result to booking. Rebuilt the repair feature, reduced the workflow treatment, replaced the tall retail image with product displays, and tightened the trust/estimate/closing sections.
-- **Home 2:** rebuilt the device controls and result spacing; used full-width choices/results at tablet to prevent a tall empty sidebar. Converted symptoms to a two-column index with its heading above. Kept the battery spotlight's portrait photograph at its natural ratio, beside a concise breakdown. Simplified the care section.
-- **Services:** retained the category navigator while recomposing the screen service around a full portrait image and readable explanations. Removed the previous wide crop, improved power-service hierarchy, and tightened secondary service rows. Tablet navigation becomes a scrollable category strip.
-- **Accessories:** built a two-product hero with complete products visible. Standardized product frames with contain fitting and compact padding, shortened product names, and used readable mobile product rows. Replaced the tall cable editorial with an appropriately framed landscape charging image and concise compatibility guidance.
-- **Pricing:** joined controls and results in one surface, removed redundant estimate text, and moved tablet controls above the result. Each model still requires an individual quotation. Reduced the cost-factor and FAQ spacing.
-- **Contact:** gave the introduction a concise local-handling explanation, balanced the form against a lighter pre-visit sidebar, grouped contact fields without an orphan half-row, and reduced fieldset gaps. Review, editing, and download remain local and honest.
+## Actual browser review and corrections
 
-Global changes include a 17px desktop / 16px mobile body, 15–16px action and form labels, context-specific image rules, a consistent 1200px maximum container, shorter content-driven sections, full-width FAQ lists, logical RTL spacing, and cleanup of superseded styles. The broad `img` cover/100%-height rule has been removed. No image is enlarged beyond its source's native width in the normal layouts.
+Before screenshots of all six pages were captured at 390, 768, and 1440px. New compositions were viewed directly in Brave/Chromium, including light, dark, tablet, mobile, and representative RTL screenshots. Visual corrections included vertically balancing the featured-repair tiles, reorganizing the five secondary services into a two-plus-three directory, shortening estimate copy, replacing the cropped earbuds source, and adjusting the product cover to preserve full source framing. Screenshots and raw reports are outside the repository under `/private/tmp/pp3-*`.
 
-## Actual browser review
+The release suite checks all six pages at 320, 390, 768, 1024, 1280, and 1440px, in light/dark and LTR/RTL: 144 combinations. It verifies overflow, image loading, visible heading/button boundaries, JavaScript errors, and failed requests. Screenshots are captured at 390, 768, 1024, and 1440px in both themes, plus representative RTL views.
 
-Before screenshots of all six live pages were captured at 390px, 768px, and 1440px. After screenshots of all six redesigned pages were captured at the same widths in light and dark mode. Additional dark RTL samples covered Services and Contact. Individual images, typography, grid proportions, and section spacing were reviewed, rather than relying only on overflow checks. This review drove further corrections to the symptom index, tablet pricing, FAQ layout, and hidden-linebreak spacing.
+Interaction coverage: desktop/mobile Home dropdown, physical navigation and refreshes, all rendered internal links, mobile scroll lock and Escape/outside close, persistent theme/direction, repair selector, guided finder with device/symptom booking context, four-step journey, six service booking links, FAQs, catalog categories/search/sort/reset, product modal/Escape/enquiry, pricing with device prefill, required/email/phone/date/consent errors, local review/download/edit, privacy dialog, and back-to-top.
 
-The final local browser suite covered six pages × six widths (320, 390, 768, 1024, 1280, 1440) × two themes × two reading directions: 144 layout combinations. It also exercised navigation, dropdowns, the mobile menu, preference persistence, issue selection, the guided finder, the repair journey, service prefill, catalog categories/search/sort/reset/details, accessory context, pricing selections, form validation, request review/download/edit, FAQs, dialog closing, and back-to-top. It checks direct visits, refreshes, and all rendered internal links. Machine-readable results are in `verification.json`.
+Additional fixes have direct browser assertions: generic accessory enquiry preselection; required/optional fields when switching request type; reset restoring sort as well as search/category; and Home dropdown Escape restoring focus to its summary. Native dialogs retain focus trapping and return focus on close.
 
-Screenshots and raw runtime reports are kept outside the published source to avoid serving test artifacts. `browser-check.mjs` accepts `QA_BASE_URL`, `QA_ROOT_URL`, `QA_OUTPUT_DIR`, `PLAYWRIGHT_MODULE`, and `BROWSER_EXECUTABLE` so the same checks can run against the actual GitHub Pages URL after publication. Delivery also verifies the published HTML matches the source and the deployment run corresponds to the pushed commit.
-
-## Repeatable dependency-free checks
+## Repeatable checks
 
 ```sh
 python3 documentation/check-static.py
 node documentation/check-behavior.mjs
 ```
 
-These validate physical HTML references, local fonts/images/module imports, syntax, architecture cleanup, request handling, relative links, safe rendering, and catalog behavior. Neither is a build step. The GitHub Pages workflow now runs them before upload.
+Optional `browser-check.mjs` accepts `PLAYWRIGHT_MODULE`, `BROWSER_EXECUTABLE`, `QA_BASE_URL`, `QA_ROOT_URL`, and `QA_OUTPUT_DIR`. Browser tooling is installed outside this repository. These checks are verification, not a website build.
 
-## Remaining business configuration
+## Limitations
 
-No real booking endpoint or business contact details have been provided. Requests stay in page memory until a delivery endpoint is configured; no appointment is confirmed. Approved prices are not invented. Verification uses Chromium; Safari and Firefox remain untested.
+No real submission endpoint or approved business contact details were supplied. Requests remain local, and no appointment is confirmed. Real delivery is therefore unverified. Safari, Firefox, physical devices, and assistive-technology sessions have not been tested. Legacy bookmarks initially return a server 404 before `404.html` redirects; all current links use physical HTML files directly.

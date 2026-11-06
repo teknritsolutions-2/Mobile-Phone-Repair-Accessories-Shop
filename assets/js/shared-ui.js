@@ -65,23 +65,22 @@ export function sectionHeading(kicker, title, right = "") {
 
 export function Logo() {
   return `<a class="brand" href="${pageUrl()}" aria-label="Port and Pixel home">
-    <svg class="brand-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-      <path d="M7 29V7h14v13H7" stroke="currentColor" stroke-width="3"/>
-      <path d="M21 20h8v9H15v-9" stroke="currentColor" stroke-width="3"/>
-      <path d="M27 5h4v4h-4z" fill="currentColor"/>
+    <svg class="brand-mark" viewBox="0 0 34 40" fill="none" aria-hidden="true">
+      <rect x="5" y="3" width="24" height="34" rx="5" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M12 3v5h10V3M12 31h10M17 15v10m-4-6h8" stroke="currentColor" stroke-width="2.5"/>
     </svg>
     <span class="brand-name">port<span class="brand-amp">&</span>pixel<span class="brand-dot">.</span></span>
   </a>`;
 }
 
 export function ProductCard(product) {
-  return `<article class="product-card">
+  return `<article class="product-card" data-kind="${product.id}">
     <button class="product-card__visual" data-product="${product.id}" aria-label="View details for ${product.name}">
       ${photo(product.image, product.name)}<span class="product-card__open">${icon("plus")}</span>
     </button>
     <p class="product-card__category">${product.category}</p>
     <h3><button class="plain-link" data-product="${product.id}">${product.name}</button></h3>
     <p class="product-card__attribute">${product.attribute}</p>
-    ${textLink("Enquire about this item", "contact", { product: product.id })}
+    ${textLink("Enquire", "contact", { product: product.id })}
   </article>`;
 }

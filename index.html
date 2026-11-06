@@ -7,7 +7,7 @@
       name="description"
       content="Professional phone repair services, considered accessories, and clear device-specific estimates."
     />
-    <meta name="theme-color" content="#315FE8" />
+    <meta name="theme-color" content="#151719" />
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
     <title>Phone repairs. Everyday essentials. | Port &amp; Pixel</title>
     <script>
@@ -30,14 +30,14 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <div id="site-header"></div>
     <main id="main">
-      <section class="showroom-hero">
-        <div class="container hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow">Your phone repair studio</p>
-            <h1>Repair your phone. <br /><span>Keep your day moving.</span></h1>
+      <section class="studio-hero">
+        <div class="container studio-hero__grid">
+          <div class="studio-hero__copy">
+            <p class="eyebrow">Port &amp; Pixel / Repair studio</p>
+            <h1>Your phone deserves a <em>second shot.</em></h1>
             <p>
-              Screen cracked? Battery fading? Get practical help, a clear
-              estimate, and a little more life from the phone you know.
+              Screen damage, battery trouble, charging issues and more. Get your
+              device back into action.
             </p>
             <div class="button-group">
               <a class="button" href="pages/contact.html"
@@ -46,19 +46,19 @@
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
                 >
                   <path d="M4 12h15m-6-6 6 6-6 6" /></svg></a
-              ><a class="button button--text" href="pages/home2.html"
-                >Find your fix<svg
+              ><a class="button button--light" href="pages/services.html"
+                >View services<svg
                   class="icon directional"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
@@ -66,171 +66,138 @@
                   <path d="M4 12h15m-6-6 6 6-6 6" /></svg
               ></a>
             </div>
-            <div class="hero-assurances">
-              <span
-                ><svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <circle cx="10" cy="10" r="6" />
-                  <path d="m15 15 6 6" /></svg
-                >Careful assessment</span
-              ><span
-                ><svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="m5 12 4 4L19 6" /></svg
-                >Clear options</span
-              >
+            <div class="studio-proof">
+              <span>Assessment first</span><span>Clear repair options</span>
             </div>
           </div>
-          <figure class="hero-photo">
-            <div class="showroom-hero__image">
-              <img
-                class=""
-                src="assets/images/workshop-detail.jpg"
-                alt="A technician examining smartphone components under a repair microscope"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </div>
+          <figure class="studio-hero__photo">
+            <img
+              src="assets/images/studio-repair.jpg"
+              alt="Technician repairing an open smartphone with a precision screwdriver at the workbench"
+              fetchpriority="high"
+              decoding="async"
+            />
             <figcaption>
-              <span>At the workbench</span>Attention where it matters.
+              <span>Inside the repair studio</span
+              ><span>Care in every detail.</span>
             </figcaption>
           </figure>
         </div>
       </section>
-      <section class="quick-repair-section">
-        <div class="container">
-          <div class="service-selector" id="quick-repairs">
-            <div class="service-selector__heading">
+      <section class="discovery section">
+        <div class="container service-selector">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / Find your repair</p>
               <h2>What needs attention?</h2>
-              <p>Choose the issue. Find your next step.</p>
             </div>
-            <div class="service-options" aria-label="Choose a repair issue">
-              <button data-issue="screen" aria-pressed="true">
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="6" y="2" width="12" height="20" rx="2" />
-                  <path d="m13 5-3 6 4 2-3 5m0 1h2" /></svg
-                ><span>Broken screen</span></button
-              ><button data-issue="battery" aria-pressed="false">
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="7" width="17" height="11" rx="2" />
-                  <path d="M22 10v5M7 10v5m4-5v5m4-5v5" /></svg
-                ><span>Weak battery</span></button
-              ><button data-issue="charging" aria-pressed="false">
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M9 2v4m6-4v4M7 6h10v4a5 5 0 0 1-10 0V6Zm5 9v7"
-                  /></svg
-                ><span>Charging trouble</span></button
-              ><button data-issue="software" aria-pressed="false">
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="3" />
-                  <path d="m9 8-4 4 4 4m6-8 4 4-4 4" /></svg
-                ><span>Software issues</span></button
-              ><button data-issue="camera" aria-pressed="false">
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M8 5 10 2h4l2 3h4v16H4V5h4Z" />
-                  <circle cx="12" cy="12" r="4" /></svg
-                ><span>Camera problems</span></button
-              ><button data-issue="audio" aria-pressed="false">
-                <svg
-                  class="icon"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M3 10h4l5-5v14l-5-5H3v-4Zm13-3a7 7 0 0 1 0 10m3-13a11 11 0 0 1 0 16"
-                  /></svg
-                ><span>Speaker or microphone</span>
-              </button>
-            </div>
-            <div
-              class="service-selection"
-              id="service-selection"
-              aria-live="polite"
-            ></div>
           </div>
+          <div class="service-options">
+            <button data-issue="screen" aria-pressed="false">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="6" y="2" width="12" height="20" rx="2" />
+                <path d="m13 5-3 6 4 2-3 5" /></svg
+              ><span>Broken screen</span></button
+            ><button data-issue="battery" aria-pressed="false">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="7" width="17" height="11" rx="2" />
+                <path d="M22 10v5M7 10v5m4-5v5m4-5v5" /></svg
+              ><span>Weak battery</span></button
+            ><button data-issue="charging" aria-pressed="false">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 2v4m6-4v4M7 6h10v4a5 5 0 0 1-10 0V6Zm5 9v7" /></svg
+              ><span>Charging trouble</span></button
+            ><button data-issue="software" aria-pressed="false">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <path d="m9 8-4 4 4 4m6-8 4 4-4 4" /></svg
+              ><span>Software issues</span></button
+            ><button data-issue="camera" aria-pressed="false">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 5 10 2h4l2 3h4v16H4V5h4Z" />
+                <circle cx="12" cy="12" r="4" /></svg
+              ><span>Camera problems</span></button
+            ><button data-issue="audio" aria-pressed="false">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 10h4l5-5v14l-5-5H3v-4Zm13-3a7 7 0 0 1 0 10" /></svg
+              ><span>Speaker or microphone</span>
+            </button>
+          </div>
+          <div
+            class="service-selection"
+            id="service-selection"
+            aria-live="polite"
+          ></div>
         </div>
       </section>
-      <section class="section">
+      <section class="section featured-repairs">
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">The right repair</p>
-              <h2>Small parts. <br />A big part of your day.</h2>
+              <p class="eyebrow">02 / On the workbench</p>
+              <h2>Small parts. Big difference.</h2>
             </div>
             <a class="button button--text" href="pages/services.html"
-              >All repair services<svg
+              >All services<svg
                 class="icon directional"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -238,46 +205,40 @@
                 <path d="M4 12h15m-6-6 6 6-6 6" /></svg
             ></a>
           </div>
-          <div class="repair-editorial">
-            <a class="repair-feature" href="pages/services.html#screen"
-              ><div class="repair-feature__image">
-                <img
-                  class=""
-                  src="assets/images/screen-repair.jpg"
-                  alt="Careful hands servicing an open phone with a precision screwdriver"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="repair-feature__copy">
-                <h3>A clearer view.</h3>
-                <p>
-                  Cracks, flickering, or a screen that doesn’t respond. Let’s
-                  start with a display assessment.
-                </p>
-                <span class="inline-action"
-                  >Screen repair
-                  <svg
-                    class="icon"
+          <div class="repair-showcase">
+            <article class="showcase-main">
+              <img
+                src="assets/images/screen-repair.jpg"
+                alt="Precision screwdriver working on a smartphone display assembly"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <p class="eyebrow">Display repair</p>
+                <h3>A clearer view ahead.</h3>
+                <a class="button button--text" href="pages/services.html#screen"
+                  >Screen replacement<svg
+                    class="icon directional"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="1.6"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path d="M5 19 19 5M5 5h14v14" /></svg
-                ></span></div
-            ></a>
-            <div class="repair-editorial__list">
-              <a href="pages/services.html#battery"
+                    <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                ></a>
+              </div>
+            </article>
+            <div class="showcase-side">
+              <a class="repair-tile" href="pages/services.html#battery"
                 ><svg
                   class="icon"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
@@ -287,29 +248,26 @@
                 </svg>
                 <div>
                   <h3>Battery Replacement</h3>
-                  <p>
-                    Give everyday use a little more staying power. We check the
-                    battery before recommending a change.
-                  </p>
+                  <p>Less battery anxiety. More everyday life.</p>
                 </div>
                 <svg
                   class="icon directional"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
                 >
                   <path d="M4 12h15m-6-6 6 6-6 6" /></svg></a
-              ><a href="pages/services.html#charging"
+              ><a class="repair-tile" href="pages/services.html#charging"
                 ><svg
                   class="icon"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
@@ -318,29 +276,26 @@
                 </svg>
                 <div>
                   <h3>Charging Port Repair</h3>
-                  <p>
-                    A charging problem is not always the port. A closer look
-                    helps establish the right next step.
-                  </p>
+                  <p>A better connection starts with a closer look.</p>
                 </div>
                 <svg
                   class="icon directional"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
                 >
                   <path d="M4 12h15m-6-6 6 6-6 6" /></svg></a
-              ><a href="pages/services.html#software"
+              ><a class="repair-tile" href="pages/services.html#software"
                 ><svg
                   class="icon"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
@@ -350,17 +305,14 @@
                 </svg>
                 <div>
                   <h3>Software Troubleshooting</h3>
-                  <p>
-                    Practical help for a phone that feels slow, unstable, or
-                    simply unlike itself.
-                  </p>
+                  <p>Get past the freezes and restarts.</p>
                 </div>
                 <svg
                   class="icon directional"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
@@ -371,20 +323,22 @@
           </div>
         </div>
       </section>
-      <section class="repair-journey section">
+      <section class="section repair-journey">
         <div class="container">
-          <div class="journey-heading">
-            <p class="eyebrow">You stay in the conversation</p>
-            <h2>A straightforward repair. <br />From start to finish.</h2>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 / From fault to finish</p>
+              <h2>Four steps. One fresh start.</h2>
+            </div>
           </div>
-          <div class="journey-tabs" aria-label="Repair process">
+          <div class="journey-tabs">
             <button data-journey="0" aria-pressed="true">
               <span>01</span>Tell us the issue<svg
                 class="icon directional"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -392,12 +346,12 @@
                 <path d="M4 12h15m-6-6 6 6-6 6" />
               </svg></button
             ><button data-journey="1" aria-pressed="false">
-              <span>02</span>Consider the estimate<svg
+              <span>02</span>Review the estimate<svg
                 class="icon directional"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -410,7 +364,7 @@
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -418,12 +372,12 @@
                 <path d="M4 12h15m-6-6 6 6-6 6" />
               </svg></button
             ><button data-journey="3" aria-pressed="false">
-              <span>04</span>Repair & collection<svg
+              <span>04</span>Repair & collect<svg
                 class="icon directional"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -437,8 +391,7 @@
             <div id="journey-copy">
               <h3>Tell us what’s wrong</h3>
               <p>
-                Share your model and describe what has changed. No technical
-                vocabulary needed.
+                Share your model and what’s changed. We’ll take it from there.
               </p>
             </div>
           </div>
@@ -448,16 +401,16 @@
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">Carry on, well equipped</p>
-              <h2>The everyday edit.</h2>
+              <p class="eyebrow">04 / The daily essentials</p>
+              <h2>Made for your everyday.</h2>
             </div>
             <a class="button button--text" href="pages/accessories.html"
-              >Browse accessories<svg
+              >Shop the collection<svg
                 class="icon directional"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -465,123 +418,14 @@
                 <path d="M4 12h15m-6-6 6 6-6 6" /></svg
             ></a>
           </div>
-          <div class="retail-preview__grid">
-            <div class="retail-preview__intro">
-              <p class="eyebrow">Useful by design</p>
-              <h3>Protect it. <br />Power it. <br />Make it yours.</h3>
-              <p>
-                Considered extras for the device that goes everywhere with you.
-              </p>
-              <p class="small">Ask about fit, availability, and pricing.</p>
-            </div>
-            <article class="product-card">
-              <button
-                class="product-card__visual"
-                data-product="case"
-                aria-label="View details for Protective phone case"
-              >
-                <img
-                  class=""
-                  src="assets/images/case.jpg"
-                  alt="Protective phone case"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="product-card__open"
-                  ><svg
-                    class="icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 5v14M5 12h14" /></svg
-                ></span>
-              </button>
-              <p class="product-card__category">Cases & Protection</p>
-              <h3>
-                <button class="plain-link" data-product="case">
-                  Protective phone case
-                </button>
-              </h3>
-              <p class="product-card__attribute">
-                Everyday protection · Model-specific fit
-              </p>
-              <a
-                class="button button--text"
-                href="pages/contact.html?product=case"
-                >Enquire about this item<svg
-                  class="icon directional"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
-              ></a>
-            </article>
-            <article class="product-card">
-              <button
-                class="product-card__visual"
-                data-product="cable"
-                aria-label="View details for USB-C cable"
-              >
-                <img
-                  class=""
-                  src="assets/images/cable.jpg"
-                  alt="USB-C cable"
-                  loading="lazy"
-                  decoding="async"
-                /><span class="product-card__open"
-                  ><svg
-                    class="icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 5v14M5 12h14" /></svg
-                ></span>
-              </button>
-              <p class="product-card__category">Chargers & Cables</p>
-              <h3>
-                <button class="plain-link" data-product="cable">
-                  USB-C cable
-                </button>
-              </h3>
-              <p class="product-card__attribute">USB-C · Everyday connection</p>
-              <a
-                class="button button--text"
-                href="pages/contact.html?product=cable"
-                >Enquire about this item<svg
-                  class="icon directional"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
-              ></a>
-            </article>
-            <article class="product-card">
+          <div class="retail-grid">
+            <article class="product-card" data-kind="earbuds">
               <button
                 class="product-card__visual"
                 data-product="earbuds"
                 aria-label="View details for Wireless earbuds"
               >
                 <img
-                  class=""
                   src="assets/images/audio.jpg"
                   alt="Wireless earbuds"
                   loading="lazy"
@@ -592,7 +436,7 @@
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="1.6"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     aria-hidden="true"
@@ -612,12 +456,110 @@
               <a
                 class="button button--text"
                 href="pages/contact.html?product=earbuds"
-                >Enquire about this item<svg
+                >Enquire<svg
                   class="icon directional"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="1.5"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+              ></a>
+            </article>
+            <article class="product-card" data-kind="cable">
+              <button
+                class="product-card__visual"
+                data-product="cable"
+                aria-label="View details for USB-C cable"
+              >
+                <img
+                  src="assets/images/cable.jpg"
+                  alt="USB-C cable"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="product-card__open"
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                ></span>
+              </button>
+              <p class="product-card__category">Chargers &amp; Cables</p>
+              <h3>
+                <button class="plain-link" data-product="cable">
+                  USB-C cable
+                </button>
+              </h3>
+              <p class="product-card__attribute">USB-C · Everyday connection</p>
+              <a
+                class="button button--text"
+                href="pages/contact.html?product=cable"
+                >Enquire<svg
+                  class="icon directional"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+              ></a>
+            </article>
+            <article class="product-card" data-kind="case">
+              <button
+                class="product-card__visual"
+                data-product="case"
+                aria-label="View details for Protective phone case"
+              >
+                <img
+                  src="assets/images/case.jpg"
+                  alt="Protective phone case"
+                  loading="lazy"
+                  decoding="async"
+                /><span class="product-card__open"
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                ></span>
+              </button>
+              <p class="product-card__category">Cases &amp; Protection</p>
+              <h3>
+                <button class="plain-link" data-product="case">
+                  Protective phone case
+                </button>
+              </h3>
+              <p class="product-card__attribute">
+                Everyday protection · Model-specific fit
+              </p>
+              <a
+                class="button button--text"
+                href="pages/contact.html?product=case"
+                >Enquire<svg
+                  class="icon directional"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   aria-hidden="true"
@@ -628,195 +570,25 @@
           </div>
         </div>
       </section>
-      <section class="section transparency">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Repair with perspective</p>
-              <h2>Know the plan. <br />Then make the call.</h2>
-            </div>
-          </div>
-          <div class="transparency__points">
-            <article>
-              <svg
-                class="icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m5 12 4 4L19 6" />
-              </svg>
-              <h3>Assessment first</h3>
-              <p>
-                Similar symptoms can have different causes. An inspection helps
-                establish what needs attention.
-              </p>
-            </article>
-            <article>
-              <svg
-                class="icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m5 12 4 4L19 6" />
-              </svg>
-              <h3>Your options, explained</h3>
-              <p>
-                Discuss suitable parts, the full estimate, and expected timing
-                before agreeing to the work.
-              </p>
-            </article>
-            <article>
-              <svg
-                class="icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m5 12 4 4L19 6" />
-              </svg>
-              <h3>Care for what matters</h3>
-              <p>
-                Back up where possible. We’ll talk through device preparation
-                and any data considerations.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section class="section estimate-path">
-        <div class="container estimate-path__grid">
-          <div>
-            <p class="eyebrow">Clarity on cost</p>
-            <h2>One model. <br />One considered estimate.</h2>
-            <p>
-              Repair costs depend on your exact device and what it needs. Start
-              with the service.
-            </p>
-          </div>
-          <div class="estimate-path__links">
-            <a href="pages/pricing.html?service=screen"
-              ><svg
-                class="icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="6" y="2" width="12" height="20" rx="2" />
-                <path d="m13 5-3 6 4 2-3 5m0 1h2" />
-              </svg>
-              <h3>Screen Replacement</h3>
-              <span>Get an estimate</span
-              ><svg
-                class="icon directional"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 12h15m-6-6 6 6-6 6" /></svg></a
-            ><a href="pages/pricing.html?service=battery"
-              ><svg
-                class="icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="3" y="7" width="17" height="11" rx="2" />
-                <path d="M22 10v5M7 10v5m4-5v5m4-5v5" />
-              </svg>
-              <h3>Battery Replacement</h3>
-              <span>Get an estimate</span
-              ><svg
-                class="icon directional"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 12h15m-6-6 6 6-6 6" /></svg></a
-            ><a href="pages/pricing.html?service=charging"
-              ><svg
-                class="icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M9 2v4m6-4v4M7 6h10v4a5 5 0 0 1-10 0V6Zm5 9v7" />
-              </svg>
-              <h3>Charging Port Repair</h3>
-              <span>Get an estimate</span
-              ><svg
-                class="icon directional"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
-            ></a>
-          </div>
-        </div>
-      </section>
       <section class="closing-cta">
         <div class="container closing-cta__inner">
           <div>
-            <p class="eyebrow">Make room for a better day</p>
-            <h2>Keep the phone. <br />Lose the problem.</h2>
+            <p class="eyebrow">Let’s get it working</p>
+            <h2>Good phone.<br />Fresh start.</h2>
           </div>
-          <div>
-            <p>
-              Start with your model and what’s not working. <br />We’ll help you
-              understand the next step.
-            </p>
-            <a class="button" href="pages/contact.html"
-              >Start your repair request<svg
-                class="icon directional"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
-            ></a>
-          </div>
+          <a class="button" href="pages/contact.html"
+            >Book a repair<svg
+              class="icon directional"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+          ></a>
         </div>
       </section>
     </main>

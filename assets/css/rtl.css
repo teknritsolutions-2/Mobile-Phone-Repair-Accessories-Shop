@@ -1,7 +1,7 @@
-/* Logical properties handle layout. Only semantic arrows change direction. */
+/* Logical properties handle layout; only directional symbols need mirroring. */
 [dir="rtl"] .directional {
   transform: scaleX(-1);
 }
-[dir="rtl"] .price-service-list button[aria-pressed="true"] {
-  box-shadow: inset -3px 0 var(--blue);
+[dir="rtl"] .price-service-options [aria-pressed="true"] {
+  box-shadow: inset -3px 0 var(--accent);
 }

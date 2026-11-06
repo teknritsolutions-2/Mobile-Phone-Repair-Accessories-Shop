@@ -136,6 +136,8 @@ export function initNavigation() {
     if (event.key === "Escape") {
       setOpen(false);
       document.querySelectorAll(".home-dropdown").forEach((dropdown) => {
+        if (dropdown.open && dropdown.contains(document.activeElement))
+          dropdown.querySelector("summary").focus();
         dropdown.open = false;
       });
     }
@@ -171,12 +173,12 @@ export function ContactDetails() {
 export function Footer() {
   return `<footer class="site-footer">
     <div class="container footer-main">
-      <div class="footer-brand">${Logo()}<p>Precision for your phone.<br>Possibility for your everyday.</p>${ContactDetails()}</div>
+      <div class="footer-brand">${Logo()}<p>Repair studio. Everyday essentials.</p>${ContactDetails()}</div>
       <div><h3>The studio</h3><a href="${pageUrl()}">Home 1</a><a href="${pageUrl("home-2")}">Home 2</a><a href="${pageUrl("services")}">Repair services</a></div>
       <div><h3>The essentials</h3><a href="${pageUrl("accessories")}">Accessories</a><a href="${pageUrl("pricing")}">Pricing guide</a><a href="${pageUrl("contact")}">Contact & booking</a></div>
-      <div class="footer-note"><h3>Good to know</h3><p>Estimates are device-specific.<br>Preferred visits need confirmation.</p><button class="plain-link" data-privacy-open>Privacy & your request ${icon("diagonal")}</button></div>
+
     </div>
-    <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><p>Repair thoughtfully. Carry on.</p><button class="plain-link" data-back-top>Back to top ${icon("arrow", "up-arrow")}</button></div>
+    <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><button class="plain-link" data-privacy-open>Privacy & your request</button><button class="plain-link" data-back-top>Back to top ${icon("arrow", "up-arrow")}</button></div>
   </footer>`;
 }
 

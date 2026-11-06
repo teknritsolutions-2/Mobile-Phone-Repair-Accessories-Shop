@@ -1,14 +1,32 @@
+/* Carbon surfaces and accessible signal accents, independently tuned. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --canvas: #0d1118;
-  --surface: #171d28;
-  --ink: #f1f4fb;
-  --muted: #b0bacb;
-  --line: #30394a;
-  --blue: #8daaff;
-  --on-blue: #0d1838;
-  --blue-soft: #1c2b4c;
-  --image-bg: #e7e9ee;
-  --night: #080c12;
-  --error: #ff9da8;
+  --canvas: #101215;
+  --surface: #1c2024;
+  --ink: #f5f6f7;
+  --muted: #b5bbc2;
+  --line: #3b4148;
+  --accent: #ff6871;
+  --on-accent: #151719;
+  --soft: #252b31;
+  --image-bg: #eceeef;
+  --error: #ff8993;
+}
+:root[data-theme="dark"] .finder-recommendation {
+  background: #151719;
+  color: #f5f6f7;
+}
+:root[data-theme="dark"] .finder-recommendation > p:not(.eyebrow) {
+  color: #c9cbd0;
+}
+:root[data-theme="dark"] .closing-cta {
+  background: #1c2024;
+  color: #f5f6f7;
+  border-top: 1px solid var(--line);
+}
+
+:root[data-theme="dark"] .studio-hero .button:not(.button--light) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
 }

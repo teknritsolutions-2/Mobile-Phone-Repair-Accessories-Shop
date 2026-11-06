@@ -73,7 +73,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
         if (result.overflow || result.broken.length || result.outside.length)
           failures.push({ width, route, theme, dir, ...result });
         if (
-          ([390, 768, 1440].includes(width) && dir === "ltr") ||
+          ([390, 768, 1024, 1440].includes(width) && dir === "ltr") ||
           (width === 390 &&
             theme === "dark" &&
             dir === "rtl" &&
@@ -198,7 +198,10 @@ assert.match(await page.locator("#estimate-panel").innerText(), /Tablet/i);
 await page.locator("#estimate-panel .button").click();
 await page.waitForSelector('body[data-ready="true"]');
 assert.equal(await page.locator("#service").inputValue(), "camera");
-checks.push("Pricing category/device selectors and request-estimate link");
+assert.match(await page.locator("#description").inputValue(), /Device: Tablet/);
+checks.push(
+  "Pricing category/device selectors, preserved device, and request-estimate link",
+);
 await page.locator('[type="submit"]').click();
 assert.equal(await page.locator("#name").getAttribute("aria-invalid"), "true");
 await page.fill("#name", "QA Visitor");
@@ -233,6 +236,44 @@ assert.equal(await page.locator("#name").inputValue(), "QA Visitor");
 checks.push(
   "Required/email/phone/date/consent validation and local review/download/edit",
 );
+await go("pages/contact.html?service=accessory");
+assert.equal(await page.locator("#service").inputValue(), "accessory");
+assert.equal(await page.locator("#model").getAttribute("required"), null);
+await page.selectOption("#service", "screen");
+assert.notEqual(await page.locator("#model").getAttribute("required"), null);
+await page.selectOption("#service", "accessory");
+await page.fill("#name", "Accessory Visitor");
+await page.fill("#email", "visitor@example.com");
+await page.fill("#phone", "+91 98765 43210");
+await page.fill("#description", "Please help me find a compatible case.");
+await page.locator("#consent").check();
+await page.locator('[type="submit"]').click();
+assert.match(
+  await page.locator(".request-review").innerText(),
+  /Accessory enquiry/,
+);
+checks.push(
+  "Generic accessory preselection, request-type switching, and optional device fields",
+);
+await go("pages/accessories.html");
+await page.selectOption("#product-sort", "za");
+await page.fill("#product-search", "no match at all");
+await page.locator("#reset-catalog").click();
+assert.equal(await page.locator("#product-sort").inputValue(), "featured");
+assert.equal(await page.locator("#product-catalog .product-card").count(), 6);
+checks.push("Reset restores category, search, and sort together");
+await go("index.html");
+await page.locator(".desktop-nav summary").focus();
+await page.keyboard.press("Enter");
+await page.keyboard.press("Tab");
+await page.keyboard.press("Escape");
+assert.equal(
+  await page
+    .locator(".desktop-nav summary")
+    .evaluate((e) => e === document.activeElement),
+  true,
+);
+checks.push("Keyboard Home dropdown Escape restores summary focus");
 await page.setViewportSize({ width: 390, height: 844 });
 await go("index.html");
 await page.locator(".menu-toggle").click();
