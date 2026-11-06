@@ -517,6 +517,133 @@ for (const route of routes) {
   await page.waitForSelector('body[data-ready="true"]');
 }
 checks.push("All six physical pages at origin root");
+// Visibility regressions: functional boundaries and focus need stronger contrast than decorative rules.
+function contrast(foreground, background) {
+  const luminance = (color) =>
+    color
+      .match(/[\d.]+/g)
+      .slice(0, 3)
+      .map(Number)
+      .map((v) => v / 255)
+      .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4))
+      .reduce((sum, v, i) => sum + v * [0.2126, 0.7152, 0.0722][i], 0);
+  const a = luminance(foreground),
+    b = luminance(background);
+  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+}
+await page.setViewportSize({ width: 390, height: 667 });
+for (const theme of ["light", "dark"]) {
+  await go("pages/contact.html");
+  await page.evaluate(
+    (theme) => (document.documentElement.dataset.theme = theme),
+    theme,
+  );
+  const colors = await page
+    .locator("#name")
+    .evaluate((el) => ({
+      border: getComputedStyle(el).borderColor,
+      background: getComputedStyle(el).backgroundColor,
+    }));
+  assert.ok(
+    contrast(colors.border, colors.background) >= 3,
+    `${theme} field boundary contrast`,
+  );
+  for (const [route, selector] of [
+    ["index.html", ".studio-hero"],
+    ["pages/home2.html", ".home2-banner"],
+    ["pages/home2.html", ".finder-recommendation"],
+    ["pages/services.html", ".closing-cta"],
+  ]) {
+    await go(route);
+    await page.evaluate(
+      (theme) => (document.documentElement.dataset.theme = theme),
+      theme,
+    );
+    await page.keyboard.press("Tab");
+    await page.locator(`${selector} .button`).first().focus();
+    const colors = await page
+      .locator(`${selector} .button`)
+      .first()
+      .evaluate((el) => ({
+        ring: getComputedStyle(el).outlineColor,
+        width: getComputedStyle(el).outlineWidth,
+        background: getComputedStyle(
+          el.closest(
+            ".studio-hero,.home2-banner,.finder-recommendation,.closing-cta",
+          ),
+        ).backgroundColor,
+      }));
+    assert.equal(colors.width, "3px");
+    assert.ok(
+      contrast(colors.ring, colors.background) >= 3,
+      `${theme} focus contrast for ${selector}`,
+    );
+  }
+}
+for (const viewport of [
+  { width: 390, height: 667 },
+  { width: 768, height: 600 },
+  { width: 844, height: 390 },
+]) {
+  await page.setViewportSize(viewport);
+  for (const dir of ["ltr", "rtl"]) {
+    await go("pages/accessories.html");
+    await page.evaluate((dir) => {
+      document.documentElement.dir = dir;
+      document.documentElement.dataset.theme = "dark";
+    }, dir);
+    assert.ok(
+      await page
+        .locator("#product-sort")
+        .evaluate((el) => parseFloat(getComputedStyle(el).fontSize) >= 16),
+    );
+    for (const id of [
+      "case",
+      "cable",
+      "glass",
+      "earbuds",
+      "charger",
+      "stand",
+    ]) {
+      await page.locator(`[data-product="${id}"]`).first().click();
+      await page
+        .locator("#product-dialog")
+        .evaluate((el) => (el.scrollTop = el.scrollHeight));
+      const visible = await page.locator("#product-dialog").evaluate((el) => {
+        const d = el.getBoundingClientRect(),
+          r = el.querySelector(".dialog-close").getBoundingClientRect();
+        return (
+          r.top >= d.top &&
+          r.bottom <= d.bottom &&
+          r.left >= d.left &&
+          r.right <= d.right
+        );
+      });
+      assert.ok(
+        visible,
+        `Scrolled close control at ${viewport.width}×${viewport.height} ${dir} ${id}`,
+      );
+      await page.locator("#product-dialog .dialog-close").click();
+      assert.equal(
+        await page.locator("#product-dialog").evaluate((el) => el.open),
+        false,
+      );
+    }
+    await page.locator(".site-footer [data-privacy-open]").click();
+    await page
+      .locator("#privacy-dialog")
+      .evaluate((el) => (el.scrollTop = el.scrollHeight));
+    await page.locator("#privacy-dialog .dialog-close").click();
+    assert.equal(
+      await page.locator("#privacy-dialog").evaluate((el) => el.open),
+      false,
+    );
+  }
+}
+checks.push(
+  "Readable field boundaries and dark-panel keyboard focus; 16px sorting; persistent close controls for every product and privacy dialog on short phone/tablet/landscape screens in LTR/RTL",
+);
+
 const report = { layoutCases: 144, failures, errors, failedRequests, checks };
 console.log(JSON.stringify(report, null, 2));
 await writeFile(`${output}/report.json`, JSON.stringify(report, null, 2));

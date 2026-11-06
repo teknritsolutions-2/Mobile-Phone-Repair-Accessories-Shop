@@ -52,3 +52,7 @@ Explore now lists Home 1, Home 2, About, Services, Accessories, and Contact in t
 ## Home 2 banner and demo-content cleanup
 
 The new opening uses a locally hosted, real Pexels repair photograph with dark directional gradients, a prominent headline, repair-booking and finder links, and a mobile treatment that retains the whole 3:2 image. The image and copy placement were reviewed at 390/768/1440px in both reading directions. The old opening finder now follows the service browser and repair spotlight. The six-page browser suite passes all 144 responsive/theme/direction cases and verifies that the main Home 2 content contains no Home 2 label, sample price or illustrated demonstration copy. Screenshots and reports are outside the repository under `/private/tmp/pp-home2-banner/`.
+
+## Visibility and responsive audit
+
+See [visibility-audit.md](visibility-audit.md) for measured before/after findings, the previous Waylark reference, all executed checks and testing limits. The release strengthens functional borders, dark-panel focus rings and mobile sort readability, and keeps dialog close controls visible during scrolling. Existing 144-case site checks and new short-screen/LTR/RTL dialog regressions pass.

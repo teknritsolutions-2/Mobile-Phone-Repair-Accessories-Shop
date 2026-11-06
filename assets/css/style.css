@@ -6,6 +6,8 @@
   --ink: #1d2830;
   --muted: #566570;
   --line: #d8e1e5;
+  --control-line: #6f818d;
+  --focus-ring: var(--accent);
   --accent: #376d83;
   --on-accent: #fff;
   --soft: #dfecf0;
@@ -122,7 +124,7 @@ textarea {
   color: var(--on-accent);
 }
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 4px;
 }
 [hidden] {
@@ -189,7 +191,7 @@ textarea {
 }
 .button--outline {
   background: transparent;
-  border-color: var(--line);
+  border-color: var(--control-line);
   color: var(--ink);
 }
 .button--light {
@@ -385,6 +387,7 @@ body.menu-is-open .back-to-top {
 }
 /* Shared closing call to action and site directory. */
 .closing-cta {
+  --focus-ring: #b9dde8;
   background: var(--dark-surface);
   color: var(--on-dark);
   padding-block: 36px;
@@ -479,6 +482,7 @@ body.menu-is-open .back-to-top {
 }
 /* Home 1 — immersive studio, compact discovery, asymmetrical catalog. */
 .studio-hero {
+  --focus-ring: #b9dde8;
   background: #1d2830;
   color: #fff;
 }
@@ -785,6 +789,7 @@ body.menu-is-open .back-to-top {
 }
 /* Home 2 — photographic opening banner; finder follows the service introduction. */
 .home2-banner {
+  --focus-ring: #b9dde8;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -1018,7 +1023,7 @@ body.menu-is-open .back-to-top {
   align-items: center;
   gap: 10px;
   background: var(--canvas);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
   padding: 16px 10px;
   font-size: 15px;
   border-radius: 3px;
@@ -1040,6 +1045,7 @@ body.menu-is-open .back-to-top {
   margin-top: 22px;
 }
 .finder-recommendation {
+  --focus-ring: #b9dde8;
   padding: 32px;
   background: var(--ink);
   color: var(--canvas);
@@ -1864,7 +1870,7 @@ body[data-page="services"] .closing-cta h2 {
   align-items: center;
   gap: 12px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
   padding-inline: 16px;
   flex: 1;
   max-width: 620px;
@@ -1886,10 +1892,10 @@ body[data-page="services"] .closing-cta h2 {
   font-size: 15px;
 }
 .sort-control select {
-  font-size: 15px;
+  font-size: 16px;
   padding: 12px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
 }
 .catalog-categories {
   display: flex;
@@ -1897,7 +1903,7 @@ body[data-page="services"] .closing-cta h2 {
   gap: 8px;
 }
 .catalog-categories button {
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
   background: var(--surface);
   padding: 10px 13px;
   font-size: 14px;
@@ -1996,7 +2002,7 @@ body[data-page="services"] .closing-cta h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
   background: var(--canvas);
   padding: 13px 10px;
   font-size: 15px;
@@ -2174,7 +2180,7 @@ body[data-page="services"] .closing-cta h2 {
   width: 100%;
   min-height: 50px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-line);
   border-radius: 3px;
   padding: 12px 13px;
   font-size: 16px;
@@ -2339,10 +2345,13 @@ dialog::backdrop {
   backdrop-filter: blur(4px);
 }
 .dialog-close {
-  position: absolute;
+  position: sticky;
   top: 12px;
-  inset-inline-end: 12px;
   z-index: 2;
+  display: flex;
+  width: 44px;
+  margin-block: 12px -56px;
+  margin-inline: auto 12px;
   background: var(--surface);
   border-radius: 50%;
 }
