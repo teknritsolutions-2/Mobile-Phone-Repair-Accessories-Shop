@@ -383,7 +383,7 @@ body.menu-is-open .back-to-top {
     bottom: max(10px, env(safe-area-inset-bottom));
   }
 }
-/* Shared close and compact footer. */
+/* Shared closing call to action and site directory. */
 .closing-cta {
   background: var(--dark-surface);
   color: var(--on-dark);
@@ -403,33 +403,53 @@ body.menu-is-open .back-to-top {
 }
 .site-footer {
   background: var(--surface);
-  padding-top: 38px;
+  padding-top: 48px;
   border-top: 1px solid var(--line);
 }
 .footer-main {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1.15fr 1fr;
   gap: 45px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
-.footer-main h3 {
-  font: 650 15px var(--body);
+.footer-link-group {
+  min-width: 0;
+}
+.footer-link-group h3 {
+  font: 650 14px var(--body);
   letter-spacing: 0;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
-.footer-main > div > a:not(.brand) {
-  display: block;
-  font-size: 15px;
+.footer-link-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-link-group li + li {
+  margin-top: 3px;
+}
+.footer-link-group a {
+  display: inline-block;
+  padding-block: 5px;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--muted);
-  margin-top: 8px;
 }
-.footer-main > div > a:hover {
+.footer-link-group a:hover {
   color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .footer-brand > p {
-  font-size: 15px;
-  margin-top: 15px;
-  max-width: 270px;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 17px;
+  max-width: 280px;
+}
+.footer-brand > .button {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--accent);
 }
 .business-details {
   display: grid;
@@ -2560,7 +2580,14 @@ dialog::backdrop {
     font-size: 44px;
   }
   .footer-main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
+  }
+  .footer-brand {
+    grid-column: 1/-1;
+  }
+  .footer-brand > p {
+    max-width: 550px;
   }
 }
 @media (max-width: 799px) {
@@ -2717,9 +2744,6 @@ dialog::backdrop {
   }
   .booking-aside li + li {
     margin-top: 18px;
-  }
-  .footer-main {
-    grid-template-columns: 1.3fr 1fr 1fr;
   }
   .footer-brand .brand-name {
     font-size: 22px;
@@ -2897,6 +2921,17 @@ dialog::backdrop {
   }
   .footer-brand > p {
     max-width: none;
+  }
+  .footer-link-group:last-child {
+    grid-column: 1/-1;
+  }
+  .footer-link-group:last-child ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3px 24px;
+  }
+  .footer-link-group:last-child li + li {
+    margin-top: 0;
   }
   .footer-bottom {
     flex-wrap: wrap;

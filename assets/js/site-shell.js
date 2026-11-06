@@ -171,12 +171,33 @@ export function ContactDetails() {
 }
 
 export function Footer() {
+  const group = (title, items) =>
+    `<nav class="footer-link-group" aria-label="${title}"><h3>${title}</h3><ul>${items.map(([label, href]) => `<li><a href="${href}">${label}</a></li>`).join("")}</ul></nav>`;
   return `<footer class="site-footer">
     <div class="container footer-main">
-      <div class="footer-brand">${Logo()}<p>Repair studio. Everyday essentials.</p>${ContactDetails()}</div>
-      <div><h3>The studio</h3><a href="${pageUrl()}">Home 1</a><a href="${pageUrl("home-2")}">Home 2</a><a href="${pageUrl("services")}">Repair services</a></div>
-      <div><h3>The essentials</h3><a href="${pageUrl("accessories")}">Accessories</a><a href="${pageUrl("pricing")}">Pricing guide</a><a href="${pageUrl("contact")}">Contact & booking</a></div>
-
+      <div class="footer-brand">${Logo()}<p>Keep your phone working and your everyday connected. Explore repair options, find useful accessories, and prepare for your next visit.</p><a class="button button--text" href="${pageUrl("home-2")}#repair-finder">Find my repair ${icon("arrow", "directional")}</a>${ContactDetails()}</div>
+      ${group("Explore", [
+        ["The repair studio", pageUrl()],
+        ["Repair finder", `${pageUrl("home-2")}#repair-finder`],
+        ["All repair services", pageUrl("services")],
+        ["Accessories", `${pageUrl("accessories")}#catalog`],
+        ["Pricing guide", pageUrl("pricing")],
+        ["Contact & booking", pageUrl("contact")],
+      ])}
+      ${group("Repair services", [
+        ["Screen replacement", `${pageUrl("services")}#screen`],
+        ["Battery replacement", `${pageUrl("services")}#battery`],
+        ["Charging port repair", `${pageUrl("services")}#charging`],
+        ["Software troubleshooting", `${pageUrl("services")}#software`],
+        ["Camera repair", `${pageUrl("services")}#camera`],
+        ["Speaker & microphone", `${pageUrl("services")}#audio`],
+      ])}
+      ${group("Plan your visit", [
+        ["Start a repair request", `${pageUrl("contact")}#booking-form`],
+        ["How repairs work", `${pageUrl("services")}#repair-process`],
+        ["Repair FAQs", `${pageUrl("services")}#repair-faqs`],
+        ["Before your visit", `${pageUrl("contact")}#before-your-visit`],
+      ])}
     </div>
     <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><button class="plain-link" data-privacy-open>Privacy & your request</button></div>
   </footer>`;

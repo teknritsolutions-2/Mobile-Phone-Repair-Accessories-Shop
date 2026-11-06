@@ -49,7 +49,7 @@ for file in (ROOT / 'assets/js').glob('*.js'):
     content = file.read_text()
     for path in re.findall(r'from\s+[\'"]([^\'"]+)[\'"]', content):
         checked += 1
-        if not (file.parent / path).resolve().is_file():
+        if not (file.parent / unquote(urlsplit(path).path)).resolve().is_file():
             errors.append(f'{file.name}: missing import {path}')
     result = subprocess.run(['node', '--check', str(file)], capture_output=True, text=True)
     if result.returncode:

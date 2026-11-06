@@ -40,3 +40,9 @@ Services now uses six full-width editorial rows with alternating photo/text plac
 All six real photograph files are exactly 1200×800, with matching HTML dimensions and a 3:2 rendered ratio. A new software-update photograph replaces the previous 1200×904 image; a controlled background trim preserves the complete phone. Photos display edge to edge without padded frames or hover zoom. Exact sources and framing decisions are documented in `image-credits.md` and credited on the published page.
 
 Static and behavior checks pass. The browser suite passes 144 layout/theme/direction combinations and checks native dimensions plus equal rendered image widths/heights at all six screen widths. All six service booking prefills and keyboard-accessible source credits pass. Visual review covers desktop, tablet and mobile in light and dark modes. Screenshots and reports remain outside the repository under `/private/tmp/pp-service-rows/`.
+
+## Expanded shared footer
+
+The footer now has 16 directory links grouped into Explore, Repair services, and Plan your visit, plus a repair-finder link in the brand introduction. All six physical pages and all six repair anchors are reachable. New section IDs link directly to repair FAQs, the repair process, and pre-visit guidance; booking links reach the existing form. No placeholder pages or contact details were added.
+
+The desktop footer uses four columns; tablet places the introduction above three link groups, and mobile uses two link columns with a separate visit-planning row. Light/dark and RTL layouts pass the existing 144-case browser suite. A focused browser check verifies all footer destinations and fragments from each of the six pages, the privacy dialog, and screenshots at 390/768/1440px. Evidence is outside the repository in `/private/tmp/pp-footer/`. Updated stylesheet and module URLs refresh the shared footer for returning visitors; static checks resolve query-versioned module imports.
