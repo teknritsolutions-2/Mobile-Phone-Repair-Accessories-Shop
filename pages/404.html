@@ -46,10 +46,10 @@
         This page may have moved. Visit the Port &amp; Pixel homepage to explore
         repairs, accessories, and booking.
       </p>
-      <a id="home-link" href="./">Return to the studio</a>
+      <a id="home-link" href="../index.html">Return to the studio</a>
     </main>
     <script>
-      // GitHub serves this file at the requested URL. Resolve only known legacy routes.
+      // If configured as the host’s error page, resolve only known legacy routes.
       const parts = location.pathname.split("/").filter(Boolean);
       const legacy = {
         services: "services",

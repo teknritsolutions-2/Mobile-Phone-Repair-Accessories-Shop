@@ -36,7 +36,7 @@ class References(HTMLParser):
             if not target.is_file():
                 errors.append(f'{self.file.relative_to(ROOT)}: missing {value}')
 
-for file in PAGES:
+for file in [*PAGES, ROOT / "pages/404.html"]:
     if not file.exists():
         errors.append(f'Missing page: {file}')
         continue
@@ -69,4 +69,4 @@ for obsolete in ['src', 'dist', 'node_modules', 'package.json', 'package-lock.js
 
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'PASS: {len(PAGES)} physical pages, {checked} local references, all JS syntax, local fonts, and architecture cleanup.')
+print(f'PASS: {len(PAGES)} main pages plus pages/404.html, {checked} local references, all JS syntax, local fonts, and architecture cleanup.')

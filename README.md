@@ -19,10 +19,11 @@ Open `http://localhost:4173/`. No installation, framework, build, or custom serv
 - `pages/accessories.html`: searchable, filterable product collection.
 - `pages/pricing.html`: connected service/device estimate guide.
 - `pages/contact.html`: repair requests and accessory enquiries.
+- `pages/404.html`: standalone error page with a homepage link and legacy-route compatibility map.
 - `assets/css/`: local fonts, shared/responsive styles, dark theme, RTL adjustments.
 - `assets/js/`: shared shell, feature modules, service/product data, configuration.
 - `assets/images/`, `assets/fonts/`: local assets and font licenses.
-- `documentation/`: credits and optional verification tools, excluded from deployment.
+- `documentation/`: credits and optional local verification tools.
 
 Main content is physical HTML. JavaScript inserts the common header/footer and enables interactions. All primary links use physical files and relative URLs, including on the GitHub Pages repository subpath.
 
@@ -32,11 +33,11 @@ Edit business details and the optional submission endpoint in `assets/js/site-co
 
 Without an endpoint, request details stay in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is delivered and no appointment is confirmed. Reloading clears entries. Only theme and direction preferences use local storage. A configured endpoint must accept POST JSON, validate server-side, and confirm actual acceptance before the UI reports delivery.
 
-## GitHub Pages
+## Hosting
 
-The Actions workflow checks all seven pages, local references, JavaScript syntax, and request/catalog behavior. It copies only `index.html`, `404.html`, `.nojekyll`, `pages/`, and `assets/` into the public artifact. This is static file collection, with no build or dependencies. Tests, documentation, and screenshots are not published.
+The project contains no `.openai` hosting configuration, GitHub Actions workflow, `.gitignore`, or `.nojekyll` file. To publish it, upload `index.html`, `pages/`, and `assets/` to a static host. Documentation and verification tools can stay outside the published files.
 
-Old `/services`, `/accessories`, `/pricing`, `/contact`, `/home-2`, and `/home2` bookmarks use one compatibility map in `404.html`. It preserves queries and anchors and redirects only recognized paths to physical pages. GitHub initially returns HTTP 404 for these old bookmarks before the browser redirect; current physical page URLs return 200 directly. Unknown paths show a helpful homepage link. There are no route-mirror directories.
+The error page is `pages/404.html`. Configure your host to use that file for missing URLs if it supports a custom error-document path. Its compatibility map preserves queries and anchors for recognized legacy routes; direct visits also provide a working homepage link. [GitHub Pages requires a root-level `404.html` for automatic custom errors](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site), so the requested nested placement will not automatically handle missing URLs there. Automatic Actions deployment is no longer configured in this repository.
 
 Optional checks and actual verification coverage are in `documentation/verification.md`. Image sources and font licenses are recorded in `documentation/image-credits.md`.
 
