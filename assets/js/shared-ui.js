@@ -1,5 +1,5 @@
-import { formatPrice } from "./product-data.js?v=cards-14";
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=cards-14";
+import { formatPrice } from "./product-data.js?v=stand-16";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=stand-16";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -58,7 +58,7 @@ const imageSizes = {
   "protector-catalog.jpg": [1000, 750],
   "earbuds-catalog.jpg": [1000, 750],
   "charger-photo.jpg": [1000, 750],
-  "stand-catalog.jpg": [1000, 750],
+  "stand-wide.jpg": [1000, 750],
   "audio-hero.jpg": [1000, 750],
   "cable-photo.jpg": [1000, 750],
   "protector-photo.jpg": [1000, 750],

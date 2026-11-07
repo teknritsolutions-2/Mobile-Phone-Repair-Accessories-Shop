@@ -9,17 +9,17 @@ import {
   ContactDetails,
   FloatingBackToTop,
   initBackToTop,
-} from "./site-shell.js?v=cards-14";
+} from "./site-shell.js?v=stand-16";
 import {
   initProductDetails,
   initAccessoryCatalog,
-} from "./accessory-catalog.js?v=cards-14";
-import { initServiceSelector } from "./service-selector.js?v=cards-14";
-import { initRepairFinder } from "./repair-finder.js?v=cards-14";
-import { initRepairJourney } from "./repair-journey.js?v=cards-14";
-import { initPricingGuide } from "./pricing-guide.js?v=cards-14";
-import { initProductPreviews } from "./product-previews.js?v=cards-14";
-import { initBookingForm } from "./booking-form.js?v=cards-14";
+} from "./accessory-catalog.js?v=stand-16";
+import { initServiceSelector } from "./service-selector.js?v=stand-16";
+import { initRepairFinder } from "./repair-finder.js?v=stand-16";
+import { initRepairJourney } from "./repair-journey.js?v=stand-16";
+import { initPricingGuide } from "./pricing-guide.js?v=stand-16";
+import { initProductPreviews } from "./product-previews.js?v=stand-16";
+import { initBookingForm } from "./booking-form.js?v=stand-16";
 
 const page = document.body.dataset.page;
 document.querySelector("#site-header").innerHTML = Header(page);

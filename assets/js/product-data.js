@@ -59,7 +59,7 @@ export const products = [
     price: 399,
     name: "Desk phone stand",
     category: "Everyday Essentials",
-    image: "stand-catalog.jpg",
+    image: "stand-wide.jpg",
     previewImage: "stand-photo.jpg",
     attribute: "Desktop companion · Upright design",
     description:

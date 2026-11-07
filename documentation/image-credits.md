@@ -53,7 +53,7 @@ All seven files, including the hero, are 1000×750. Cards use equal 4:3 frames a
 | protector-catalog.jpg | [Rann Vijay, Pexels 7742507](https://www.pexels.com/photo/7742507/) | Different photograph from the Home 2 source. 1000×1500 portrait, landscape window from y=500 preserving the complete protector. |
 | earbuds-catalog.jpg | [Andrey Matveev, Pexels 34030072](https://www.pexels.com/photo/34030072/) | Complete dark blue earbuds and open case. Native 4:3; no crop. |
 | charger-photo.jpg | [Alfin Auzikri, Pexels 12965167](https://www.pexels.com/photo/12965167/) | Hand-held white adapter with body, pins and socket visible. Source 1000×1333, landscape window from y=400. Catalogue only. |
-| stand-catalog.jpg | [I'm Zion, Pexels 4526428](https://www.pexels.com/photo/4526428/) | Complete phone and metal desk stand. Source 1000×1400; 1000×780 window from y=410. 20px neutral margin added to each side, then resized to 1000×750, preserving the full holder/base. |
+| stand-wide.jpg | [COPPERTIST WU, Pexels 15979684](https://www.pexels.com/photo/15979684/) | Entire landscape source at 1000×714, centered on a 1000×750 dark canvas with 18px above and below. No source cropping or distortion; complete phone and stand remain visible with space around their edges. |
 
 Older unused sources remain in the asset directory: `repair-detail.jpg` ([Revendo, Unsplash Q_I49DIzHu8](https://unsplash.com/photos/Q_I49DIzHu8), [Unsplash License](https://unsplash.com/license)), `charger.jpg` ([Steve A Johnson, Pexels 845239](https://www.pexels.com/photo/845239/)), and previous product SVG illustrations. They are not rendered on any page.
 

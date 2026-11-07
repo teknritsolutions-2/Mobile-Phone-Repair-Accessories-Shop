@@ -120,3 +120,7 @@ At widths up to 1099px, the existing studio photograph fills the hero behind the
 Focused checks pass 36 combinations at 320/390/600/768/820/1024/1099/1100/1440px, light/dark and LTR/RTL. They verify exact image/hero bounds, cover fitting, caption behavior, content containment, action presence and no horizontal overflow. Phone and tablet screenshots were visually reviewed. Evidence is outside the repository at `/private/tmp/pp-hero/`.
 
 Static/behavior checks and the complete 168-case responsive site suite pass without page errors, failed requests or layout failures, including the existing card alignment and unique-photo inventory checks.
+
+## Desk stand photograph framing
+
+Replaced the portrait-derived catalogue stand image with a distinct real landscape photograph, preserving its entire composition. The source is 1000×714 and sits within a 1000×750 dark canvas with 18px above and below; no photo pixels are cropped and the complete phone and holder remain visible. Home 2 retains its own different wooden-stand photograph. Static/behavior checks and 20 focused width/theme/direction cases pass, including all six matching photo dimensions, 4:3 contain fitting, overflow, stand price and enquiry. The rendered tablet card was visually reviewed.
