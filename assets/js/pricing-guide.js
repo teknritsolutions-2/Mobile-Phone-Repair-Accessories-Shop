@@ -1,7 +1,7 @@
-import { services } from "./service-data.js?v=credits-13";
-import { label } from "./shared-ui.js?v=credits-13";
-import { pageUrl } from "./utils.js?v=credits-13";
-import { icon } from "./shared-ui.js?v=credits-13";
+import { services } from "./service-data.js?v=cards-14";
+import { label } from "./shared-ui.js?v=cards-14";
+import { pageUrl } from "./utils.js?v=cards-14";
+import { icon } from "./shared-ui.js?v=cards-14";
 
 export function initPricingGuide() {
   const panel = document.querySelector("#estimate-panel");

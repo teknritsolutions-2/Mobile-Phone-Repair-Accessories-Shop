@@ -78,6 +78,42 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
       );
       await document.fonts.ready;
     });
+    if (
+      ["index.html", "pages/home2.html", "pages/accessories.html"].includes(
+        route,
+      )
+    ) {
+      const cardRows = await page
+        .locator(".product-card")
+        .evaluateAll((cards) => {
+          const rows = [];
+          for (const card of cards) {
+            const top = card.querySelector("img").getBoundingClientRect().top;
+            let row = rows.find((item) => Math.abs(item.top - top) < 2);
+            if (!row) {
+              row = { top, cards: [] };
+              rows.push(row);
+            }
+            row.cards.push(
+              [...card.children]
+                .filter((item) => getComputedStyle(item).display !== "none")
+                .map((item) => item.getBoundingClientRect().top),
+            );
+          }
+          return rows;
+        });
+      for (const row of cardRows) {
+        for (const card of row.cards) {
+          assert.equal(card.length, row.cards[0].length);
+          card.forEach((top, index) =>
+            assert.ok(
+              Math.abs(top - row.cards[0][index]) < 1.2,
+              `Card content row ${index + 1} must align on ${route} at ${width}px`,
+            ),
+          );
+        }
+      }
+    }
     if (route === "pages/services.html") {
       const photos = await page
         .locator(".service-story img")

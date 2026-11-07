@@ -716,10 +716,41 @@ body.menu-is-open .back-to-top {
 /* Product system: complete subjects with deliberate framing per category. */
 .product-card {
   min-width: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 6;
+  row-gap: 0;
+  padding-block-end: 32px;
+}
+/* Shared rows follow the tallest copy in each visual row of cards. */
+.product-card > .product-card__visual {
+  grid-row: 1;
+}
+.product-card > .product-card__category {
+  grid-row: 2;
+}
+.product-card > h3 {
+  grid-row: 3;
+}
+.product-card > .product-card__attribute {
+  grid-row: 4;
+}
+.product-card > .product-price {
+  grid-row: 5;
+}
+.product-card > .button {
+  grid-row: 6;
+}
+.product-card > :not(.product-card__visual) {
+  align-self: start;
+}
+.product-card h3 .plain-link {
+  display: inline;
 }
 .product-card h3 .icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-inline-start: 6px;
   width: 16px;
   height: 16px;
   color: var(--accent);
@@ -786,7 +817,8 @@ body.menu-is-open .back-to-top {
 }
 .product-card .button {
   align-self: start;
-  margin-top: auto;
+  justify-self: start;
+  margin-top: 0;
 }
 /* Home 2 — photographic opening banner; finder follows the service introduction. */
 .home2-banner {
@@ -1298,10 +1330,6 @@ body.menu-is-open .back-to-top {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
-.essentials-strip .product-card {
-  display: flex;
-  flex-direction: column;
-}
 .essentials-strip .product-card__visual {
   aspect-ratio: 4/3;
   align-self: stretch;
@@ -1422,16 +1450,13 @@ body.menu-is-open .back-to-top {
   }
   .catalog-grid .product-price {
     font-size: 14px;
-    margin-block: auto 10px;
+    margin-block: 0 10px;
   }
   .catalog-grid .button {
     align-self: start;
   }
 }
 @media (max-width: 359px) {
-  .catalog-grid .product-card {
-    display: flex;
-  }
   .catalog-grid .product-card__category {
     margin-top: 15px;
   }
@@ -3187,17 +3212,8 @@ dialog::backdrop {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .retail-grid .product-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 18px;
-    align-content: center;
-  }
   .retail-grid .product-card__visual {
-    grid-column: 1;
-    grid-row: 1/7;
-    aspect-ratio: 1;
-    align-self: center;
+    aspect-ratio: 4/3;
   }
   .retail-grid .product-card__category {
     margin-top: 6px;
@@ -3512,11 +3528,8 @@ dialog::backdrop {
   .product-card__visual {
     aspect-ratio: 1;
   }
-  .retail-grid .product-card {
-    display: flex;
-  }
   .retail-grid .product-card__visual {
-    aspect-ratio: 1;
+    aspect-ratio: 4/3;
   }
   .retail-grid .product-card__category {
     margin-top: 15px;
@@ -3537,6 +3550,12 @@ dialog::backdrop {
   .booking-intro h1 {
     font-size: 36px;
   }
+}
+/* Card spacing belongs between card rows, not between subgrid tracks. */
+.retail-grid,
+.essentials-strip,
+.catalog-grid {
+  row-gap: 0;
 }
 @media (prefers-reduced-motion: reduce) {
   html {

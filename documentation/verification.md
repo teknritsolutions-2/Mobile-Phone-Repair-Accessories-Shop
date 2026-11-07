@@ -104,3 +104,11 @@ Validation passes: static references/JS syntax, behavior checks, the 24-placemen
 ## Remove visible cable attribution strip
 
 Removed the cable credit line beneath the Accessories catalogue. The required author, source, license and modification notice are available through a footer Photo credits dialog instead. Static/behavior checks pass, plus 12 focused responsive cases covering phone/tablet/desktop, light/dark and LTR/RTL, dialog opening, close button/Escape, source/license links and horizontal overflow.
+
+## Consistent accessory card alignment
+
+Home 1 previews, Home 2 essentials and the Accessories catalogue now share content rows for photograph, category, title, description, indicative price and enquiry action. Row heights follow the longest visible content in that row without fixed text heights or truncation. Titles wrap naturally with inline detail symbols; enquiry links retain their compact width. Small-screen Home 1 cards use a consistent stacked 4:3 photograph instead of switching to a mixed horizontal/square layout.
+
+Focused measurements pass 84 cases across seven widths (320/390/600/768/820/1024/1440), both themes and reading directions, plus filtered and alphabetically sorted catalogue rows. Each visible content row is checked for matching top coordinates. Visual evidence is outside the repository at `/private/tmp/pp-cards/`. The site-wide browser suite now includes content-row alignment assertions for all three product grids.
+
+Static and behavior checks and the full 168-case site browser suite pass with no layout failures, page errors or failed requests. Product photo uniqueness, filtering/sorting, enquiry prefills, dialogs and navigation remain verified.

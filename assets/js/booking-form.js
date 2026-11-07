@@ -1,12 +1,12 @@
-import { business } from "./site-config.js?v=credits-13";
-import { services } from "./service-data.js?v=credits-13";
-import { products } from "./product-data.js?v=credits-13";
-import { escapeHtml } from "./utils.js?v=credits-13";
+import { business } from "./site-config.js?v=cards-14";
+import { services } from "./service-data.js?v=cards-14";
+import { products } from "./product-data.js?v=cards-14";
+import { escapeHtml } from "./utils.js?v=cards-14";
 import {
   validateRequest,
   buildRequestSummary,
-} from "./validation.js?v=credits-13";
-import { icon } from "./shared-ui.js?v=credits-13";
+} from "./validation.js?v=cards-14";
+import { icon } from "./shared-ui.js?v=cards-14";
 
 function downloadRequest(summary) {
   const url = URL.createObjectURL(
