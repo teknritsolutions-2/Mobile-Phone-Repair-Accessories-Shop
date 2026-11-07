@@ -1,4 +1,4 @@
-import { initDropdowns } from "./dropdowns.js?v=dropdowns-17";
+import { initDropdowns } from "./dropdowns.js?v=dropdown-startup-19";
 import {
   Header,
   Footer,
@@ -10,17 +10,17 @@ import {
   ContactDetails,
   FloatingBackToTop,
   initBackToTop,
-} from "./site-shell.js?v=dropdowns-17";
+} from "./site-shell.js?v=dropdown-startup-19";
 import {
   initProductDetails,
   initAccessoryCatalog,
-} from "./accessory-catalog.js?v=dropdowns-17";
-import { initServiceSelector } from "./service-selector.js?v=dropdowns-17";
-import { initRepairFinder } from "./repair-finder.js?v=dropdowns-17";
-import { initRepairJourney } from "./repair-journey.js?v=dropdowns-17";
-import { initPricingGuide } from "./pricing-guide.js?v=dropdowns-17";
-import { initProductPreviews } from "./product-previews.js?v=dropdowns-17";
-import { initBookingForm } from "./booking-form.js?v=dropdowns-17";
+} from "./accessory-catalog.js?v=dropdown-startup-19";
+import { initServiceSelector } from "./service-selector.js?v=dropdown-startup-19";
+import { initRepairFinder } from "./repair-finder.js?v=dropdown-startup-19";
+import { initRepairJourney } from "./repair-journey.js?v=dropdown-startup-19";
+import { initPricingGuide } from "./pricing-guide.js?v=dropdown-startup-19";
+import { initProductPreviews } from "./product-previews.js?v=dropdown-startup-19";
+import { initBookingForm } from "./booking-form.js?v=dropdown-startup-19";
 
 const page = document.body.dataset.page;
 document.querySelector("#site-header").innerHTML = Header(page);

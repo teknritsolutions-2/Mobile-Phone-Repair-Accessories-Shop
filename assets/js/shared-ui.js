@@ -1,5 +1,5 @@
-import { formatPrice } from "./product-data.js?v=dropdowns-17";
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=dropdowns-17";
+import { formatPrice } from "./product-data.js?v=dropdown-startup-19";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=dropdown-startup-19";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',

@@ -140,3 +140,9 @@ Below 600px, the three daily-essentials cards use a full-width photograph above 
 Focused geometry checks pass 28 width/theme/direction combinations at 320/390/425/599/600/768/1440px. On phones, image/frame bounds differ only by the 1px border, native photo ratio remains 4:3, the text sits below the full-width image and has the intended spacing. Mobile screenshots were visually reviewed. The durable site suite includes these mobile geometry checks; evidence is outside the repository in `/private/tmp/pp-mobile-cards/`.
 
 The complete 168-case site suite passes with no layout failures, page errors or failed requests. Existing dropdown behavior, unique imagery, form flows and larger-screen card alignment remain verified.
+
+## Dropdown startup safeguard
+
+A follow-up screenshot showed the older native menu; the published page itself passed the 120-case readable-menu checks, so the exact URL/browser cause could not be established from the screenshot. Each HTML page now loads an independent dropdown entry module, and all script versions are refreshed. If an unrelated feature interrupts main startup, the dropdowns still initialize at DOMContentLoaded. Initialization skips existing enhanced selects and shares open-menu state, preventing duplicate controls or listeners.
+
+A deliberate interruption immediately before product-preview startup still produces usable large menus, correct battery/symptom updates and a single set of controls after repeated initialization. This failure-path test is retained in the browser suite. Static/behavior checks and the complete 168-case site suite pass with no unexpected page errors, failed requests or layout failures. The intentionally injected error is checked separately. A 425px failure-path screenshot was visually reviewed under `/private/tmp/pp-dropdowns/`.

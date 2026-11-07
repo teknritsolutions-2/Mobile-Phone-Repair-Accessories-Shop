@@ -11,3 +11,5 @@ CSS is organized into the four requested entry files: local fonts, main light/re
 The dedicated `pages/about.html` contains brand purpose, repair principles and scope. Together with the two homepages, Services, Accessories, Pricing and Contact, the public site has seven physical pages. Shared navigation and the static/deployment checks include this page.
 
 `assets/js/dropdowns.js` enhances the six native select controls after page-specific initialization. Native values and form submission remain the data source; the visible combobox/listbox menus share typography, keyboard behavior and viewport-aware placement. Labels, required/error descriptions, dependent options, change events and resets synchronize with the original controls. Without enhancement, the authored native selects remain available.
+
+Every HTML entry also loads `dropdown-entry.js` independently. It waits for DOMContentLoaded and can initialize readable menus even if another page feature interrupts `main.js`. Dropdown initialization is idempotent, so the normal main startup and this safeguard share the same controls and listeners.

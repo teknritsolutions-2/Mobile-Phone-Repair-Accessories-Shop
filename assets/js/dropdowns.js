@@ -1,8 +1,9 @@
 // Keep native selects as the form/data source while presenting readable menus.
+let closeCurrent = null;
+
 export function initDropdowns() {
-  let closeCurrent = null;
   document.querySelectorAll("select:not([multiple])").forEach((select) => {
-    if (select.size > 1) return;
+    if (select.size > 1 || select.classList.contains("select-native")) return;
     const wrapper = document.createElement("div");
     wrapper.className = "select-control";
     select.before(wrapper);

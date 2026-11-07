@@ -913,6 +913,56 @@ checks.push(
   "Readable field boundaries and dark-panel keyboard focus; 16px sorting; persistent close controls for every product and privacy dialog on short phone/tablet/landscape screens in LTR/RTL",
 );
 
+// Dropdowns must still enhance when an unrelated page feature interrupts main.
+const startupPage = await b.newPage({ viewport: { width: 425, height: 900 } });
+const startupErrors = [];
+startupPage.on("pageerror", (error) => startupErrors.push(error.message));
+await startupPage.route("**/assets/js/main.js?*", async (route) => {
+  const response = await route.fetch();
+  const body = (await response.text()).replace(
+    "initProductPreviews();",
+    'throw new Error("Simulated page-feature interruption");',
+  );
+  await route.fulfill({ response, body });
+});
+await startupPage.goto(base + "pages/home2.html");
+await startupPage.locator("#finder-problem-trigger").waitFor();
+assert.deepEqual(startupErrors, ["Simulated page-feature interruption"]);
+await startupPage.locator("#finder-problem-trigger").click();
+await startupPage
+  .locator('#finder-problem-options [role="option"]')
+  .nth(1)
+  .click();
+assert.equal(
+  await startupPage.locator("#finder-problem").inputValue(),
+  "battery",
+);
+assert.equal(
+  await startupPage.locator("#finder-symptom-trigger").innerText(),
+  "Drains quickly",
+);
+await startupPage.evaluate(async () => {
+  const source = document.querySelector('script[src*="dropdown-entry.js"]').src;
+  const { initDropdowns } = await import(
+    source.replace("dropdown-entry.js", "dropdowns.js")
+  );
+  initDropdowns();
+  initDropdowns();
+});
+assert.equal(await startupPage.locator(".select-trigger").count(), 2);
+assert.equal(await startupPage.locator(".select-options").count(), 2);
+await startupPage.locator("#finder-problem-trigger").click();
+assert.equal(
+  await startupPage
+    .locator("#finder-problem-trigger")
+    .getAttribute("aria-expanded"),
+  "true",
+);
+await startupPage.close();
+checks.push(
+  "Independent dropdown startup survives a page-feature interruption and repeated initialization creates no duplicate controls/listeners",
+);
+
 const report = {
   layoutCases: routes.length * 24,
   failures,
