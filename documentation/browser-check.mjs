@@ -78,6 +78,34 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
       );
       await document.fonts.ready;
     });
+    if (route === "index.html") {
+      const hero = await page.locator(".studio-hero").evaluate((section) => {
+        const figure = section.querySelector("figure");
+        const image = figure.querySelector("img");
+        const outer = section.getBoundingClientRect();
+        const photo = image.getBoundingClientRect();
+        return {
+          position: getComputedStyle(figure).position,
+          caption: getComputedStyle(figure.querySelector("figcaption")).display,
+          fit: getComputedStyle(image).objectFit,
+          fills: ["x", "y", "width", "height"].every(
+            (key) => Math.abs(outer[key] - photo[key]) < 1,
+          ),
+        };
+      });
+      if (width <= 1099) {
+        assert.equal(hero.position, "absolute");
+        assert.equal(hero.fit, "cover");
+        assert.equal(hero.caption, "none");
+        assert.ok(
+          hero.fills,
+          "Tablet/mobile photograph fills the hero behind the copy",
+        );
+      } else {
+        assert.equal(hero.position, "static");
+        assert.notEqual(hero.caption, "none");
+      }
+    }
     if (
       ["index.html", "pages/home2.html", "pages/accessories.html"].includes(
         route,

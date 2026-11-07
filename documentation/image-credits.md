@@ -8,7 +8,7 @@ Pexels photographs are covered by the [Pexels License](https://www.pexels.com/li
 
 | Asset | Local dimensions | Photographer / source | Framing |
 | --- | --- | --- | --- |
-| studio-repair.jpg | 1400×933 | [Tima Miroshnichenko, Pexels 6755056](https://www.pexels.com/photo/6755056/) | Native landscape composition. Opening banner only. |
+| studio-repair.jpg | 1400×933 | [Tima Miroshnichenko, Pexels 6755056](https://www.pexels.com/photo/6755056/) | Native landscape composition. Opening banner only. Desktop displays the photo beside the copy; at widths up to 1099px it fills the hero background with cover fitting and a dark directional overlay. |
 | screen-repair.jpg | 1000×667 | [Tima Miroshnichenko, Pexels 6755075](https://www.pexels.com/photo/6755075/) | Native close-up of screwdriver work on a smartphone; no additional crop. Workbench section only. |
 | audio.jpg | 1000×750 | [Andrey Matveev, Pexels 33444591](https://www.pexels.com/photo/33444591/) | Complete white earbuds and case. Home 1 preview only. |
 | cable-photo.jpg | 1000×750 | [Fructibus, Wikimedia Commons](https://commons.wikimedia.org/wiki/File:USB-C_cable_2017_A.jpg), [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | Full white coil and both connectors, resized without cropping. Home 1 preview only. |

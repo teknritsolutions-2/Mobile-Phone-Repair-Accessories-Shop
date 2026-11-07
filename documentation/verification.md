@@ -112,3 +112,11 @@ Home 1 previews, Home 2 essentials and the Accessories catalogue now share conte
 Focused measurements pass 84 cases across seven widths (320/390/600/768/820/1024/1440), both themes and reading directions, plus filtered and alphabetically sorted catalogue rows. Each visible content row is checked for matching top coordinates. Visual evidence is outside the repository at `/private/tmp/pp-cards/`. The site-wide browser suite now includes content-row alignment assertions for all three product grids.
 
 Static and behavior checks and the full 168-case site browser suite pass with no layout failures, page errors or failed requests. Product photo uniqueness, filtering/sorting, enquiry prefills, dialogs and navigation remain verified.
+
+## Home 1 background hero on tablet and phone
+
+At widths up to 1099px, the existing studio photograph fills the hero behind the copy instead of becoming a second block below it. The photograph remains a single image element, positioned as a full-section background with cover fitting; a directional dark gradient protects text readability in both directions. The caption is hidden in this mode. Copy, repair/service actions and supporting labels stay above the image. Desktop widths of 1100px and above retain the side-by-side composition and caption.
+
+Focused checks pass 36 combinations at 320/390/600/768/820/1024/1099/1100/1440px, light/dark and LTR/RTL. They verify exact image/hero bounds, cover fitting, caption behavior, content containment, action presence and no horizontal overflow. Phone and tablet screenshots were visually reviewed. Evidence is outside the repository at `/private/tmp/pp-hero/`.
+
+Static/behavior checks and the complete 168-case responsive site suite pass without page errors, failed requests or layout failures, including the existing card alignment and unique-photo inventory checks.
