@@ -1,7 +1,7 @@
-import { services } from "./service-data.js?v=accessories-9";
-import { pageUrl, escapeHtml } from "./utils.js?v=accessories-9";
-import { icon } from "./shared-ui.js?v=accessories-9";
-import { label } from "./shared-ui.js?v=accessories-9";
+import { services } from "./service-data.js?v=prices-10";
+import { pageUrl, escapeHtml } from "./utils.js?v=prices-10";
+import { icon } from "./shared-ui.js?v=prices-10";
+import { label } from "./shared-ui.js?v=prices-10";
 
 export const symptoms = {
   screen: [

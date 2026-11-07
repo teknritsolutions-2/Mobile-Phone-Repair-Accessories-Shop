@@ -78,8 +78,9 @@ assert.deepEqual(
   }).map((p) => p.id),
   ["charger"],
 );
-const { products } = await import("../assets/js/product-data.js");
-assert.ok(products.every((p) => !("samplePrice" in p)));
+const { products, formatPrice } = await import("../assets/js/product-data.js");
+assert.ok(products.every((p) => Number.isInteger(p.price) && p.price > 0));
+assert.equal(formatPrice(1299), "₹1,299");
 console.log(
-  "PASS: alphabetical sorting with combined category/search filters; no demonstration prices in product data.",
+  "PASS: alphabetical sorting with combined category/search filters; central indicative INR pricing.",
 );

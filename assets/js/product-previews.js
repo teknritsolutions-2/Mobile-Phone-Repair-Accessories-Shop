@@ -1,5 +1,5 @@
-import { products } from "./product-data.js?v=accessories-9";
-import { ProductCard } from "./shared-ui.js?v=accessories-9";
+import { products } from "./product-data.js?v=prices-10";
+import { ProductCard } from "./shared-ui.js?v=prices-10";
 
 export function initProductPreviews() {
   document.querySelectorAll("[data-product-preview]").forEach((preview) => {

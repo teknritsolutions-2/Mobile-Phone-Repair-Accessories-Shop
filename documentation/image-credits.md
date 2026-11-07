@@ -1,6 +1,6 @@
 # Image sources and framing audit
 
-Photographs are locally hosted under the [Pexels License](https://www.pexels.com/license/) or [Unsplash License](https://unsplash.com/license). Product photographs and illustrations describe categories, not verified stock. Prices are confirmed on enquiry; unverified sample prices have been removed.
+Photographs are locally hosted under the [Pexels License](https://www.pexels.com/license/) or [Unsplash License](https://unsplash.com/license). Product photographs and illustrations describe categories, not verified stock. Displayed prices are indicative and confirmed on enquiry.
 
 | Asset             | Native size / ratio | Source and display decision                                                                                                                                                                                                       |
 | ----------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

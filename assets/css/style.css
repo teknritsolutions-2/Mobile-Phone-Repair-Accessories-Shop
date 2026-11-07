@@ -760,6 +760,18 @@ body.menu-is-open .back-to-top {
   color: var(--muted);
   margin-block: 0 15px;
 }
+.product-price bdi {
+  display: block;
+  color: var(--ink);
+  font: 650 22px/1.3 var(--display);
+}
+.product-price small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 4px;
+  font-weight: 400;
+}
 .product-card__category {
   font-size: 13px;
   margin-top: 18px;

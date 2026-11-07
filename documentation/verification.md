@@ -82,3 +82,7 @@ The remaining USB-C illustration is replaced with a real, full-cable CC0 photogr
 Focused checks cover 24 catalog combinations across 320/390/600/768/1024/1440px in light/dark and LTR/RTL; native file dimensions, rendered sizes, contain fitting, all six product dialogs and the cable enquiry are checked. The site browser suite also asserts six real JPEG photos with uniform 1000×750 files and equal 4:3 frames at every catalog test width. Evidence is outside the repository in `/private/tmp/pp-accessories-real/`.
 
 Visual review also found that the detail badge could cover the new cable’s connector on small cards. The detail symbol now belongs to the product-name button, keeping all image pixels unobstructed while retaining both image and title detail actions.
+
+## Temporary accessory pricing
+
+At the user’s request, six fixed temporary INR prices are now stored in `product-data.js`: case ₹449, cable ₹299, screen protector ₹179, earbuds ₹1,299, charger ₹649, and stand ₹399. Cards, both homepage previews, and product dialogs share one formatter and the same “Indicative price” caption. The amounts remain stable across navigation and reloads until edited. Existing catalogue search, categories, alphabetical sorting, and enquiry behavior are preserved.

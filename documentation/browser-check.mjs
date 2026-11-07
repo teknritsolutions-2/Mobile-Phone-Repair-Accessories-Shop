@@ -280,7 +280,7 @@ assert.equal(
   "",
 );
 checks.push(
-  "Photographic Home 2 banner, middle-page finder, removed demo content, accessory enquiries, and FAQ",
+  "Photographic Home 2 banner, middle-page finder, removed demo content, accessory previews, and FAQ",
 );
 await go("pages/services.html");
 for (const id of [
@@ -371,8 +371,8 @@ assert.match(
   /USB-C cable/,
 );
 assert.equal(
-  await page.locator("#product-catalog .product-price").innerText(),
-  "Price on enquiry",
+  await page.locator("#product-catalog .product-price bdi").innerText(),
+  "₹299",
 );
 await page.fill("#product-search", "");
 await page.locator('[data-category="All essentials"]').click();
@@ -381,7 +381,7 @@ assert.equal(
   0,
 );
 checks.push(
-  "Alphabetical sorting combined with search/category; enquiry pricing without sample amounts",
+  "Alphabetical sorting combined with search/category; consistent indicative INR prices",
 );
 await page.locator('[data-product="case"]').first().click();
 assert.equal(
@@ -390,7 +390,7 @@ assert.equal(
 );
 assert.match(
   await page.locator("#product-dialog .product-price").innerText(),
-  /Price on enquiry/,
+  /₹449/,
 );
 await page.keyboard.press("Escape");
 assert.equal(

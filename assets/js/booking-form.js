@@ -1,12 +1,12 @@
-import { business } from "./site-config.js?v=accessories-9";
-import { services } from "./service-data.js?v=accessories-9";
-import { products } from "./product-data.js?v=accessories-9";
-import { escapeHtml } from "./utils.js?v=accessories-9";
+import { business } from "./site-config.js?v=prices-10";
+import { services } from "./service-data.js?v=prices-10";
+import { products } from "./product-data.js?v=prices-10";
+import { escapeHtml } from "./utils.js?v=prices-10";
 import {
   validateRequest,
   buildRequestSummary,
-} from "./validation.js?v=accessories-9";
-import { icon } from "./shared-ui.js?v=accessories-9";
+} from "./validation.js?v=prices-10";
+import { icon } from "./shared-ui.js?v=prices-10";
 
 function downloadRequest(summary) {
   const url = URL.createObjectURL(

@@ -1,6 +1,7 @@
 export const products = [
   {
     id: "case",
+    price: 449,
     name: "Protective phone case",
     category: "Cases & Protection",
     image: "case.jpg",
@@ -10,6 +11,7 @@ export const products = [
   },
   {
     id: "cable",
+    price: 299,
     name: "USB-C cable",
     category: "Chargers & Cables",
     image: "cable-photo.jpg",
@@ -19,6 +21,7 @@ export const products = [
   },
   {
     id: "glass",
+    price: 179,
     name: "Screen protector",
     category: "Screen Protectors",
     image: "protector-photo.jpg",
@@ -28,6 +31,7 @@ export const products = [
   },
   {
     id: "earbuds",
+    price: 1299,
     name: "Wireless earbuds",
     category: "Audio",
     image: "audio.jpg",
@@ -37,6 +41,7 @@ export const products = [
   },
   {
     id: "charger",
+    price: 649,
     name: "Wall charger",
     category: "Chargers & Cables",
     image: "charger-photo.jpg",
@@ -46,6 +51,7 @@ export const products = [
   },
   {
     id: "stand",
+    price: 399,
     name: "Desk phone stand",
     category: "Everyday Essentials",
     image: "stand-photo.jpg",
@@ -54,3 +60,12 @@ export const products = [
       "Keep your screen comfortably in view at your desk. Ask about dimensions and compatibility with your device and case.",
   },
 ];
+
+// Temporary indicative INR prices, editable in the product records above.
+export function formatPrice(amount) {
+  return new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(amount);
+}

@@ -28,7 +28,7 @@ Main content is physical HTML. JavaScript inserts the common header/footer and e
 
 ## Editing and request delivery
 
-Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. Accessories use price-on-enquiry messaging in previews, cards, and dialogs. Alphabetical sorting combines with search and categories; unverified prices and their sorting controls have been removed. Repair estimates remain quotation-based. No warranties, turnaround promises, or business contact details have been invented.
+Edit business details and the optional submission endpoint in `assets/js/site-config.js`; blank contact details are omitted. Service and product data have separate readable modules. Accessories use temporary indicative INR prices in `product-data.js`, shared by previews, cards, and dialogs. Alphabetical sorting combines with search and categories. Final pricing and compatibility are confirmed on enquiry. Repair estimates remain quotation-based. No warranties, turnaround promises, or business contact details have been invented.
 
 Without an endpoint, request details stay in page memory. Visitors can validate, review, edit, and download a text copy. Nothing is delivered and no appointment is confirmed. Reloading clears entries. Only theme and direction preferences use local storage. A configured endpoint must accept POST JSON, validate server-side, and confirm actual acceptance before the UI reports delivery.
 

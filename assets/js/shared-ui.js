@@ -1,4 +1,5 @@
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=accessories-9";
+import { formatPrice } from "./product-data.js?v=prices-10";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=prices-10";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -92,6 +93,10 @@ export function Logo() {
   </a>`;
 }
 
+export function ProductPrice(product) {
+  return `<p class="product-price"><bdi>${formatPrice(product.price)}</bdi><small>Indicative price</small></p>`;
+}
+
 export function ProductCard(product) {
   return `<article class="product-card" data-kind="${product.id}">
     <button class="product-card__visual" data-product="${product.id}" aria-label="View details for ${product.name}">
@@ -100,7 +105,7 @@ export function ProductCard(product) {
     <p class="product-card__category">${product.category}</p>
     <h3><button class="plain-link" data-product="${product.id}">${product.name}${icon("plus")}</button></h3>
     <p class="product-card__attribute">${product.attribute}</p>
-    <p class="product-price">Price on enquiry</p>
+    ${ProductPrice(product)}
     ${textLink("Enquire", "contact", { product: product.id })}
   </article>`;
 }
