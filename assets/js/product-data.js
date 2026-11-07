@@ -12,7 +12,7 @@ export const products = [
     id: "cable",
     name: "USB-C cable",
     category: "Chargers & Cables",
-    image: "cable.svg",
+    image: "cable-photo.jpg",
     attribute: "USB-C · Everyday connection",
     description:
       "Practical connection options for your daily setup. Confirm connector compatibility, length, and charging capability before purchase.",

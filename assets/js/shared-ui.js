@@ -1,4 +1,4 @@
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=photos-7";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=accessories-9";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -52,6 +52,7 @@ export function textLink(label, page, params = {}) {
 }
 
 const imageSizes = {
+  "cable-photo.jpg": [1000, 750],
   "protector-photo.jpg": [1000, 750],
   "charger-photo.jpg": [1000, 750],
   "stand-photo.jpg": [1000, 750],
@@ -94,10 +95,10 @@ export function Logo() {
 export function ProductCard(product) {
   return `<article class="product-card" data-kind="${product.id}">
     <button class="product-card__visual" data-product="${product.id}" aria-label="View details for ${product.name}">
-      ${photo(product.image, product.name)}<span class="product-card__open">${icon("plus")}</span>
+      ${photo(product.image, product.name)}
     </button>
     <p class="product-card__category">${product.category}</p>
-    <h3><button class="plain-link" data-product="${product.id}">${product.name}</button></h3>
+    <h3><button class="plain-link" data-product="${product.id}">${product.name}${icon("plus")}</button></h3>
     <p class="product-card__attribute">${product.attribute}</p>
     <p class="product-price">Price on enquiry</p>
     ${textLink("Enquire", "contact", { product: product.id })}

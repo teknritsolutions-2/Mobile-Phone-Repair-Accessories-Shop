@@ -74,3 +74,11 @@ Focused browser checks cover seven widths (320/390/600/768/820/1024/1440), both 
 The About link previously targeted the Home 1 introduction, exposing unrelated homepage sections. It now opens `pages/about.html`, a dedicated page with five sections: brand introduction, purpose, repair/care principles, repair and accessory scope, and a contact invitation. It includes a real repair photograph and avoids invented founding dates, staff identities, awards, statistics, or testimonials. About is available in the header and the requested Explore group; the remaining footer groups are unchanged.
 
 The buildless architecture now has seven physical pages. Static validation, deployment entrypoint checks, and the existing browser route list include About. The browser layout matrix is calculated from the route count (168 cases). Focused About QA covers 36 combinations at 320/390/600/768/820/1024/1100/1280/1440px, light/dark and LTR/RTL, checking text contrast, touch targets, overflow, header overlap, relevant sections, every footer About destination, and the repair-services link. Evidence is outside the repository at `/private/tmp/pp-about/`.
+
+## Accessories real-photo and framing audit
+
+The remaining USB-C illustration is replaced with a real, full-cable CC0 photograph. All six catalog files and the hero image are verified at 1000×750. Shared product previews and dialogs use the same photographs. An explicit catalog 4:3 rule prevents the small-phone square-frame override from changing image presentation. All primary products were visually inspected for complete framing, including both ends of the cable.
+
+Focused checks cover 24 catalog combinations across 320/390/600/768/1024/1440px in light/dark and LTR/RTL; native file dimensions, rendered sizes, contain fitting, all six product dialogs and the cable enquiry are checked. The site browser suite also asserts six real JPEG photos with uniform 1000×750 files and equal 4:3 frames at every catalog test width. Evidence is outside the repository in `/private/tmp/pp-accessories-real/`.
+
+Visual review also found that the detail badge could cover the new cable’s connector on small cards. The detail symbol now belongs to the product-name button, keeping all image pixels unobstructed while retaining both image and title detail actions.

@@ -107,6 +107,39 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
         `Equal uncropped accessory frames at ${width}px`,
       );
     }
+    if (route === "pages/accessories.html") {
+      const photos = await page
+        .locator("#product-catalog img")
+        .evaluateAll((images) =>
+          images.map((i) => ({
+            file: i.src,
+            native: [i.naturalWidth, i.naturalHeight],
+            width: i.getBoundingClientRect().width,
+            height: i.getBoundingClientRect().height,
+            fit: getComputedStyle(i).objectFit,
+          })),
+        );
+      assert.equal(photos.length, 6);
+      assert.ok(
+        photos.every(
+          (i) =>
+            i.file.endsWith(".jpg") &&
+            i.native[0] === 1000 &&
+            i.native[1] === 750 &&
+            i.fit === "contain",
+        ),
+        "All accessory products use real 1000 × 750 photographs",
+      );
+      assert.ok(
+        photos.every(
+          (i) =>
+            Math.abs(i.width - photos[0].width) < 1 &&
+            Math.abs(i.height - photos[0].height) < 1 &&
+            Math.abs(i.width / i.height - 4 / 3) < 0.02,
+        ),
+        `Equal uncropped 4:3 catalog photographs at ${width}px`,
+      );
+    }
     // Test actual scrolled geometry; CSS declarations alone do not prove sticky behavior.
     await page.evaluate(() => {
       document.documentElement.style.scrollBehavior = "auto";
