@@ -27,7 +27,7 @@ jobs:
       - name: Verify static entrypoints
         run: |
           test -s index.html
-          for page in home2 services accessories pricing contact; do
+          for page in home2 about services accessories pricing contact; do
             test -s "pages/$page.html"
           done
           test -s assets/css/style.css

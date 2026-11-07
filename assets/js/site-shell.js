@@ -61,6 +61,7 @@ export function initDirectionToggle() {
 }
 
 const navigation = [
+  ["about", "About"],
   ["services", "Services"],
   ["accessories", "Accessories"],
   ["pricing", "Pricing guide"],
@@ -179,7 +180,7 @@ export function Footer() {
       ${group("Explore", [
         ["Home 1", pageUrl()],
         ["Home 2", pageUrl("home-2")],
-        ["About", `${pageUrl()}#about`],
+        ["About", pageUrl("about")],
         ["Services", pageUrl("services")],
         ["Accessories", pageUrl("accessories")],
         ["Contact", pageUrl("contact")],

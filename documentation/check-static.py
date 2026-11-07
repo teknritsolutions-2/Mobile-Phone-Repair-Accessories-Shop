@@ -6,7 +6,7 @@ import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / 'index.html', *[ROOT / 'pages' / (name + '.html') for name in ['home2', 'services', 'accessories', 'pricing', 'contact']]]
+PAGES = [ROOT / 'index.html', *[ROOT / 'pages' / (name + '.html') for name in ['home2', 'about', 'services', 'accessories', 'pricing', 'contact']]]
 errors = []
 checked = 0
 
@@ -69,4 +69,4 @@ for obsolete in ['src', 'dist', 'node_modules', 'package.json', 'package-lock.js
 
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'PASS: 6 physical pages, {checked} local references, all JS syntax, local fonts, and architecture cleanup.')
+print(f'PASS: {len(PAGES)} physical pages, {checked} local references, all JS syntax, local fonts, and architecture cleanup.')

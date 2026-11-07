@@ -9,7 +9,7 @@ import {
   ContactDetails,
   FloatingBackToTop,
   initBackToTop,
-} from "./site-shell.js?v=photos-7";
+} from "./site-shell.js?v=about-8";
 import {
   initProductDetails,
   initAccessoryCatalog,

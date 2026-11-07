@@ -1,6 +1,6 @@
 # Port & Pixel
 
-A six-page precision repair showroom in HTML5, CSS3, and vanilla JavaScript. Steel & Ice: desaturated blue-gray, ice, and white; self-hosted Archivo and Inter. The conventional file organization follows the approved Waylark reference.
+A seven-page precision repair showroom in HTML5, CSS3, and vanilla JavaScript. Steel & Ice: desaturated blue-gray, ice, and white; self-hosted Archivo and Inter. The conventional file organization follows the approved Waylark reference.
 
 ## Run
 
@@ -14,6 +14,7 @@ Open `http://localhost:4173/`. No installation, framework, build, or custom serv
 
 - `index.html`: Home 1 repair showroom.
 - `pages/home2.html`: photographic opening banner, service browser, screen-repair spotlight, middle-page repair finder, accessory preview, three-step process, FAQs, and booking.
+- `pages/about.html`: the shop’s purpose, repair approach, care principles, and service scope.
 - `pages/services.html`: real-photo service gallery, six visible repair categories, booking/estimate links, and visit FAQs.
 - `pages/accessories.html`: searchable, filterable product collection.
 - `pages/pricing.html`: connected service/device estimate guide.
@@ -33,7 +34,7 @@ Without an endpoint, request details stay in page memory. Visitors can validate,
 
 ## GitHub Pages
 
-The Actions workflow checks all six pages, local references, JavaScript syntax, and request/catalog behavior. It copies only `index.html`, `404.html`, `.nojekyll`, `pages/`, and `assets/` into the public artifact. This is static file collection, with no build or dependencies. Tests, documentation, and screenshots are not published.
+The Actions workflow checks all seven pages, local references, JavaScript syntax, and request/catalog behavior. It copies only `index.html`, `404.html`, `.nojekyll`, `pages/`, and `assets/` into the public artifact. This is static file collection, with no build or dependencies. Tests, documentation, and screenshots are not published.
 
 Old `/services`, `/accessories`, `/pricing`, `/contact`, `/home-2`, and `/home2` bookmarks use one compatibility map in `404.html`. It preserves queries and anchors and redirects only recognized paths to physical pages. GitHub initially returns HTTP 404 for these old bookmarks before the browser redirect; current physical page URLs return 200 directly. Unknown paths show a helpful homepage link. There are no route-mirror directories.
 

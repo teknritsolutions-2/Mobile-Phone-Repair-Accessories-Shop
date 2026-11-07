@@ -14,6 +14,7 @@ const output = process.env.QA_OUTPUT_DIR || "/tmp/port-pixel-browser-qa";
 const routes = [
   "index.html",
   "pages/home2.html",
+  "pages/about.html",
   "pages/services.html",
   "pages/accessories.html",
   "pages/pricing.html",
@@ -172,7 +173,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
 await writeFile(
   `${output}/layout-report.json`,
   JSON.stringify(
-    { layoutCases: 144, failures, errors, failedRequests },
+    { layoutCases: routes.length * 24, failures, errors, failedRequests },
     null,
     2,
   ),
@@ -548,7 +549,7 @@ for (const route of routes) {
   await page.goto(rootBase + route);
   await page.waitForSelector('body[data-ready="true"]');
 }
-checks.push("All six physical pages at origin root");
+checks.push("All seven physical pages at origin root");
 // Visibility regressions: functional boundaries and focus need stronger contrast than decorative rules.
 function contrast(foreground, background) {
   const luminance = (color) =>
@@ -674,7 +675,13 @@ checks.push(
   "Readable field boundaries and dark-panel keyboard focus; 16px sorting; persistent close controls for every product and privacy dialog on short phone/tablet/landscape screens in LTR/RTL",
 );
 
-const report = { layoutCases: 144, failures, errors, failedRequests, checks };
+const report = {
+  layoutCases: routes.length * 24,
+  failures,
+  errors,
+  failedRequests,
+  checks,
+};
 console.log(JSON.stringify(report, null, 2));
 await writeFile(`${output}/report.json`, JSON.stringify(report, null, 2));
 await b.close();

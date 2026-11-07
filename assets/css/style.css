@@ -1432,6 +1432,223 @@ body.menu-is-open .back-to-top {
     margin-top: 15px;
   }
 }
+/* About — purpose, repair principles and scope. */
+.about-intro {
+  background: var(--surface);
+  padding-block: 48px 54px;
+  border-bottom: 1px solid var(--line);
+}
+.about-intro > .container > .eyebrow {
+  margin-bottom: 25px;
+}
+.about-intro__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: end;
+  gap: 80px;
+}
+.about-intro h1 {
+  font-size: clamp(45px, 5.2vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+.about-intro h1 span {
+  color: var(--accent);
+}
+.about-intro__grid > div {
+  max-width: 440px;
+  justify-self: end;
+}
+.about-intro__grid p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.about-intro__grid p + p {
+  margin-top: 16px;
+}
+.about-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 23px;
+  margin-top: 23px;
+}
+.about-index a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--accent);
+}
+.about-purpose {
+  background: var(--surface);
+}
+.about-purpose__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+.about-purpose figure {
+  margin: 0;
+}
+.about-purpose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+.about-purpose figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.about-purpose h2,
+.about-section-heading h2 {
+  font-size: clamp(32px, 3.3vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.about-purpose__grid > div > p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.about-approach {
+  background: var(--soft);
+  border-block: 1px solid var(--line);
+}
+.about-section-heading {
+  margin-bottom: 35px;
+}
+.about-section-heading > p:last-child:not(.eyebrow) {
+  max-width: 500px;
+  font-size: 16px;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+}
+.about-values article {
+  border-top: 1px solid var(--control-line);
+  padding-top: 18px;
+}
+.about-values article > span {
+  color: var(--accent);
+  font-size: 12px;
+}
+.about-values h3 {
+  font-size: 27px;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin-block: 22px 14px;
+}
+.about-values p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.about-scope {
+  background: var(--surface);
+}
+.about-scope__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+.about-scope article {
+  border-top: 1px solid var(--line);
+  padding-top: 23px;
+}
+.about-scope h3 {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.about-scope article > p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-block: 17px 20px;
+  max-width: 500px;
+}
+.about-scope .button {
+  font-size: 14px;
+}
+@media (max-width: 1099px) {
+  .about-intro__grid,
+  .about-purpose__grid {
+    gap: 40px;
+  }
+  .about-intro h1 {
+    font-size: 58px;
+  }
+  .about-values {
+    gap: 28px;
+  }
+  .about-values h3 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 799px) {
+  .about-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .about-intro__grid > div {
+    max-width: 600px;
+    justify-self: start;
+  }
+  .about-purpose__grid {
+    gap: 30px;
+  }
+  .about-purpose h2 {
+    font-size: 32px;
+  }
+  .about-values {
+    gap: 22px;
+  }
+  .about-values h3 {
+    font-size: 23px;
+  }
+  .about-scope__grid {
+    gap: 30px;
+  }
+}
+@media (max-width: 599px) {
+  .about-intro {
+    padding-block: 30px 35px;
+  }
+  .about-intro h1 {
+    font-size: clamp(39px, 10.5vw, 55px);
+  }
+  .about-intro__grid p {
+    font-size: 16px;
+  }
+  .about-index {
+    gap: 8px 20px;
+  }
+  .about-purpose__grid,
+  .about-values,
+  .about-scope__grid {
+    grid-template-columns: 1fr;
+  }
+  .about-values {
+    gap: 28px;
+  }
+  .about-values h3 {
+    font-size: 27px;
+    margin-top: 17px;
+  }
+  .about-values p {
+    font-size: 16px;
+  }
+  .about-section-heading {
+    margin-bottom: 28px;
+  }
+}
+
 /* Services — alternating editorial rows, six matching 3:2 photographs. */
 .service-collection-intro {
   background: var(--surface);

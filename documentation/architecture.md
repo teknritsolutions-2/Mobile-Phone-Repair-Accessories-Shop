@@ -7,3 +7,5 @@ Page content is authored directly in HTML. There is no JavaScript page router, g
 Shared header, footer, dialogs, preferences, and navigation behavior live in `assets/js/site-shell.js`. Common UI primitives live in `shared-ui.js`. Each substantial interactive feature has its own module. Reusable service/product content and business configuration are separate from interactions. Personal request data is kept in page memory only.
 
 CSS is organized into the four requested entry files: local fonts, main light/responsive styles, dark-mode tokens, and semantic RTL adjustments. Main stylesheet sections follow the shared components and individual page compositions. No runtime dependency or package installation is needed.
+
+The dedicated `pages/about.html` contains brand purpose, repair principles and scope. Together with the two homepages, Services, Accessories, Pricing and Contact, the public site has seven physical pages. Shared navigation and the static/deployment checks include this page.
