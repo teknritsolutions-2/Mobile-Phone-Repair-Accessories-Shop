@@ -67,6 +67,19 @@ for (const route of routes) {
 checks.push(
   `${photographSources.size} photographic placements use distinct source URLs and file contents across all seven pages`,
 );
+async function chooseOption(selector, value) {
+  const index = await page
+    .locator(selector)
+    .evaluate(
+      (select, wanted) =>
+        [...select.options].findIndex((option) => option.value === wanted),
+      value,
+    );
+  assert.ok(index >= 0, `Option ${value} exists in ${selector}`);
+  await page.locator(`${selector}-trigger`).click();
+  await page.locator(`${selector}-options [role="option"]`).nth(index).click();
+  assert.equal(await page.locator(selector).inputValue(), value);
+}
 for (const width of [320, 390, 768, 1024, 1280, 1440]) {
   await page.setViewportSize({ width, height: 960 });
   for (const route of routes) {
@@ -78,6 +91,34 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
       );
       await document.fonts.ready;
     });
+    for (const id of await page
+      .locator("select")
+      .evaluateAll((selects) => selects.map((select) => select.id))) {
+      const trigger = page.locator(`#${id}-trigger`);
+      await trigger.click();
+      const menu = await page.locator(`#${id}-options`).evaluate((list) => ({
+        bounds: list.getBoundingClientRect().toJSON(),
+        options: [...list.children].map((option) => ({
+          font: parseFloat(getComputedStyle(option).fontSize),
+          height: option.getBoundingClientRect().height,
+        })),
+      }));
+      assert.ok(
+        menu.options.every(
+          (option) => option.font >= 16 && option.height >= 48,
+        ),
+        "Readable option text and touch targets",
+      );
+      assert.ok(
+        menu.bounds.x >= 0 &&
+          menu.bounds.right <= width + 1 &&
+          menu.bounds.y >= 0 &&
+          menu.bounds.bottom <= 961,
+        "Dropdown stays inside viewport",
+      );
+      await trigger.press("Escape");
+      assert.equal(await trigger.getAttribute("aria-expanded"), "false");
+    }
     if (route === "index.html") {
       const hero = await page.locator(".studio-hero").evaluate((section) => {
         const figure = section.querySelector("figure");
@@ -239,7 +280,7 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
     // Test actual scrolled geometry; CSS declarations alone do not prove sticky behavior.
     await page.evaluate(() => {
       document.documentElement.style.scrollBehavior = "auto";
-      scrollTo(0, 0);
+      scrollTo({ top: 0, behavior: "instant" });
     });
     await page.waitForTimeout(40);
     assert.equal(await page.locator("[data-back-top]").isVisible(), false);
@@ -299,6 +340,32 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
   }
   console.log("Responsive width complete:", width);
 }
+await go("pages/home2.html");
+const problemTrigger = page.locator("#finder-problem-trigger");
+await problemTrigger.focus();
+await problemTrigger.press("ArrowDown");
+await problemTrigger.press("ArrowDown");
+await problemTrigger.press("Enter");
+assert.equal(await page.locator("#finder-problem").inputValue(), "battery");
+assert.equal(
+  await page.locator("#finder-symptom-trigger").innerText(),
+  "Drains quickly",
+);
+await problemTrigger.press("End");
+await problemTrigger.press("Escape");
+assert.equal(await page.locator("#finder-problem").inputValue(), "battery");
+await problemTrigger.press("c");
+await problemTrigger.press("Tab");
+assert.equal(await page.locator("#finder-problem").inputValue(), "charging");
+assert.equal(
+  await page
+    .locator("#finder-symptom-trigger")
+    .evaluate((element) => element === document.activeElement),
+  true,
+);
+checks.push(
+  "Readable dropdowns with 16px options, 48px targets, keyboard selection/typeahead, cancel/Tab, and synchronized dependent choices",
+);
 await writeFile(
   `${output}/layout-report.json`,
   JSON.stringify(
@@ -321,8 +388,8 @@ await page.waitForSelector('body[data-ready="true"]');
 assert.match(page.url(), /pages\/home2.html$/);
 checks.push("Desktop Home dropdown and physical page navigation");
 await page.locator('[data-device="Tablet"]').click();
-await page.selectOption("#finder-problem", "battery");
-await page.selectOption("#finder-symptom", "Unexpected shutdowns");
+await chooseOption("#finder-problem", "battery");
+await chooseOption("#finder-symptom", "Unexpected shutdowns");
 await page.locator("#finder-result a").click();
 await page.waitForSelector('body[data-ready="true"]');
 assert.equal(await page.locator("#service").inputValue(), "battery");
@@ -446,13 +513,13 @@ await page.fill("#product-search", "zzzzzzzz");
 assert.equal(await page.locator(".empty-state").count(), 1);
 await page.locator("#reset-catalog").click();
 assert.equal(await page.locator("#product-catalog .product-card").count(), 6);
-await page.selectOption("#product-sort", "az");
+await chooseOption("#product-sort", "az");
 let names = await page.locator("#product-catalog h3").allTextContents();
 assert.deepEqual(
   names,
   [...names].sort((a, b) => a.localeCompare(b)),
 );
-await page.selectOption("#product-sort", "za");
+await chooseOption("#product-sort", "za");
 names = await page.locator("#product-catalog h3").allTextContents();
 assert.deepEqual(
   names,
@@ -510,7 +577,7 @@ checks.push(
 await go("pages/pricing.html?service=audio");
 assert.match(await page.locator("#estimate-panel h2").innerText(), /Speaker/);
 await page.locator('[data-price-service="camera"]').click();
-await page.selectOption("#price-device", "Tablet");
+await chooseOption("#price-device", "Tablet");
 assert.match(await page.locator("#estimate-panel").innerText(), /Tablet/i);
 await page.locator("#estimate-panel .button").click();
 await page.waitForSelector('body[data-ready="true"]');
@@ -556,9 +623,9 @@ checks.push(
 await go("pages/contact.html?service=accessory");
 assert.equal(await page.locator("#service").inputValue(), "accessory");
 assert.equal(await page.locator("#model").getAttribute("required"), null);
-await page.selectOption("#service", "screen");
+await chooseOption("#service", "screen");
 assert.notEqual(await page.locator("#model").getAttribute("required"), null);
-await page.selectOption("#service", "accessory");
+await chooseOption("#service", "accessory");
 await page.fill("#name", "Accessory Visitor");
 await page.fill("#email", "visitor@example.com");
 await page.fill("#phone", "+91 98765 43210");
@@ -573,7 +640,7 @@ checks.push(
   "Generic accessory preselection, request-type switching, and optional device fields",
 );
 await go("pages/accessories.html");
-await page.selectOption("#product-sort", "za");
+await chooseOption("#product-sort", "za");
 await page.fill("#product-search", "no match at all");
 await page.locator("#reset-catalog").click();
 assert.equal(await page.locator("#product-sort").inputValue(), "featured");

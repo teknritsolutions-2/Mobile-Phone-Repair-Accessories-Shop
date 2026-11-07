@@ -9,3 +9,5 @@ Shared header, footer, dialogs, preferences, and navigation behavior live in `as
 CSS is organized into the four requested entry files: local fonts, main light/responsive styles, dark-mode tokens, and semantic RTL adjustments. Main stylesheet sections follow the shared components and individual page compositions. No runtime dependency or package installation is needed.
 
 The dedicated `pages/about.html` contains brand purpose, repair principles and scope. Together with the two homepages, Services, Accessories, Pricing and Contact, the public site has seven physical pages. Shared navigation and the static/deployment checks include this page.
+
+`assets/js/dropdowns.js` enhances the six native select controls after page-specific initialization. Native values and form submission remain the data source; the visible combobox/listbox menus share typography, keyboard behavior and viewport-aware placement. Labels, required/error descriptions, dependent options, change events and resets synchronize with the original controls. Without enhancement, the authored native selects remain available.

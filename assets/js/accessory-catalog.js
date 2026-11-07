@@ -1,6 +1,6 @@
-import { products } from "./product-data.js?v=stand-16";
-import { ProductCard, ProductPrice } from "./shared-ui.js?v=stand-16";
-import { label, button } from "./shared-ui.js?v=stand-16";
+import { products } from "./product-data.js?v=dropdowns-17";
+import { ProductCard, ProductPrice } from "./shared-ui.js?v=dropdowns-17";
+import { label, button } from "./shared-ui.js?v=dropdowns-17";
 
 export function filterProducts({
   category = "All essentials",
@@ -65,7 +65,7 @@ export function initAccessoryCatalog() {
             String(item.dataset.category === state.category),
           ),
         );
-      render();
+      sort.dispatchEvent(new Event("change", { bubbles: true }));
     });
   };
   search.addEventListener("input", () => {

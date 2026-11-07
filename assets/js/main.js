@@ -1,3 +1,4 @@
+import { initDropdowns } from "./dropdowns.js?v=dropdowns-17";
 import {
   Header,
   Footer,
@@ -9,17 +10,17 @@ import {
   ContactDetails,
   FloatingBackToTop,
   initBackToTop,
-} from "./site-shell.js?v=stand-16";
+} from "./site-shell.js?v=dropdowns-17";
 import {
   initProductDetails,
   initAccessoryCatalog,
-} from "./accessory-catalog.js?v=stand-16";
-import { initServiceSelector } from "./service-selector.js?v=stand-16";
-import { initRepairFinder } from "./repair-finder.js?v=stand-16";
-import { initRepairJourney } from "./repair-journey.js?v=stand-16";
-import { initPricingGuide } from "./pricing-guide.js?v=stand-16";
-import { initProductPreviews } from "./product-previews.js?v=stand-16";
-import { initBookingForm } from "./booking-form.js?v=stand-16";
+} from "./accessory-catalog.js?v=dropdowns-17";
+import { initServiceSelector } from "./service-selector.js?v=dropdowns-17";
+import { initRepairFinder } from "./repair-finder.js?v=dropdowns-17";
+import { initRepairJourney } from "./repair-journey.js?v=dropdowns-17";
+import { initPricingGuide } from "./pricing-guide.js?v=dropdowns-17";
+import { initProductPreviews } from "./product-previews.js?v=dropdowns-17";
+import { initBookingForm } from "./booking-form.js?v=dropdowns-17";
 
 const page = document.body.dataset.page;
 document.querySelector("#site-header").innerHTML = Header(page);
@@ -44,4 +45,5 @@ const contactDetails = document.querySelector(
 );
 if (contactDetails) contactDetails.outerHTML = ContactDetails();
 
+initDropdowns();
 document.body.dataset.ready = "true";

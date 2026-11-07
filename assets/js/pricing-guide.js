@@ -1,7 +1,7 @@
-import { services } from "./service-data.js?v=stand-16";
-import { label } from "./shared-ui.js?v=stand-16";
-import { pageUrl } from "./utils.js?v=stand-16";
-import { icon } from "./shared-ui.js?v=stand-16";
+import { services } from "./service-data.js?v=dropdowns-17";
+import { label } from "./shared-ui.js?v=dropdowns-17";
+import { pageUrl } from "./utils.js?v=dropdowns-17";
+import { icon } from "./shared-ui.js?v=dropdowns-17";
 
 export function initPricingGuide() {
   const panel = document.querySelector("#estimate-panel");

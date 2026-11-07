@@ -1,12 +1,12 @@
-import { business } from "./site-config.js?v=stand-16";
-import { services } from "./service-data.js?v=stand-16";
-import { products } from "./product-data.js?v=stand-16";
-import { escapeHtml } from "./utils.js?v=stand-16";
+import { business } from "./site-config.js?v=dropdowns-17";
+import { services } from "./service-data.js?v=dropdowns-17";
+import { products } from "./product-data.js?v=dropdowns-17";
+import { escapeHtml } from "./utils.js?v=dropdowns-17";
 import {
   validateRequest,
   buildRequestSummary,
-} from "./validation.js?v=stand-16";
-import { icon } from "./shared-ui.js?v=stand-16";
+} from "./validation.js?v=dropdowns-17";
+import { icon } from "./shared-ui.js?v=dropdowns-17";
 
 function downloadRequest(summary) {
   const url = URL.createObjectURL(

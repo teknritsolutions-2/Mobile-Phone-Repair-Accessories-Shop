@@ -1,7 +1,7 @@
-import { services } from "./service-data.js?v=stand-16";
-import { pageUrl, escapeHtml } from "./utils.js?v=stand-16";
-import { icon } from "./shared-ui.js?v=stand-16";
-import { label } from "./shared-ui.js?v=stand-16";
+import { services } from "./service-data.js?v=dropdowns-17";
+import { pageUrl, escapeHtml } from "./utils.js?v=dropdowns-17";
+import { icon } from "./shared-ui.js?v=dropdowns-17";
+import { label } from "./shared-ui.js?v=dropdowns-17";
 
 export const symptoms = {
   screen: [
