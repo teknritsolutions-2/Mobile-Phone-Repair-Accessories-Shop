@@ -134,6 +134,43 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
           ),
         };
       });
+      if (width <= 599) {
+        const mobileCards = await page
+          .locator(".retail-grid .product-card")
+          .evaluateAll((cards) =>
+            cards.map((card) => {
+              const frame = card
+                .querySelector(".product-card__visual")
+                .getBoundingClientRect();
+              const image = card.querySelector("img").getBoundingClientRect();
+              const category = card
+                .querySelector(".product-card__category")
+                .getBoundingClientRect();
+              return {
+                noBands: Math.abs(frame.height - image.height - 2) < 0.2,
+                fullWidth: Math.abs(frame.width - image.width - 2) < 0.2,
+                ratio: image.width / image.height,
+                copyGap: category.top - frame.bottom,
+                textSize: parseFloat(
+                  getComputedStyle(
+                    card.querySelector(".product-card__attribute"),
+                  ).fontSize,
+                ),
+              };
+            }),
+          );
+        assert.ok(
+          mobileCards.every(
+            (card) =>
+              card.noBands &&
+              card.fullWidth &&
+              Math.abs(card.ratio - 4 / 3) < 0.002 &&
+              card.copyGap >= 19 &&
+              card.textSize >= 16,
+          ),
+          "Mobile Home 1 cards show full photos without bands, above comfortably spaced copy",
+        );
+      }
       if (width <= 1099) {
         assert.equal(hero.position, "absolute");
         assert.equal(hero.fit, "cover");
