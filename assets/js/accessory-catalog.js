@@ -1,6 +1,6 @@
-import { products } from "./product-data.js?v=charger-11";
-import { ProductCard, ProductPrice } from "./shared-ui.js?v=charger-11";
-import { label, photo, button } from "./shared-ui.js?v=charger-11";
+import { products } from "./product-data.js?v=unique-12";
+import { ProductCard, ProductPrice } from "./shared-ui.js?v=unique-12";
+import { label, button } from "./shared-ui.js?v=unique-12";
 
 export function filterProducts({
   category = "All essentials",
@@ -33,7 +33,6 @@ export function initProductDetails() {
     if (!product) return;
     document.querySelector("#product-dialog-content").innerHTML =
       `<div class="product-detail" data-kind="${product.id}">
-      <div class="product-detail__image">${photo(product.image, product.name, "", true)}</div>
       <div class="product-detail__copy">${label(product.category)}<h2>${product.name}</h2>${ProductPrice(product)}<p>${product.description}</p><p class="small">Ask about current availability, device compatibility, and pricing.</p>${button("Enquire about this item", "contact", { product: product.id })}</div></div>`;
     document.querySelector("#product-dialog").showModal();
   });

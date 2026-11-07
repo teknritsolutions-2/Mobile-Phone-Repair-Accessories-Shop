@@ -2,6 +2,7 @@ const { chromium } = await import(
   process.env.PLAYWRIGHT_MODULE || "playwright"
 );
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { writeFile, mkdir } from "node:fs/promises";
 const b = await chromium.launch({
   executablePath: process.env.BROWSER_EXECUTABLE || undefined,
@@ -35,6 +36,37 @@ async function go(route) {
   assert.equal(response.status(), 200);
   await page.waitForSelector('body[data-ready="true"]');
 }
+// Each photographic placement owns its source; renamed copies also count as repeats.
+const photographSources = new Map();
+const photographHashes = new Map();
+for (const route of routes) {
+  await go(route);
+  const sources = await page
+    .locator("main img")
+    .evaluateAll((images) => images.map((image) => image.src));
+  for (const source of sources) {
+    const canonical = new URL(source);
+    canonical.search = "";
+    assert.ok(
+      !photographSources.has(canonical.href),
+      `Repeated photograph on ${route}, first used on ${photographSources.get(canonical.href)}: ${canonical.pathname}`,
+    );
+    photographSources.set(canonical.href, route);
+    const response = await page.request.get(source);
+    assert.equal(response.status(), 200);
+    const hash = createHash("sha256")
+      .update(await response.body())
+      .digest("hex");
+    assert.ok(
+      !photographHashes.has(hash),
+      `Duplicate photo bytes on ${route}: ${photographHashes.get(hash)}`,
+    );
+    photographHashes.set(hash, source);
+  }
+}
+checks.push(
+  `${photographSources.size} photographic placements use distinct source URLs and file contents across all seven pages`,
+);
 for (const width of [320, 390, 768, 1024, 1280, 1440]) {
   await page.setViewportSize({ width, height: 960 });
   for (const route of routes) {
@@ -391,6 +423,11 @@ assert.equal(
 assert.match(
   await page.locator("#product-dialog .product-price").innerText(),
   /₹449/,
+);
+assert.equal(
+  await page.locator("#product-dialog img").count(),
+  0,
+  "Product details do not repeat the card photograph",
 );
 await page.keyboard.press("Escape");
 assert.equal(

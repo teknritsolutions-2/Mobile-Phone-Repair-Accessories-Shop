@@ -1,5 +1,5 @@
-import { formatPrice } from "./product-data.js?v=charger-11";
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=charger-11";
+import { formatPrice } from "./product-data.js?v=unique-12";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=unique-12";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -53,6 +53,13 @@ export function textLink(label, page, params = {}) {
 }
 
 const imageSizes = {
+  "case-catalog.jpg": [1000, 750],
+  "cable-catalog.jpg": [1000, 750],
+  "protector-catalog.jpg": [1000, 750],
+  "earbuds-catalog.jpg": [1000, 750],
+  "charger-photo.jpg": [1000, 750],
+  "stand-catalog.jpg": [1000, 750],
+  "audio-hero.jpg": [1000, 750],
   "cable-photo.jpg": [1000, 750],
   "protector-photo.jpg": [1000, 750],
   "charger-desk.jpg": [1000, 750],

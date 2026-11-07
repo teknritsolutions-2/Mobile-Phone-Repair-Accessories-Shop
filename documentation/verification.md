@@ -92,3 +92,11 @@ At the user’s request, six fixed temporary INR prices are now stored in `produ
 Replaced the hand-held charger with a real 4:3 photograph of a wall charger and coiled cable. The new `charger-desk.jpg` is 1000×750, resized without cropping or padding, and is shared by the Home 2 card, catalogue and product dialog. Cache versions are refreshed for existing browsers.
 
 Static and behavior checks pass. Focused browser QA passes 28 combinations across seven mobile/tablet/desktop widths, light/dark themes and LTR/RTL, checking matching native/rendered dimensions, contain fitting, overflow, and all three product dialog/enquiry mappings. Desktop and mobile screenshots were reviewed; the middle charger is fully in frame.
+
+## Distinct photographs across the site
+
+Each photographic placement now owns its image: Home 1 and Home 2 previews use dedicated preview sources, the catalogue uses six different product photographs, the Accessories hero has a separate earbuds photo, and About and the Home 2 screen spotlight have distinct relevant photos. The requested Home 2 middle charger photo is retained there only. Product detail dialogs no longer repeat card imagery; description, indicative price, keyboard dismissal and enquiry actions remain available. Product prices and category IDs are unchanged.
+
+A browser regression check inventories all seven rendered pages and rejects repeated image URLs or identical SHA-256 file contents under different names. Source credits, individual framing decisions and the cable photo’s visible CC BY-SA attribution are documented in image-credits.md.
+
+Validation passes: static references/JS syntax, behavior checks, the 24-placement source/hash inventory, and the full 168-case responsive/theme/direction browser matrix with no page errors or failed requests. Product dialog close controls, prices, filtering and enquiry prefills pass. Screenshots of the changed catalogue, hero, About purpose and Home 2 spotlight were captured at 390/768/1440px and reviewed alongside the compact text-only product dialog. Evidence is outside the repository under `/private/tmp/pp-unique/`.
