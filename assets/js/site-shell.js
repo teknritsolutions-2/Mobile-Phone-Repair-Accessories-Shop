@@ -1,7 +1,7 @@
-import { pageUrl, escapeHtml, savePreference } from "./utils.js?v=unique-12";
-import { business } from "./site-config.js?v=unique-12";
-import { icon, bookLink } from "./shared-ui.js?v=unique-12";
-import { Logo } from "./shared-ui.js?v=unique-12";
+import { pageUrl, escapeHtml, savePreference } from "./utils.js?v=credits-13";
+import { business } from "./site-config.js?v=credits-13";
+import { icon, bookLink } from "./shared-ui.js?v=credits-13";
+import { Logo } from "./shared-ui.js?v=credits-13";
 
 export function ThemeToggle() {
   return `<button class="tool-button" data-theme-toggle aria-label="Switch color theme">${icon("moon")}<span class="mobile-tool-label">Color theme</span></button>`;
@@ -200,7 +200,7 @@ export function Footer() {
         ["Before your visit", `${pageUrl("contact")}#before-your-visit`],
       ])}
     </div>
-    <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><button class="plain-link" data-privacy-open>Privacy & your request</button></div>
+    <div class="container footer-bottom"><p>© ${new Date().getFullYear()} Port & Pixel</p><button class="plain-link" data-credits-open>Photo credits</button><button class="plain-link" data-privacy-open>Privacy & your request</button></div>
   </footer>`;
 }
 
@@ -211,10 +211,19 @@ export function Dialogs() {
       <p>${business.submissionEndpoint ? "Your request is sent to the shop through the configured submission service." : "This form prepares a request locally. Your entries stay in this page’s memory and are not sent to the shop. Refreshing clears them."}</p>
       <p>A downloaded copy is saved only to your device. Never include passwords, passcodes, financial information, or other sensitive content.</p>
       <p>Color theme and reading direction preferences are saved in your browser. An enquiry does not confirm an appointment.</p></div>
+    </dialog>
+    <dialog id="credits-dialog" aria-labelledby="credits-title"><button class="dialog-close tool-button" aria-label="Close photo credits">${icon("close")}</button>
+      <div class="privacy-content"><h2 id="credits-title">Photo credits</h2>
+      <p>Accessories cable photograph: <a href="https://commons.wikimedia.org/wiki/File:IKEA_SITTBRUNN_USB_A_TO_C_CABLE.jpg" target="_blank" rel="noopener">Dinkun Chen / Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and background trimmed.</p></div>
     </dialog>`;
 }
 
 export function initDialogs() {
+  document.querySelectorAll("[data-credits-open]").forEach((button) => {
+    button.addEventListener("click", () =>
+      document.querySelector("#credits-dialog").showModal(),
+    );
+  });
   document.querySelectorAll("[data-privacy-open]").forEach((button) => {
     button.addEventListener("click", () =>
       document.querySelector("#privacy-dialog").showModal(),

@@ -1,5 +1,5 @@
-import { formatPrice } from "./product-data.js?v=unique-12";
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=unique-12";
+import { formatPrice } from "./product-data.js?v=credits-13";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=credits-13";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',

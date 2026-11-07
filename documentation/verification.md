@@ -100,3 +100,7 @@ Each photographic placement now owns its image: Home 1 and Home 2 previews use d
 A browser regression check inventories all seven rendered pages and rejects repeated image URLs or identical SHA-256 file contents under different names. Source credits, individual framing decisions and the cable photo’s visible CC BY-SA attribution are documented in image-credits.md.
 
 Validation passes: static references/JS syntax, behavior checks, the 24-placement source/hash inventory, and the full 168-case responsive/theme/direction browser matrix with no page errors or failed requests. Product dialog close controls, prices, filtering and enquiry prefills pass. Screenshots of the changed catalogue, hero, About purpose and Home 2 spotlight were captured at 390/768/1440px and reviewed alongside the compact text-only product dialog. Evidence is outside the repository under `/private/tmp/pp-unique/`.
+
+## Remove visible cable attribution strip
+
+Removed the cable credit line beneath the Accessories catalogue. The required author, source, license and modification notice are available through a footer Photo credits dialog instead. Static/behavior checks pass, plus 12 focused responsive cases covering phone/tablet/desktop, light/dark and LTR/RTL, dialog opening, close button/Escape, source/license links and horizontal overflow.
