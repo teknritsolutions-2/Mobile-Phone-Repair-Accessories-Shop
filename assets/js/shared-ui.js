@@ -1,5 +1,5 @@
-import { formatPrice } from "./product-data.js?v=prices-10";
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=prices-10";
+import { formatPrice } from "./product-data.js?v=charger-11";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=charger-11";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -55,7 +55,7 @@ export function textLink(label, page, params = {}) {
 const imageSizes = {
   "cable-photo.jpg": [1000, 750],
   "protector-photo.jpg": [1000, 750],
-  "charger-photo.jpg": [1000, 750],
+  "charger-desk.jpg": [1000, 750],
   "stand-photo.jpg": [1000, 750],
   "stand.svg": [800, 600],
   "case.jpg": [1000, 750],

@@ -86,3 +86,9 @@ Visual review also found that the detail badge could cover the new cable’s con
 ## Temporary accessory pricing
 
 At the user’s request, six fixed temporary INR prices are now stored in `product-data.js`: case ₹449, cable ₹299, screen protector ₹179, earbuds ₹1,299, charger ₹649, and stand ₹399. Cards, both homepage previews, and product dialogs share one formatter and the same “Indicative price” caption. The amounts remain stable across navigation and reloads until edited. Existing catalogue search, categories, alphabetical sorting, and enquiry behavior are preserved.
+
+## Home 2 middle accessory image replacement
+
+Replaced the hand-held charger with a real 4:3 photograph of a wall charger and coiled cable. The new `charger-desk.jpg` is 1000×750, resized without cropping or padding, and is shared by the Home 2 card, catalogue and product dialog. Cache versions are refreshed for existing browsers.
+
+Static and behavior checks pass. Focused browser QA passes 28 combinations across seven mobile/tablet/desktop widths, light/dark themes and LTR/RTL, checking matching native/rendered dimensions, contain fitting, overflow, and all three product dialog/enquiry mappings. Desktop and mobile screenshots were reviewed; the middle charger is fully in frame.

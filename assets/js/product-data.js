@@ -44,7 +44,7 @@ export const products = [
     price: 649,
     name: "Wall charger",
     category: "Chargers & Cables",
-    image: "charger-photo.jpg",
+    image: "charger-desk.jpg",
     attribute: "Compact design · USB charging",
     description:
       "A tidy addition to your charging setup. Confirm supported power output and regional plug options with the shop.",
