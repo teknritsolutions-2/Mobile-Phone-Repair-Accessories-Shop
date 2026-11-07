@@ -62,3 +62,9 @@ See [visibility-audit.md](visibility-audit.md) for measured before/after finding
 The screen-repair spotlight now uses a full-width heading/action row above a landscape repair photograph and a structured three-check panel. It replaces the narrow portrait and uneven side-by-side copy. The real `screen-repair.jpg` photograph retains its native 1000×667 proportions without a CSS crop. Desktop places checks alongside the photo; tablet places three columns beneath it, and mobile stacks the checks. The section remains third and the following repair finder is unchanged.
 
 Focused browser QA passes 32 combinations at 320/390/600/768/820/900/1024/1440px in light/dark and LTR/RTL, including contrast, touch targets, image proportions, overflow, and the screen-repair booking prefill. Screenshots and reports are outside the repository at `/private/tmp/pp-section-qa/`. Existing site-wide responsive and functional checks are also run for this release.
+
+## Matching real photos in A little extra care
+
+The screen protector and phone-stand illustrations and tightly framed charger source are replaced with three real Pexels photographs. All three local files and image attributes are 1000×750, and the Home 2 section uses equal 4:3 frames with contain fitting and no zoom. Larger photographs sit above the product copy; all three product dialogs and catalogue records use the same photos. Source crops preserve the complete primary products; exact source links and crop decisions are in `image-credits.md`.
+
+Focused browser checks cover seven widths (320/390/600/768/820/1024/1440), both themes and both directions: 28 combinations. File dimensions, equal rendered photo dimensions, complete contain fitting, product/photo mappings, and enquiry links pass. Screenshots and raw reports are outside the repository under `/private/tmp/pp-essentials/`. The existing site-wide browser suite also verifies matching Home 2 accessory frames at each tested width.

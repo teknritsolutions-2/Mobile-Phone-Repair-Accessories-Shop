@@ -1,9 +1,12 @@
-import { business } from "./site-config.js?v=site-4";
-import { services } from "./service-data.js?v=site-4";
-import { products } from "./product-data.js?v=site-4";
-import { escapeHtml } from "./utils.js?v=site-4";
-import { validateRequest, buildRequestSummary } from "./validation.js?v=site-4";
-import { icon } from "./shared-ui.js?v=site-4";
+import { business } from "./site-config.js?v=photos-7";
+import { services } from "./service-data.js?v=photos-7";
+import { products } from "./product-data.js?v=photos-7";
+import { escapeHtml } from "./utils.js?v=photos-7";
+import {
+  validateRequest,
+  buildRequestSummary,
+} from "./validation.js?v=photos-7";
+import { icon } from "./shared-ui.js?v=photos-7";
 
 function downloadRequest(summary) {
   const url = URL.createObjectURL(

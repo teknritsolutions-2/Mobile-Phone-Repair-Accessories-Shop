@@ -1,7 +1,7 @@
-import { pageUrl, escapeHtml, savePreference } from "./utils.js?v=site-4";
-import { business } from "./site-config.js?v=site-4";
-import { icon, bookLink } from "./shared-ui.js?v=site-4";
-import { Logo } from "./shared-ui.js?v=site-4";
+import { pageUrl, escapeHtml, savePreference } from "./utils.js?v=photos-7";
+import { business } from "./site-config.js?v=photos-7";
+import { icon, bookLink } from "./shared-ui.js?v=photos-7";
+import { Logo } from "./shared-ui.js?v=photos-7";
 
 export function ThemeToggle() {
   return `<button class="tool-button" data-theme-toggle aria-label="Switch color theme">${icon("moon")}<span class="mobile-tool-label">Color theme</span></button>`;

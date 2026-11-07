@@ -750,9 +750,6 @@ body.menu-is-open .back-to-top {
 .product-card[data-kind="stand"] .product-card__visual {
   background: #edf2f4;
 }
-.product-card[data-kind="glass"] .product-card__visual {
-  padding: 8px;
-}
 .product-price {
   font: 500 14px/1.6 var(--body);
   color: var(--muted);
@@ -1298,18 +1295,15 @@ body.menu-is-open .back-to-top {
   gap: 24px;
 }
 .essentials-strip .product-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 16px;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
 }
 .essentials-strip .product-card__visual {
-  grid-row: 1/7;
-  aspect-ratio: 1;
-  align-self: center;
+  aspect-ratio: 4/3;
+  align-self: stretch;
 }
 .essentials-strip .product-card__category {
-  margin-top: 0;
+  margin-top: 16px;
 }
 .essentials-strip .product-card__attribute {
   display: none;
@@ -1365,15 +1359,6 @@ body.menu-is-open .back-to-top {
   .problem-browser {
     grid-template-columns: 1fr 1fr;
   }
-  .essentials-strip .product-card {
-    display: flex;
-  }
-  .essentials-strip .product-card__visual {
-    aspect-ratio: 4/3;
-  }
-  .essentials-strip .product-card__category {
-    margin-top: 15px;
-  }
   .simple-process > .container {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1392,19 +1377,6 @@ body.menu-is-open .back-to-top {
   .essentials-strip {
     grid-template-columns: 1fr;
     gap: 25px;
-  }
-  .essentials-strip .product-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 20px;
-  }
-  .essentials-strip .product-card__visual {
-    grid-row: 1/7;
-    aspect-ratio: 4/3;
-  }
-  .essentials-strip .product-card__category {
-    font-size: 13px;
-    margin-top: 0;
   }
   .essentials-strip .product-price {
     margin-block: 10px;
@@ -1453,11 +1425,9 @@ body.menu-is-open .back-to-top {
   }
 }
 @media (max-width: 359px) {
-  .essentials-strip .product-card,
   .catalog-grid .product-card {
     display: flex;
   }
-  .essentials-strip .product-card__category,
   .catalog-grid .product-card__category {
     margin-top: 15px;
   }

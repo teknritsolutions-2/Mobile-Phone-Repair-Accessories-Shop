@@ -21,7 +21,7 @@ export const products = [
     id: "glass",
     name: "Screen protector",
     category: "Screen Protectors",
-    image: "protector.svg",
+    image: "protector-photo.jpg",
     attribute: "Clear finish · Model-specific fit",
     description:
       "An extra layer for the display you use every day. Ask about compatible options and fitting for your phone.",
@@ -39,7 +39,7 @@ export const products = [
     id: "charger",
     name: "Wall charger",
     category: "Chargers & Cables",
-    image: "charger.jpg",
+    image: "charger-photo.jpg",
     attribute: "Compact design · USB charging",
     description:
       "A tidy addition to your charging setup. Confirm supported power output and regional plug options with the shop.",
@@ -48,7 +48,7 @@ export const products = [
     id: "stand",
     name: "Desk phone stand",
     category: "Everyday Essentials",
-    image: "stand.svg",
+    image: "stand-photo.jpg",
     attribute: "Desktop companion · Upright design",
     description:
       "Keep your screen comfortably in view at your desk. Ask about dimensions and compatibility with your device and case.",

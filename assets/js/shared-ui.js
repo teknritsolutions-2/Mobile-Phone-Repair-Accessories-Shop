@@ -1,4 +1,4 @@
-import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=site-4";
+import { pageUrl, assetUrl, escapeHtml } from "./utils.js?v=photos-7";
 
 const paths = {
   arrow: '<path d="M4 12h15m-6-6 6 6-6 6"/>',
@@ -52,6 +52,9 @@ export function textLink(label, page, params = {}) {
 }
 
 const imageSizes = {
+  "protector-photo.jpg": [1000, 750],
+  "charger-photo.jpg": [1000, 750],
+  "stand-photo.jpg": [1000, 750],
   "stand.svg": [800, 600],
   "case.jpg": [1000, 750],
   "protector.svg": [700, 600],

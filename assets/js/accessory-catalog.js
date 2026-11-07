@@ -1,6 +1,6 @@
-import { products } from "./product-data.js?v=site-4";
-import { ProductCard } from "./shared-ui.js?v=site-4";
-import { label, photo, button } from "./shared-ui.js?v=site-4";
+import { products } from "./product-data.js?v=photos-7";
+import { ProductCard } from "./shared-ui.js?v=photos-7";
+import { label, photo, button } from "./shared-ui.js?v=photos-7";
 
 export function filterProducts({
   category = "All essentials",

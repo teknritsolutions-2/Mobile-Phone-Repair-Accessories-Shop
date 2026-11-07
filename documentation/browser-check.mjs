@@ -74,6 +74,38 @@ for (const width of [320, 390, 768, 1024, 1280, 1440]) {
         "Service photos retain their 3:2 ratio",
       );
     }
+    if (route === "pages/home2.html") {
+      const photos = await page
+        .locator(".essentials-strip img")
+        .evaluateAll((images) =>
+          images.map((i) => ({
+            nativeWidth: i.naturalWidth,
+            nativeHeight: i.naturalHeight,
+            width: i.getBoundingClientRect().width,
+            height: i.getBoundingClientRect().height,
+            fit: getComputedStyle(i).objectFit,
+          })),
+        );
+      assert.equal(photos.length, 3);
+      assert.ok(
+        photos.every(
+          (i) =>
+            i.nativeWidth === 1000 &&
+            i.nativeHeight === 750 &&
+            i.fit === "contain",
+        ),
+        "Three real accessory photos retain matching 1000 × 750 proportions",
+      );
+      assert.ok(
+        photos.every(
+          (i) =>
+            Math.abs(i.width - photos[0].width) < 1 &&
+            Math.abs(i.height - photos[0].height) < 1 &&
+            Math.abs(i.width / i.height - 4 / 3) < 0.02,
+        ),
+        `Equal uncropped accessory frames at ${width}px`,
+      );
+    }
     // Test actual scrolled geometry; CSS declarations alone do not prove sticky behavior.
     await page.evaluate(() => {
       document.documentElement.style.scrollBehavior = "auto";
@@ -538,12 +570,10 @@ for (const theme of ["light", "dark"]) {
     (theme) => (document.documentElement.dataset.theme = theme),
     theme,
   );
-  const colors = await page
-    .locator("#name")
-    .evaluate((el) => ({
-      border: getComputedStyle(el).borderColor,
-      background: getComputedStyle(el).backgroundColor,
-    }));
+  const colors = await page.locator("#name").evaluate((el) => ({
+    border: getComputedStyle(el).borderColor,
+    background: getComputedStyle(el).backgroundColor,
+  }));
   assert.ok(
     contrast(colors.border, colors.background) >= 3,
     `${theme} field boundary contrast`,
