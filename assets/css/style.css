@@ -1126,39 +1126,168 @@ body.menu-is-open .back-to-top {
 .repair-focus {
   background: var(--surface);
 }
-.repair-focus__grid {
+.repair-focus__heading {
   display: grid;
-  grid-template-columns: 0.72fr 1fr;
-  gap: clamp(30px, 6vw, 90px);
+  grid-template-columns: 1.15fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+.repair-focus__heading h2 {
+  font-size: clamp(34px, 3.5vw, 50px);
+  line-height: 1.07;
+  letter-spacing: -0.045em;
+}
+.repair-focus__heading > div:last-child {
+  max-width: 465px;
+  justify-self: end;
+}
+.repair-focus__heading > div:last-child > p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.repair-focus__heading .button {
+  margin-top: 16px;
+  font-size: 14px;
+}
+.repair-focus__workbench {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
-  max-width: 1060px;
+  gap: 40px;
+  background: var(--soft);
+  padding: 20px 36px 20px 20px;
+  border-radius: 6px;
 }
-.repair-focus figure {
-  max-width: 340px;
-  justify-self: center;
+.repair-focus__photo {
+  margin: 0;
+  min-width: 0;
 }
-.repair-focus figure img {
+.repair-focus__photo img {
+  display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 1000/667;
+  border-radius: 3px;
 }
-.repair-focus figcaption {
-  font-size: 13px;
-  color: var(--muted);
+.repair-focus__photo figcaption {
   margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
 }
-.repair-focus__copy > p:not(.eyebrow) {
-  margin-block: 20px;
-  max-width: 480px;
+.repair-focus__checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.focus-checks {
+.repair-focus__checks li {
   display: grid;
-  gap: 0;
-  margin-block: 25px;
+  grid-template-columns: 30px 1fr;
+  gap: 14px;
+  padding-block: 21px;
 }
-.focus-checks span {
-  font-size: 15px;
+.repair-focus__checks li + li {
   border-top: 1px solid var(--line);
-  padding-block: 13px;
+}
+.repair-focus__checks li > span {
+  color: var(--accent);
+  font-size: 12px;
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.repair-focus__checks h3 {
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.repair-focus__checks p {
+  font-size: 14px;
+  line-height: 1.75;
+  margin-top: 10px;
+}
+@media (max-width: 1099px) {
+  .repair-focus__heading {
+    gap: 35px;
+  }
+  .repair-focus__workbench {
+    gap: 28px;
+    padding-inline-end: 25px;
+  }
+  .repair-focus__checks h3 {
+    font-size: 21px;
+  }
+  .repair-focus__checks li {
+    gap: 8px;
+    padding-block: 16px;
+  }
+}
+@media (max-width: 899px) {
+  .repair-focus__workbench {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px;
+  }
+  .repair-focus__checks {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .repair-focus__checks li {
+    display: block;
+    padding-block: 14px 5px;
+    border-top: 1px solid var(--line);
+  }
+  .repair-focus__checks li > span {
+    display: block;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+  .repair-focus__checks h3 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 599px) {
+  .repair-focus__heading {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 25px;
+  }
+  .repair-focus__heading > div:last-child {
+    max-width: none;
+    justify-self: stretch;
+  }
+  .repair-focus__heading h2 {
+    font-size: 36px;
+  }
+  .repair-focus__heading .button {
+    margin-top: 12px;
+  }
+  .repair-focus__workbench {
+    padding: 14px;
+    gap: 10px;
+  }
+  .repair-focus__checks {
+    display: block;
+  }
+  .repair-focus__checks li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    padding-block: 20px;
+  }
+  .repair-focus__checks li:first-child {
+    border-top: 0;
+  }
+  .repair-focus__checks li > span {
+    padding-top: 3px;
+    margin: 0;
+  }
+  .repair-focus__checks h3 {
+    font-size: 22px;
+  }
+  .repair-focus__checks p {
+    font-size: 15px;
+  }
 }
 .home2-essentials {
   background: var(--surface);
@@ -1236,13 +1365,6 @@ body.menu-is-open .back-to-top {
   .problem-browser {
     grid-template-columns: 1fr 1fr;
   }
-  .repair-focus__grid {
-    grid-template-columns: 0.75fr 1fr;
-    gap: 35px;
-  }
-  .repair-focus figure {
-    max-width: 300px;
-  }
   .essentials-strip .product-card {
     display: flex;
   }
@@ -1258,9 +1380,6 @@ body.menu-is-open .back-to-top {
   }
 }
 @media (max-width: 799px) {
-  .repair-focus__copy h2 {
-    font-size: 32px;
-  }
 }
 @media (max-width: 599px) {
   .problem-browser {
@@ -1268,17 +1387,6 @@ body.menu-is-open .back-to-top {
   }
   .problem-browser a {
     padding-block: 21px;
-  }
-  .repair-focus__grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .repair-focus figure {
-    max-width: 270px;
-    width: 100%;
-  }
-  .repair-focus__copy h2 {
-    font-size: 32px;
   }
 
   .essentials-strip {

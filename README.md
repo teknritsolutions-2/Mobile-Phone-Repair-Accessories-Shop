@@ -13,7 +13,7 @@ Open `http://localhost:4173/`. No installation, framework, build, or custom serv
 ## Structure
 
 - `index.html`: Home 1 repair showroom.
-- `pages/home2.html`: photographic opening banner, service browser, portrait spotlight, middle-page repair finder, accessory preview, three-step process, FAQs, and booking.
+- `pages/home2.html`: photographic opening banner, service browser, screen-repair spotlight, middle-page repair finder, accessory preview, three-step process, FAQs, and booking.
 - `pages/services.html`: real-photo service gallery, six visible repair categories, booking/estimate links, and visit FAQs.
 - `pages/accessories.html`: searchable, filterable product collection.
 - `pages/pricing.html`: connected service/device estimate guide.
